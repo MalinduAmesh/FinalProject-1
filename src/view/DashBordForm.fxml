@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="646.0" prefWidth="1241.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBordFormController">
+   <children>
+      <AnchorPane prefHeight="646.0" prefWidth="160.0" style="-fx-background-color: #2c3e50;" />
+      <AnchorPane layoutX="160.0" prefHeight="92.0" prefWidth="1081.0" style="-fx-background-color: #34495e;" />
+      <AnchorPane layoutX="160.0" layoutY="92.0" prefHeight="554.0" prefWidth="1081.0" style="-fx-background-color: #95a5a6;">
+         <children>
+            <JFXTextField layoutX="425.0" layoutY="210.0" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
