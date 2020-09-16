@@ -27,7 +27,7 @@ public class DashBordFormController {
 
 
     public void btnRegisterOnAction(MouseEvent mouseEvent) throws IOException {
-        setUi("RegisterForm");
+        setUi("MemberForm");
     }
 
     public void btnAttendanceOnAction(MouseEvent mouseEvent) {

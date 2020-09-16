@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="912.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBordFormController">
+<AnchorPane prefHeight="962.0" prefWidth="1355.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBordFormController">
    <children>
-      <AnchorPane fx:id="root" layoutX="253.0" prefHeight="926.0" prefWidth="1102.0" style="-fx-background-color: #95a5a6;" />
-      <AnchorPane prefHeight="926.0" prefWidth="253.0" style="-fx-background-color: #2f3542;">
+      <AnchorPane fx:id="root" layoutX="253.0" layoutY="69.0" prefHeight="926.0" prefWidth="1102.0" style="-fx-background-color: #95a5a6;" />
+      <AnchorPane layoutY="69.0" prefHeight="926.0" prefWidth="253.0" style="-fx-background-color: #2f3542;">
          <children>
             <JFXButton layoutX="2.0" layoutY="60.0" onMouseClicked="#btnRegisterOnAction" prefHeight="60.0" prefWidth="248.0" text="Register" textFill="#a4b0be" />
             <JFXButton layoutX="-2.0" layoutY="291.0" onMouseClicked="#btnAttendanceOnAction" prefHeight="60.0" prefWidth="248.0" text="   Attendance" textFill="#a4b0be" />
@@ -64,6 +66,29 @@
                   <Image url="@../Assests/Members.png" />
                </image>
             </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="253.0" prefHeight="69.0" prefWidth="1102.0" style="-fx-background-color: #16a085;">
+         <children>
+            <Label layoutX="454.0" layoutY="20.0" text="Beast House GYM">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="60.0" layoutX="400.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/Gym%20logo%202.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="69.0" prefWidth="253.0" style="-fx-background-color: #218c74;">
+         <children>
+            <Label layoutX="62.0" layoutY="20.0" text="Welcome">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
