@@ -7,28 +7,28 @@
 
 <AnchorPane prefHeight="912.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBordFormController">
    <children>
-      <AnchorPane layoutX="253.0" prefHeight="926.0" prefWidth="1102.0" style="-fx-background-color: #95a5a6;" />
+      <AnchorPane fx:id="root" layoutX="253.0" prefHeight="926.0" prefWidth="1102.0" style="-fx-background-color: #95a5a6;" />
       <AnchorPane prefHeight="926.0" prefWidth="253.0" style="-fx-background-color: #2f3542;">
          <children>
-            <JFXButton layoutX="2.0" layoutY="60.0" prefHeight="60.0" prefWidth="248.0" style="-fx-background-image: #f1c40f;" text="Register" textFill="#a4b0be" />
-            <JFXButton layoutX="-2.0" layoutY="291.0" prefHeight="60.0" prefWidth="248.0" text="   Attendance" textFill="#a4b0be" />
-            <JFXButton layoutY="120.0" prefHeight="60.0" prefWidth="251.0" text="          Assign Workout" textFill="#a4b0be" />
-            <ImageView fitHeight="42.0" fitWidth="55.0" layoutX="28.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+            <JFXButton layoutX="2.0" layoutY="60.0" onMouseClicked="#btnRegisterOnAction" prefHeight="60.0" prefWidth="248.0" text="Register" textFill="#a4b0be" />
+            <JFXButton layoutX="-2.0" layoutY="291.0" onMouseClicked="#btnAttendanceOnAction" prefHeight="60.0" prefWidth="248.0" text="   Attendance" textFill="#a4b0be" />
+            <JFXButton layoutY="120.0" onMouseClicked="#btnAssignWorkOutOnAction" prefHeight="60.0" prefWidth="251.0" text="          Assign Workout" textFill="#a4b0be" />
+            <ImageView fitHeight="42.0" fitWidth="54.0" layoutX="28.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assests/Assign%20workout.png" />
-               </image>
+                  <Image url="@../Assests/aasiignWorkOut.png" />
+               </image> 
             </ImageView>
             <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="32.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assests/Register%20Button.png" />
+                  <Image url="@../Assests/register.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="-1.0" layoutY="231.0" prefHeight="60.0" prefWidth="248.0" text="Workout" textFill="#a4b0be" />
-            <JFXButton layoutX="-2.0" layoutY="351.0" prefHeight="60.0" prefWidth="251.0" text="Products" textFill="#a4b0be" />
-            <JFXButton layoutX="-2.0" layoutY="411.0" prefHeight="60.0" prefWidth="251.0" text="Store" textFill="#a4b0be" />
+            <JFXButton layoutX="-1.0" layoutY="231.0" onMouseClicked="#btnWorkoutOnAction" prefHeight="60.0" prefWidth="248.0" text="Workout" textFill="#a4b0be" />
+            <JFXButton layoutX="-2.0" layoutY="351.0" onMouseClicked="#btnProductOnAction" prefHeight="60.0" prefWidth="251.0" text="Products" textFill="#a4b0be" />
+            <JFXButton layoutX="-2.0" layoutY="411.0" onMouseClicked="#btnStoreOnAction" prefHeight="60.0" prefWidth="251.0" text="Store" textFill="#a4b0be" />
             <ImageView fitHeight="42.0" fitWidth="55.0" layoutX="24.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assests/WorkOut.png" />
+                  <Image url="@../Assests/Workout.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="42.0" fitWidth="55.0" layoutX="24.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
@@ -46,19 +46,19 @@
                   <Image url="@../Assests/Attendance.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="3.0" prefHeight="60.0" prefWidth="248.0" style="-fx-background-image: #f1c40f;" text="DashBoard" textFill="#a4b0be" />
+            <JFXButton layoutX="3.0" onMouseClicked="#btnDashBoardOnAction" prefHeight="60.0" prefWidth="248.0" text="DashBoard" textFill="#a4b0be" />
             <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="32.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assests/Home.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="1.0" layoutY="458.0" prefHeight="60.0" prefWidth="251.0" text="Send Email" textFill="#a4b0be" />
+            <JFXButton layoutX="1.0" layoutY="458.0" onMouseClicked="#btnEmailOnAction" prefHeight="60.0" prefWidth="251.0" text="Send Email" textFill="#a4b0be" />
             <ImageView fitHeight="42.0" fitWidth="55.0" layoutX="27.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assests/email.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="5.0" layoutY="171.0" prefHeight="60.0" prefWidth="248.0" text="Members" textFill="#a4b0be" />
+            <JFXButton layoutX="5.0" layoutY="171.0" onMouseClicked="#btnMembersOnAction" prefHeight="60.0" prefWidth="248.0" text="Members" textFill="#a4b0be" />
             <ImageView fitHeight="42.0" fitWidth="55.0" layoutX="28.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assests/Members.png" />
