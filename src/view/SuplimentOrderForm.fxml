@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="926.0" prefWidth="1356.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SuplimentOrderFormController">
+   <children>
+      <Label layoutX="137.0" layoutY="52.0" text="Sell Records">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Separator layoutY="101.0" prefHeight="4.0" prefWidth="1356.0" />
+      <JFXButton layoutX="1084.0" layoutY="31.0" text="Sell Products">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/Sell%20Icon.png" />
+               </image></ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="57.0" fitWidth="62.0" layoutX="68.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assests/Money.png" />
+         </image>
+      </ImageView>
+      <TableView layoutX="37.0" layoutY="154.0" prefHeight="743.0" prefWidth="1283.0">
+        <columns>
+          <TableColumn prefWidth="171.0" text="Customer Name" />
+            <TableColumn prefWidth="196.0" text="Supliment ID" />
+          <TableColumn minWidth="0.0" prefWidth="182.0" text="Name" />
+            <TableColumn prefWidth="165.0" text="Date" />
+            <TableColumn prefWidth="193.0" text="QTY" />
+            <TableColumn prefWidth="174.0" text="Total Price" />
+            <TableColumn prefWidth="201.0" text="Other Options" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

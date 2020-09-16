@@ -11,20 +11,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="926.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MemberFormController">
+<AnchorPane prefHeight="926.0" prefWidth="1356.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MemberFormController">
    <children>
-      <AnchorPane prefHeight="927.0" prefWidth="1102.0">
+      <AnchorPane prefHeight="927.0" prefWidth="1356.0">
          <children>
-            <TableView layoutX="12.0" layoutY="231.0" prefHeight="685.0" prefWidth="1076.0">
+            <TableView layoutX="12.0" layoutY="231.0" prefHeight="685.0" prefWidth="1333.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="Photo" />
                 <TableColumn prefWidth="109.0" text="Member ID" />
-                  <TableColumn prefWidth="144.0" text="Member Name" />
-                  <TableColumn prefWidth="147.0" text="Contact" />
-                  <TableColumn prefWidth="130.0" text="Gender" />
-                  <TableColumn minWidth="0.0" prefWidth="144.0" text="Joining Date" />
-                  <TableColumn prefWidth="144.0" text="Expire Date" />
-                  <TableColumn minWidth="0.0" prefWidth="181.0" text="Other" />
+                  <TableColumn prefWidth="158.0" text="Member Name" />
+                  <TableColumn prefWidth="151.0" text="Contact" />
+                  <TableColumn prefWidth="142.0" text="Gender" />
+                  <TableColumn minWidth="0.0" prefWidth="219.0" text="Joining Date" />
+                  <TableColumn prefWidth="221.0" text="Expire Date" />
+                  <TableColumn minWidth="0.0" prefWidth="257.0" text="Other" />
               </columns>
             </TableView>
             <Label layoutX="69.0" layoutY="35.0" text="Member List">
@@ -34,7 +34,7 @@
             </Label>
             <ImageView fitHeight="30.0" fitWidth="38.0" layoutX="31.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assests/hambuger%20menu.png" />
+                  <Image url="@../Assests/Members.png" />
                </image>
             </ImageView>
             <JFXTextField alignment="CENTER" layoutX="437.0" layoutY="119.0" prefHeight="56.0" prefWidth="228.0" promptText="Member ID" />
@@ -47,11 +47,11 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Button layoutX="860.0" layoutY="19.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="54.0" prefWidth="191.0" text="Register Member">
+            <Button layoutX="1115.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#btnRegisterOnAction" prefHeight="54.0" prefWidth="191.0" text="Register Member">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assests/Members.png" />
+                        <Image url="@../Assests/register.png" />
                      </image>
                   </ImageView>
                </graphic>

@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -26,9 +27,9 @@ public class DashBordFormController {
     }
 
 
-    public void btnRegisterOnAction(MouseEvent mouseEvent) throws IOException {
-        setUi("MemberForm");
-    }
+
+
+
 
     public void btnAttendanceOnAction(MouseEvent mouseEvent) {
     }
@@ -39,7 +40,8 @@ public class DashBordFormController {
     public void btnWorkoutOnAction(MouseEvent mouseEvent) {
     }
 
-    public void btnProductOnAction(MouseEvent mouseEvent) {
+    public void btnProductOnAction(MouseEvent mouseEvent) throws IOException {
+        setUi("SuplimentOrderForm");
     }
 
     public void btnStoreOnAction(MouseEvent mouseEvent) {
@@ -52,6 +54,12 @@ public class DashBordFormController {
     public void btnEmailOnAction(MouseEvent mouseEvent) {
     }
 
-    public void btnMembersOnAction(MouseEvent mouseEvent) {
+    public void btnMembersOnAction(MouseEvent mouseEvent) throws IOException {
+        setUi("MemberForm");
+    }
+
+
+    public void registerUser(MouseEvent mouseEvent) throws IOException {
+        setUi("RegisterForm");
     }
 }
