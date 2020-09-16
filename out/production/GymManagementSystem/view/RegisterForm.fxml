@@ -1,40 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="740.0" prefWidth="1512.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterFormController">
+<AnchorPane prefHeight="926.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterFormController">
    <children>
-      <Label layoutX="81.0" layoutY="113.0" text="Customer ID" />
-      <Label layoutX="86.0" layoutY="172.0" text="Name" />
-      <Label layoutX="86.0" layoutY="248.0" text="Address" />
-      <Label layoutX="86.0" layoutY="311.0" text="Contact" />
-      <Label layoutX="86.0" layoutY="382.0" text="DOB" />
-      <Label layoutX="630.0" layoutY="109.0" text="Gender" />
-      <Label layoutX="630.0" layoutY="191.0" text="Email" />
-      <Label layoutX="630.0" layoutY="272.0" text="Weigth" />
-      <Label layoutX="630.0" layoutY="350.0" text="Height" />
-      <JFXTextField layoutX="766.0" layoutY="276.0" />
-      <JFXTextField layoutX="766.0" layoutY="195.0" />
-      <JFXTextField layoutX="766.0" layoutY="113.0" />
-      <JFXTextField layoutX="222.0" layoutY="386.0" />
-      <JFXTextField layoutX="222.0" layoutY="315.0" />
-      <JFXTextField layoutX="222.0" layoutY="252.0" />
-      <JFXTextField layoutX="222.0" layoutY="176.0" />
-      <JFXTextField layoutX="766.0" layoutY="354.0" />
-      <JFXTextField layoutX="222.0" layoutY="117.0" />
-      <Label layoutX="1083.0" layoutY="96.0" text="Reg  Id" />
-      <Label layoutX="1083.0" layoutY="164.0" text="Tra Id" />
-      <Label layoutX="1083.0" layoutY="240.0" text="Start Date" />
-      <Label layoutX="1083.0" layoutY="303.0" text="Amount Type" />
-      <Label layoutX="1083.0" layoutY="374.0" text="Payment" />
-      <JFXTextField layoutX="1222.0" layoutY="100.0" />
-      <JFXTextField layoutX="1222.0" layoutY="378.0" />
-      <JFXTextField layoutX="1222.0" layoutY="307.0" />
-      <JFXTextField layoutX="1222.0" layoutY="244.0" />
-      <JFXTextField layoutX="1222.0" layoutY="168.0" />
-      <Label layoutX="1088.0" layoutY="455.0" text="Supliment" />
-      <JFXTextField layoutX="1222.0" layoutY="459.0" />
+      <AnchorPane layoutX="18.0" layoutY="405.0" prefHeight="237.0" prefWidth="1063.0" style="-fx-background-color: #747d8c;">
+         <children>
+            <Label layoutX="74.0" layoutY="20.0" text="Register Details">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="87.0" layoutY="79.0" text="Reg  Id">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="138.0" text="Instructor">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="607.0" layoutY="196.0" text="Amount Type">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="197.0" text="Package">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXComboBox layoutX="764.0" layoutY="66.0" prefHeight="40.0" prefWidth="286.0" />
+            <Label layoutX="613.0" layoutY="83.0" text="Start Date">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="609.0" layoutY="147.0" text="End Date">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXComboBox layoutX="249.0" layoutY="182.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="252.0" layoutY="124.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="253.0" layoutY="67.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="764.0" layoutY="137.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="765.0" layoutY="196.0" prefHeight="40.0" prefWidth="286.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="17.0" layoutY="22.0" prefHeight="375.0" prefWidth="1063.0" style="-fx-background-color: #747d8c;">
+         <children>
+            <Label layoutX="609.0" layoutY="100.0" text=" Gender">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="615.0" layoutY="157.0" text="Email">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="613.0" layoutY="218.0" text="Weigth">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="613.0" layoutY="287.0" text="Height">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="100.0" text="Customer ID" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="156.0" text="Name" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="56.0" layoutY="212.0" text="Address" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="276.0" text="Contact" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="335.0" text="DOB" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="239.0" layoutY="152.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="235.0" layoutY="204.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="236.0" layoutY="265.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="234.0" layoutY="321.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="750.0" layoutY="153.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="753.0" layoutY="218.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="757.0" layoutY="285.0" prefHeight="40.0" prefWidth="286.0" />
+            <JFXTextField layoutX="241.0" layoutY="100.0" prefHeight="40.0" prefWidth="286.0" />
+         </children>
+      </AnchorPane>
+      <JFXTextField layoutX="766.0" layoutY="113.0" prefHeight="40.0" prefWidth="286.0" />
+      <Label layoutX="99.0" layoutY="64.0" text="Customer Details">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="16.0" layoutY="649.0" prefHeight="262.0" prefWidth="1068.0" style="-fx-background-color: #747d8c;">
+         <children>
+            <Label layoutX="70.0" layoutY="30.0" text="Payments Details">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -11,14 +11,18 @@ public class DashBordFormController {
     public AnchorPane root;
 
     public void initialize() throws IOException {
-        setUi("MainForm");
+        defalt();
+        //setUi("MainForm");
     }
 
-    private void setUi(String mainForm) throws IOException {
+    private void setUi(String m) throws IOException {
         root.getChildren().clear();;
-        root.getChildren().add(FXMLLoader.load(this.getClass().getResource("../view/"+ mainForm + ".fxml")));
+        root.getChildren().add(FXMLLoader.load(this.getClass().getResource("../view/"+ m + ".fxml")));
 
 
+    }
+    public  void defalt() throws IOException {
+        setUi("MainForm");
     }
 
 
@@ -41,7 +45,8 @@ public class DashBordFormController {
     public void btnStoreOnAction(MouseEvent mouseEvent) {
     }
 
-    public void btnDashBoardOnAction(MouseEvent mouseEvent) {
+    public void btnDashBoardOnAction(MouseEvent mouseEvent) throws IOException {
+        setUi("MainForm");
     }
 
     public void btnEmailOnAction(MouseEvent mouseEvent) {
