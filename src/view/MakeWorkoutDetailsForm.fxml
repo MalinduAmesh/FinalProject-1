@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="956.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MakeWorkoutDetailsFormController">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="22.0" prefHeight="518.0" prefWidth="1032.0" style="-fx-background-color: #ecf0f1;">
+         <children>
+            <Label layoutX="105.0" layoutY="40.0" text="Schedule Details" />
+            <JFXTextField layoutX="94.0" layoutY="99.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="94.0" layoutY="207.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="587.0" layoutY="320.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="587.0" layoutY="99.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="337.0" layoutY="428.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="94.0" layoutY="320.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="587.0" layoutY="207.0" prefHeight="52.0" prefWidth="410.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1075.0" layoutY="22.0" prefHeight="552.0" prefWidth="575.0" style="-fx-background-color: #ecf0f1;">
+         <children>
+            <Label layoutX="62.0" layoutY="40.0" text="Equipment Details" />
+            <JFXTextField layoutX="122.0" layoutY="101.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="129.0" layoutY="478.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="129.0" layoutY="384.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="129.0" layoutY="287.0" prefHeight="52.0" prefWidth="410.0" />
+            <JFXTextField layoutX="122.0" layoutY="194.0" prefHeight="52.0" prefWidth="410.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
