@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="926.0" prefWidth="1666.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SuplimentOrderFormController">
+<AnchorPane fx:id="root" prefHeight="926.0" prefWidth="1666.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SuplimentOrderFormController">
    <children>
       <Label layoutX="137.0" layoutY="52.0" text="Sell Records">
          <font>
@@ -18,7 +18,7 @@
          </font>
       </Label>
       <Separator layoutY="101.0" prefHeight="4.0" prefWidth="1356.0" />
-      <JFXButton layoutX="1084.0" layoutY="31.0" text="Sell Products">
+      <JFXButton layoutX="1084.0" layoutY="31.0" onMouseClicked="#sellOnAction" text="Sell Products">
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>

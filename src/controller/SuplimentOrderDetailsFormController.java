@@ -13,6 +13,7 @@ public class SuplimentOrderDetailsFormController {
     public JFXTextField txtProductName;
     public JFXTextField txtDiscount;
     public JFXTextField txtAmount;
+    public JFXTextField txtAvalbleQTY;
     public JFXTextField txtQTY;
     public JFXTextField txtPrice;
     public JFXTextField txtTotal;
@@ -22,6 +23,7 @@ public class SuplimentOrderDetailsFormController {
     public TableColumn colQty;
     public TableColumn colDiscount;
     public TableColumn colTotal;
+
 
     public void AddOnAction(MouseEvent mouseEvent) {
     }

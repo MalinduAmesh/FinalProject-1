@@ -34,16 +34,17 @@
             </Label>
             <JFXComboBox fx:id="cmbSuplimetnId" layoutX="132.0" layoutY="109.0" prefHeight="55.0" prefWidth="375.0" promptText="Supliment ID" />
             <JFXTextField fx:id="txtProductName" layoutX="593.0" layoutY="119.0" prefHeight="51.0" prefWidth="375.0" promptText="Product Name" />
-            <JFXTextField fx:id="txtDiscount" layoutX="593.0" layoutY="295.0" prefHeight="51.0" prefWidth="375.0" promptText="Discount" />
-            <JFXTextField fx:id="txtAmount" layoutX="132.0" layoutY="295.0" prefHeight="51.0" prefWidth="375.0" promptText="Amount" />
-            <JFXTextField fx:id="txtQTY" layoutX="593.0" layoutY="208.0" prefHeight="51.0" prefWidth="375.0" promptText="Quantity" />
+            <JFXTextField fx:id="txtDiscount" layoutX="132.0" layoutY="374.0" prefHeight="51.0" prefWidth="375.0" promptText="Discount" />
+            <JFXTextField fx:id="txtAmount" layoutX="599.0" layoutY="288.0" prefHeight="51.0" prefWidth="375.0" promptText="Amount" />
+            <JFXTextField fx:id="txtQTY" layoutX="132.0" layoutY="288.0" prefHeight="51.0" prefWidth="375.0" promptText="Quantity" />
             <JFXTextField fx:id="txtPrice" layoutX="132.0" layoutY="198.0" prefHeight="51.0" prefWidth="375.0" promptText="Price" />
-            <JFXTextField fx:id="txtTotal" layoutX="319.0" layoutY="376.0" prefHeight="51.0" prefWidth="375.0" promptText="Total Amount" />
-            <ImageView fitHeight="51.0" fitWidth="52.0" layoutX="983.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+            <JFXTextField fx:id="txtTotal" layoutX="599.0" layoutY="374.0" prefHeight="51.0" prefWidth="375.0" promptText="Total Amount" />
+            <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="520.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assests/Discount.png" />
                </image>
             </ImageView>
+            <JFXTextField fx:id="txtAvalbleQTY" layoutX="593.0" layoutY="198.0" prefHeight="51.0" prefWidth="375.0" promptText="Available Quantity" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="284.0" prefHeight="312.0" prefWidth="552.0" style="-fx-background-color: #ecf0f1;">
