@@ -21,7 +21,7 @@
                   <Font name="System Bold" size="26.0" />
                </font>
             </Label>
-            <JFXComboBox layoutX="120.0" layoutY="149.0" prefHeight="55.0" prefWidth="381.0" promptText="MemberID" style="-fx-background-color: #ecf0f1;" />
+            <JFXComboBox fx:id="txt" layoutX="120.0" layoutY="149.0" prefHeight="55.0" prefWidth="381.0" promptText="MemberID" style="-fx-background-color: #ecf0f1;" />
             <JFXTextField layoutX="120.0" layoutY="236.0" prefHeight="55.0" prefWidth="381.0" promptText="Member Name" style="-fx-background-color: #ecf0f1;" />
             <JFXTextField layoutX="120.0" layoutY="428.0" prefHeight="55.0" prefWidth="381.0" promptText="Attandnce Total" style="-fx-background-color: #ecf0f1;" />
             <JFXTextField layoutX="120.0" layoutY="332.0" prefHeight="55.0" prefWidth="381.0" promptText="Workout Type" style="-fx-background-color: #ecf0f1;" />
