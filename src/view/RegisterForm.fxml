@@ -46,14 +46,14 @@
       </AnchorPane>
       <AnchorPane layoutX="8.0" layoutY="9.0" prefHeight="388.0" prefWidth="759.0" style="-fx-background-color: #ecf0f1;">
          <children>
-            <JFXTextField fx:id="txtCustomerName" layoutX="61.0" layoutY="154.0" prefHeight="40.0" prefWidth="286.0" promptText="Name" />
-            <JFXTextField fx:id="txtCustomerAddress" layoutX="61.0" layoutY="210.0" prefHeight="40.0" prefWidth="286.0" promptText="Address" />
-            <JFXTextField fx:id="txtCusContact" layoutX="61.0" layoutY="267.0" prefHeight="40.0" prefWidth="286.0" promptText="Contact" />
-            <JFXTextField fx:id="txtCusDOB" layoutX="64.0" layoutY="326.0" prefHeight="40.0" prefWidth="286.0" promptText="DOB" />
-            <JFXTextField fx:id="txtCusEmail" layoutX="443.0" layoutY="92.0" prefHeight="40.0" prefWidth="286.0" promptText="Email" />
-            <JFXTextField fx:id="txtCusWeight" layoutX="442.0" layoutY="151.0" prefHeight="40.0" prefWidth="286.0" promptText="Weigth" />
-            <JFXTextField fx:id="txtCusHeight" layoutX="442.0" layoutY="211.0" prefHeight="40.0" prefWidth="286.0" promptText="Height" />
-            <JFXTextField fx:id="txtCustomerID" layoutX="63.0" layoutY="91.0" prefHeight="40.0" prefWidth="286.0" promptText="Customer ID" />
+            <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="61.0" layoutY="154.0" prefHeight="40.0" prefWidth="286.0" promptText="Name" />
+            <JFXTextField fx:id="txtCustomerAddress" labelFloat="true" layoutX="61.0" layoutY="210.0" prefHeight="40.0" prefWidth="286.0" promptText="Address" />
+            <JFXTextField fx:id="txtCusContact" labelFloat="true" layoutX="61.0" layoutY="267.0" prefHeight="40.0" prefWidth="286.0" promptText="Contact" />
+            <JFXTextField fx:id="txtCusDOB" labelFloat="true" layoutX="64.0" layoutY="326.0" prefHeight="40.0" prefWidth="286.0" promptText="DOB" />
+            <JFXTextField fx:id="txtCusEmail" labelFloat="true" layoutX="443.0" layoutY="92.0" prefHeight="40.0" prefWidth="286.0" promptText="Email" />
+            <JFXTextField fx:id="txtCusWeight" labelFloat="true" layoutX="442.0" layoutY="151.0" prefHeight="40.0" prefWidth="286.0" promptText="Weigth" />
+            <JFXTextField fx:id="txtCusHeight" labelFloat="true" layoutX="442.0" layoutY="211.0" prefHeight="40.0" prefWidth="286.0" promptText="Height" />
+            <JFXTextField fx:id="txtCustomerID" labelFloat="true" layoutX="63.0" layoutY="91.0" prefHeight="40.0" prefWidth="286.0" promptText="Customer ID" />
             <Label layoutX="65.0" layoutY="32.0" text="Customer Details">
                <font>
                   <Font name="System Bold" size="26.0" />

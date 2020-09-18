@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="956.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EquipmentFormController">
+   <children>
+      <AnchorPane layoutX="21.0" layoutY="27.0" prefHeight="599.0" prefWidth="820.0">
+         <children>
+            <JFXTextField fx:id="txtTotalQty" layoutX="434.0" layoutY="342.0" prefHeight="50.0" prefWidth="141.0" promptText="Total Qty" />
+            <JFXTextField fx:id="txtNowQty" layoutX="232.0" layoutY="342.0" prefHeight="50.0" prefWidth="141.0" promptText="Quntity" />
+            <JFXTextField fx:id="txtAvalQTY" layoutX="232.0" layoutY="266.0" prefHeight="50.0" prefWidth="343.0" promptText="Avalible Qty" />
+            <JFXTextField fx:id="txtEquName" layoutX="232.0" layoutY="192.0" prefHeight="50.0" prefWidth="343.0" promptText="Name" />
+            <Label layoutX="67.0" layoutY="54.0" text="Equpments Stock">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="txtEquID" layoutX="232.0" layoutY="118.0" prefHeight="50.0" prefWidth="343.0" promptText="Equ ID" />
+            <ImageView fitHeight="19.0" fitWidth="26.0" layoutX="394.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/sum.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtOneItem" layoutX="232.0" layoutY="415.0" prefHeight="50.0" prefWidth="343.0" promptText="Item price" />
+            <JFXTextField fx:id="txtTottalFee" layoutX="232.0" layoutY="498.0" prefHeight="50.0" prefWidth="343.0" promptText="Total" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="187.0" layoutY="626.0" prefHeight="147.0" prefWidth="438.0">
+         <children>
+            <JFXButton layoutX="101.0" layoutY="31.0" text=".">
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="61.0" onMouseClicked="#btnAddOnAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assests/add%20list.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="309.0" layoutY="31.0" text=".">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="70.0" onMouseClicked="#btnclearOnAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assests/clear.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblEqupment" layoutX="727.0" layoutY="169.0" prefHeight="548.0" prefWidth="915.0">
+        <columns>
+            <TableColumn fx:id="colImage" prefWidth="132.0" text="Image" />
+          <TableColumn fx:id="colID" prefWidth="112.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="188.0" text=" Name" />
+            <TableColumn fx:id="colQty" prefWidth="118.0" text="Qty" />
+            <TableColumn fx:id="colOneItem" prefWidth="184.0" text="one itemfee" />
+            <TableColumn fx:id="colTotal" prefWidth="180.0" text="Total" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
