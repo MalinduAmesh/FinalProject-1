@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="926.0" prefWidth="1356.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SuplimentOrderFormController">
+<AnchorPane prefHeight="926.0" prefWidth="1666.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SuplimentOrderFormController">
    <children>
       <Label layoutX="137.0" layoutY="52.0" text="Sell Records">
          <font>
@@ -34,15 +34,15 @@
             <Image url="@../Assests/Money.png" />
          </image>
       </ImageView>
-      <TableView layoutX="37.0" layoutY="154.0" prefHeight="743.0" prefWidth="1283.0">
+      <TableView layoutX="37.0" layoutY="154.0" prefHeight="743.0" prefWidth="1605.0">
         <columns>
           <TableColumn prefWidth="171.0" text="Customer Name" />
-            <TableColumn prefWidth="196.0" text="Supliment ID" />
-          <TableColumn minWidth="0.0" prefWidth="182.0" text="Name" />
-            <TableColumn prefWidth="165.0" text="Date" />
-            <TableColumn prefWidth="193.0" text="QTY" />
-            <TableColumn prefWidth="174.0" text="Total Price" />
-            <TableColumn prefWidth="201.0" text="Other Options" />
+            <TableColumn prefWidth="230.0" text="Supliment ID" />
+          <TableColumn minWidth="0.0" prefWidth="243.0" text="Name" />
+            <TableColumn prefWidth="237.0" text="Date" />
+            <TableColumn prefWidth="171.0" text="QTY" />
+            <TableColumn prefWidth="249.0" text="Total Price" />
+            <TableColumn prefWidth="303.0" text="Other Options" />
         </columns>
       </TableView>
    </children>

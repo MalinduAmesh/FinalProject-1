@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class ScheduleDAOImpl implements ScheduleDAO {
     @Override
     public boolean add(Schedule a) throws SQLException, ClassNotFoundException {
-        String sql = "Insert Into schedule Values(?,?,?,?,?)";
+        String sql = "Insert Into schedule Values(?,?,?,?,?,?,?)";
         return CrudUtil.executeUpdate(sql,a.getSchId(),a.getSchGoal(),a.getSchType(),a.getSchLevel(),a.getSchDuration(),a.getSchPerWeek(),a.getSchPerTime());
 
     }

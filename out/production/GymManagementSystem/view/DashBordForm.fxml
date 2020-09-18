@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="962.0" prefWidth="1355.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBordFormController">
+<AnchorPane prefHeight="995.0" prefWidth="1919.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBordFormController">
    <children>
-      <AnchorPane fx:id="root" layoutX="253.0" layoutY="69.0" prefHeight="926.0" prefWidth="1356.0" style="-fx-background-color: #95a5a6;" />
+      <AnchorPane fx:id="root" layoutX="253.0" layoutY="69.0" prefHeight="926.0" prefWidth="1666.0" style="-fx-background-color: #95a5a6;" />
       <AnchorPane layoutY="69.0" prefHeight="926.0" prefWidth="253.0" style="-fx-background-color: #2f3542;">
          <children>
             <JFXButton layoutX="-2.0" layoutY="180.0" onMouseClicked="#btnAttendanceOnAction" prefHeight="60.0" prefWidth="248.0" text="   Attendance" textFill="#a4b0be" />
