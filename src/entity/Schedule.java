@@ -2,60 +2,80 @@ package entity;
 
 public class Schedule {
 
-    private String schedulID;
-    private String schedulName;
-    private String equipID;
-    private String schedulAddTime;
-    private String schedulDuration;
+    private String schId;
+    private String schGoal;
+    private String schType;
+    private String schLevel;
+    private String schDuration;
+    private String schPerWeek;
+    private String schPerTime;
 
     public Schedule() {
     }
 
-    public Schedule(String schedulID, String schedulName, String equipID, String schedulAddTime, String schedulDuration) {
-        this.schedulID = schedulID;
-        this.schedulName = schedulName;
-        this.equipID = equipID;
-        this.schedulAddTime = schedulAddTime;
-        this.schedulDuration = schedulDuration;
+    public Schedule(String schId, String schGoal, String schType, String schLevel, String schDuration, String schPerWeek, String schPerTime) {
+        this.schId = schId;
+        this.schGoal = schGoal;
+        this.schType = schType;
+        this.schLevel = schLevel;
+        this.schDuration = schDuration;
+        this.schPerWeek = schPerWeek;
+        this.schPerTime = schPerTime;
     }
 
-    public String getSchedulID() {
-        return schedulID;
+    public String getSchId() {
+        return schId;
     }
 
-    public void setSchedulID(String schedulID) {
-        this.schedulID = schedulID;
+    public void setSchId(String schId) {
+        this.schId = schId;
     }
 
-    public String getSchedulName() {
-        return schedulName;
+    public String getSchGoal() {
+        return schGoal;
     }
 
-    public void setSchedulName(String schedulName) {
-        this.schedulName = schedulName;
+    public void setSchGoal(String schGoal) {
+        this.schGoal = schGoal;
     }
 
-    public String getEquipID() {
-        return equipID;
+    public String getSchType() {
+        return schType;
     }
 
-    public void setEquipID(String equipID) {
-        this.equipID = equipID;
+    public void setSchType(String schType) {
+        this.schType = schType;
     }
 
-    public String getSchedulAddTime() {
-        return schedulAddTime;
+    public String getSchLevel() {
+        return schLevel;
     }
 
-    public void setSchedulAddTime(String schedulAddTime) {
-        this.schedulAddTime = schedulAddTime;
+    public void setSchLevel(String schLevel) {
+        this.schLevel = schLevel;
     }
 
-    public String getSchedulDuration() {
-        return schedulDuration;
+    public String getSchDuration() {
+        return schDuration;
     }
 
-    public void setSchedulDuration(String schedulDuration) {
-        this.schedulDuration = schedulDuration;
+    public void setSchDuration(String schDuration) {
+        this.schDuration = schDuration;
+    }
+
+    public String getSchPerWeek() {
+        return schPerWeek;
+    }
+
+    public void setSchPerWeek(String schPerWeek) {
+        this.schPerWeek = schPerWeek;
+    }
+
+    public String getSchPerTime() {
+        return schPerTime;
+    }
+
+    public void setSchPerTime(String schPerTime) {
+        this.schPerTime = schPerTime;
     }
 }

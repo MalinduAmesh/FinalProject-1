@@ -12,7 +12,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
     @Override
     public boolean add(Schedule a) throws SQLException, ClassNotFoundException {
         String sql = "Insert Into schedule Values(?,?,?,?,?)";
-        return CrudUtil.executeUpdate(sql,a.getSchedulID(),a.getSchedulName(),a.getEquipID(),a.getSchedulAddTime(),a.getSchedulDuration());
+        return CrudUtil.executeUpdate(sql,a.getSchId(),a.getSchGoal(),a.getSchType(),a.getSchLevel(),a.getSchDuration(),a.getSchPerWeek(),a.getSchPerTime());
 
     }
 
@@ -24,8 +24,8 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 
     @Override
     public boolean update(Schedule a) throws SQLException, ClassNotFoundException {
-        String sql = "Update schedule set schName =?,equId =?,schAddTime = ?,schAddMon =? where schId =?";
-        return CrudUtil.executeUpdate(sql,a.getSchedulName(),a.getEquipID(),a.getSchedulAddTime(),a.getSchedulDuration(),a.getSchedulID());
+        String sql = "Update schedule set schGoal=?,schType = ?,schLevel =?,schDuration = ?,schPerWeek = ?,schPerTime =? where schId =?";
+        return CrudUtil.executeUpdate(sql,a.getSchGoal(),a.getSchType(),a.getSchLevel(),a.getSchDuration(),a.getSchPerWeek(),a.getSchPerTime(),a.getSchId());
 
     }
 
@@ -39,7 +39,10 @@ public class ScheduleDAOImpl implements ScheduleDAO {
                     rst.getString(2),
                     rst.getString(3),
                     rst.getString(4),
-                    rst.getString(5)
+                    rst.getString(5),
+                    rst.getString(6),
+                    rst.getString(7)
+
             );
         }
 
@@ -58,7 +61,9 @@ public class ScheduleDAOImpl implements ScheduleDAO {
                     rst.getString(2),
                     rst.getString(3),
                     rst.getString(4),
-                    rst.getString(5)
+                    rst.getString(5),
+                    rst.getString(6),
+                    rst.getString(7)
             ));
         }
         return list;

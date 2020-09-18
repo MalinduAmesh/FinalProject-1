@@ -30,6 +30,7 @@ public class RegisterFormController {
     public JFXButton btnPaid;
 
     public void btnPaidOnAction(ActionEvent actionEvent) {
+
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
