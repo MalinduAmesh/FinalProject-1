@@ -20,20 +20,19 @@
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
-            </Label>
-            <JFXComboBox fx:id="txt" layoutX="120.0" layoutY="149.0" prefHeight="55.0" prefWidth="381.0" promptText="MemberID" style="-fx-background-color: #ecf0f1;" />
-            <JFXTextField layoutX="120.0" layoutY="236.0" prefHeight="55.0" prefWidth="381.0" promptText="Member Name" style="-fx-background-color: #ecf0f1;" />
-            <JFXTextField layoutX="120.0" layoutY="428.0" prefHeight="55.0" prefWidth="381.0" promptText="Attandnce Total" style="-fx-background-color: #ecf0f1;" />
-            <JFXTextField layoutX="120.0" layoutY="332.0" prefHeight="55.0" prefWidth="381.0" promptText="Workout Type" style="-fx-background-color: #ecf0f1;" />
-            <Label fx:id="txtPayID" layoutX="120.0" layoutY="82.0" prefHeight="55.0" prefWidth="162.0" style="-fx-background-color: #7f8c8d;" />
-            <JFXDatePicker layoutX="120.0" layoutY="528.0" prefHeight="55.0" prefWidth="381.0" style="-fx-background-color: #ecf0f1;" />
+            </Label><![CDATA[
+            ]]><JFXComboBox fx:id="txtMemberID" layoutX="120.0" layoutY="149.0" prefHeight="55.0" prefWidth="381.0" promptText="MemberID" style="-fx-background-color: #ecf0f1;" />
+            <JFXTextField fx:id="txtMemberName" layoutX="120.0" layoutY="236.0" prefHeight="55.0" prefWidth="381.0" promptText="Member Name" style="-fx-background-color: #ecf0f1;" />
+            <JFXTextField fx:id="txtAttTotal" layoutX="120.0" layoutY="428.0" prefHeight="55.0" prefWidth="381.0" promptText="Attandnce Total" style="-fx-background-color: #ecf0f1;" />
+            <JFXTextField fx:id="txtWorkOutType" layoutX="120.0" layoutY="332.0" prefHeight="55.0" prefWidth="381.0" promptText="Workout Type" style="-fx-background-color: #ecf0f1;" />
+            <JFXDatePicker fx:id="txtDate" layoutX="120.0" layoutY="528.0" prefHeight="55.0" prefWidth="381.0" style="-fx-background-color: #ecf0f1;" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="675.0" layoutY="490.0" prefHeight="436.0" prefWidth="452.0" style="-fx-background-color: #574b90;">
          <children>
-            <JFXTextField layoutX="36.0" layoutY="112.0" prefHeight="55.0" prefWidth="381.0" promptText="Total" style="-fx-background-color: #ecf0f1;" />
-            <JFXTextField layoutX="36.0" layoutY="295.0" prefHeight="55.0" prefWidth="381.0" promptText="Balance" style="-fx-background-color: #ecf0f1;" />
-            <JFXTextField layoutX="36.0" layoutY="202.0" prefHeight="55.0" prefWidth="381.0" promptText="Cash" style="-fx-background-color: #ecf0f1;" />
+            <JFXTextField fx:id="txtTotal" layoutX="36.0" layoutY="112.0" prefHeight="55.0" prefWidth="381.0" promptText="Total" style="-fx-background-color: #ecf0f1;" />
+            <JFXTextField fx:id="txtBalance" layoutX="36.0" layoutY="295.0" prefHeight="55.0" prefWidth="381.0" promptText="Balance" style="-fx-background-color: #ecf0f1;" />
+            <JFXTextField fx:id="txtCash" layoutX="36.0" layoutY="202.0" prefHeight="55.0" prefWidth="381.0" promptText="Cash" style="-fx-background-color: #ecf0f1;" />
             <Label layoutX="20.0" layoutY="32.0" text="Amount Information" textFill="#95a5a6">
                <font>
                   <Font name="System Bold" size="26.0" />
@@ -43,7 +42,7 @@
       </AnchorPane>
       <AnchorPane layoutX="232.0" layoutY="810.0" prefHeight="77.0" prefWidth="318.0" style="-fx-background-color: #bdc3c7;">
          <children>
-            <JFXButton layoutX="52.0" layoutY="6.0" text=".">
+            <JFXButton layoutX="52.0" layoutY="6.0" onMouseClicked="#btnAddOnAction" text=".">
                <graphic>
                   <ImageView fitHeight="55.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -52,7 +51,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton layoutX="199.0" layoutY="6.0" text=".">
+            <JFXButton layoutX="199.0" layoutY="6.0" onMouseClicked="#btnClearOnAction" text=".">
                <graphic>
                   <ImageView fitHeight="55.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -63,12 +62,12 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <TableView layoutX="781.0" layoutY="167.0" prefHeight="276.0" prefWidth="865.0">
+      <TableView fx:id="tblOrder" layoutX="781.0" layoutY="167.0" prefHeight="276.0" prefWidth="865.0">
         <columns>
-          <TableColumn prefWidth="184.0" text="ID" />
-          <TableColumn prefWidth="224.0" text="Name" />
-            <TableColumn prefWidth="244.0" text="Date" />
-            <TableColumn prefWidth="212.0" text="Amount" />
+          <TableColumn fx:id="colID" prefWidth="184.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="224.0" text="Name" />
+            <TableColumn fx:id="colDate" prefWidth="244.0" text="Date" />
+            <TableColumn fx:id="colAmount" prefWidth="212.0" text="Amount" />
         </columns>
       </TableView>
       <Label layoutX="781.0" layoutY="104.0" text="Older Fee Details">

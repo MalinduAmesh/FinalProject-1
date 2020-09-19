@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="956.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WorkOutFormController">
+<AnchorPane fx:id="root" prefHeight="956.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WorkOutFormController">
    <children>
       <Label layoutX="66.0" layoutY="48.0" text="WorkOut Details">
          <font>
@@ -20,6 +19,7 @@
          </font>
       </Label>
       <Separator layoutY="101.0" prefHeight="0.0" prefWidth="1666.0" />
+
       <JFXButton layoutX="1335.0" layoutY="38.0" onMouseClicked="#AssignworkoutOnAction" text="Assign WorkOut">
          <graphic>
             <ImageView fitHeight="41.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
@@ -33,13 +33,13 @@
          </font>
       </JFXButton>
       <JFXTextField fx:id="txtSearch" layoutX="756.0" layoutY="132.0" prefHeight="63.0" prefWidth="278.0" promptText="Search" />
-      <TableView layoutX="139.0" layoutY="259.0" prefHeight="673.0" prefWidth="1388.0">
+      <TableView fx:id="tblWorkOutDetails" layoutX="139.0" layoutY="259.0" prefHeight="673.0" prefWidth="1388.0">
         <columns>
-          <TableColumn prefWidth="297.0" text="Photo" />
-          <TableColumn prefWidth="285.0" text="Member Name" />
-            <TableColumn prefWidth="268.0" text="Level" />
-            <TableColumn prefWidth="268.0" text="Goal" />
-            <TableColumn prefWidth="268.0" text="Action" />
+          <TableColumn fx:id="colPhoto" prefWidth="297.0" text="Photo" />
+          <TableColumn fx:id="colMemberName" prefWidth="285.0" text="Member Name" />
+            <TableColumn fx:id="colLevel" prefWidth="268.0" text="Level" />
+            <TableColumn fx:id="colGoal" prefWidth="268.0" text="Goal" />
+            <TableColumn fx:id="colTools" prefWidth="268.0" text="Tools" />
         </columns>
       </TableView>
    </children>

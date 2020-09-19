@@ -1,11 +1,29 @@
 package controller;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 
 public class WorkOutFormController {
     public JFXTextField txtSearch;
+    public AnchorPane root;
+    public TableView tblWorkOutDetails;
+    public TableColumn colPhoto;
+    public TableColumn colMemberName;
+    public TableColumn colLevel;
+    public TableColumn colGoal;
+    public TableColumn colTools;
 
-    public void AssignworkoutOnAction(MouseEvent mouseEvent) {
+
+    public void AssignworkoutOnAction(MouseEvent mouseEvent) throws IOException {
+        root.getChildren().clear();
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource(""));
+        root.getChildren().setAll(pane.getChildren());
+
     }
 }

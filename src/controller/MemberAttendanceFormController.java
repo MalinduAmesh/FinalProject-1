@@ -7,20 +7,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 
-public class MemberPaymentFormController {
-    public JFXComboBox txtMemberID;
+public class MemberAttendanceFormController {
     public JFXTextField txtMemberName;
-    public JFXTextField txtAttTotal;
-    public JFXTextField txtWorkOutType;
+    public JFXComboBox txtMemberId;
     public JFXDatePicker txtDate;
-    public JFXTextField txtTotal;
-    public JFXTextField txtBalance;
-    public JFXTextField txtCash;
-    public TableView tblOrder;
+    public TableView tblAttendance;
     public TableColumn colID;
     public TableColumn colName;
     public TableColumn colDate;
-    public TableColumn colAmount;
+    public JFXTextField txtSearch;
 
     public void btnAddOnAction(MouseEvent mouseEvent) {
     }

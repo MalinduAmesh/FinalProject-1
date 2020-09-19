@@ -31,13 +31,13 @@ public class DashBordFormController {
 
 
 
-    public void btnAttendanceOnAction(MouseEvent mouseEvent) {
+    public void btnAttendanceOnAction(MouseEvent mouseEvent) throws IOException {
+        setUi("MemberAttendanceForm");
+
     }
 
-    public void btnAssignWorkOutOnAction(MouseEvent mouseEvent) {
-    }
-
-    public void btnWorkoutOnAction(MouseEvent mouseEvent) {
+    public void btnAssignWorkOutOnAction(MouseEvent mouseEvent) throws IOException {
+        setUi("WorkOutForm");
     }
 
     public void btnProductOnAction(MouseEvent mouseEvent) throws IOException {
@@ -52,6 +52,7 @@ public class DashBordFormController {
     }
 
     public void btnEmailOnAction(MouseEvent mouseEvent) {
+
     }
 
     public void btnMembersOnAction(MouseEvent mouseEvent) throws IOException {
@@ -61,5 +62,9 @@ public class DashBordFormController {
 
     public void registerUser(MouseEvent mouseEvent) throws IOException {
         setUi("RegisterForm");
+    }
+
+    public void btnPaymentOnAction(MouseEvent mouseEvent) throws IOException {
+        setUi("MemberPaymentForm");
     }
 }
