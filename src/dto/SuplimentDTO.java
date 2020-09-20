@@ -1,13 +1,16 @@
 package dto;
 
+import javafx.scene.control.Button;
+
 public class SuplimentDTO {
     private String suplimId;
     private String suplimName;
     private String suplimQTY;
     private String suplimCost;
 
-    public SuplimentDTO() {
+    public SuplimentDTO(String suplimId, String suplimName, String suplimQTY, String suplimCost, Button button) {
     }
+
 
     public SuplimentDTO(String suplimId, String suplimName, String suplimQTY, String suplimCost) {
         this.suplimId = suplimId;

@@ -10,6 +10,12 @@ public class Supliment {
     public Supliment() {
     }
 
+    public Supliment(String suplimName, String suplimQTY, String suplimCost) {
+        this.suplimName = suplimName;
+        this.suplimQTY = suplimQTY;
+        this.suplimCost = suplimCost;
+    }
+
     public Supliment(String suplimId, String suplimName, String suplimQTY, String suplimCost) {
         this.suplimId = suplimId;
         this.suplimName = suplimName;
@@ -48,4 +54,6 @@ public class Supliment {
     public void setSuplimCost(String suplimCost) {
         this.suplimCost = suplimCost;
     }
+
+
 }

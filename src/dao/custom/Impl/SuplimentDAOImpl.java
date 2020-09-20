@@ -11,11 +11,11 @@ import java.util.ArrayList;
 public class SuplimentDAOImpl implements SuplimentDAO {
     @Override
     public boolean add(Supliment a) throws SQLException, ClassNotFoundException {
-        String sql = "Insert Into supliment Values(?,?,?,?)";
+        String sql = "Insert Into supliment VALUES(?,?,?,?)";
         return CrudUtil.executeUpdate(sql,a.getSuplimId(),a.getSuplimName(),a.getSuplimQTY(),a.getSuplimCost());
 
     }
-
+ /*   name | supQty | supCost*/
     @Override
     public boolean delete(String s) throws SQLException, ClassNotFoundException {
         String sql = "delete from supliment where supId =?";
@@ -25,8 +25,8 @@ public class SuplimentDAOImpl implements SuplimentDAO {
     @Override
     public boolean update(Supliment a) throws SQLException, ClassNotFoundException {
 
-        String sql = "Update supliment set name =?,supQty =?,supCost =? where supId =?";
-        return CrudUtil.executeUpdate(sql,a.getSuplimName(),a.getSuplimQTY(),a.getSuplimCost(),a.getSuplimId());
+        String sql = "Update supliment set supQty =?,supCost =? where name =?";
+        return CrudUtil.executeUpdate(sql,a.getSuplimQTY(),a.getSuplimCost(),a.getSuplimName());
 
 
     }

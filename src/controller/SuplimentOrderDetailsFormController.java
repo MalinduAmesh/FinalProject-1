@@ -2,6 +2,7 @@ package controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
@@ -32,5 +33,9 @@ public class SuplimentOrderDetailsFormController {
     }
 
     public void ClearOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void btnAddToCartOnAction(ActionEvent actionEvent) {
+
     }
 }
