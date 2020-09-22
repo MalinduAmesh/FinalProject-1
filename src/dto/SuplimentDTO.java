@@ -19,12 +19,11 @@ public class SuplimentDTO {
         this.suplimCost = suplimCost;
     }
 
+
+
+
     public String getSuplimId() {
         return suplimId;
-    }
-
-    public void setSuplimId(String suplimId) {
-        this.suplimId = suplimId;
     }
 
     public String getSuplimName() {

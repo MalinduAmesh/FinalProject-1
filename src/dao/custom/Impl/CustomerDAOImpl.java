@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public boolean add(Customer s) throws SQLException, ClassNotFoundException {
-        String sql ="Insert Into customer Values(?,?,?,?,?,?,?,?,?)";
-        return CrudUtil.executeUpdate(sql,s.getCustID(),s.getCustName(),s.getCustAddress(),s.getCustContact(),s.getCustDate(),s.getCustGender(),s.getCustEmail(),s.getCustWeigth(),s.getCustHeight());
+        String sql ="Insert Into customer Values(?,?,?,?,?,?,?,?)";
+        return CrudUtil.executeUpdate(sql,s.getCustID(),s.getCustName(),s.getCustNic(),s.getCustAddress(),s.getCustContact(),s.getCustDOB(),s.getCustGender(),s.getCustEmail());
     }
 
     @Override
@@ -23,8 +23,8 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean update(Customer s) throws SQLException, ClassNotFoundException {
-        String sql ="Update customer set cusName =?,address = ?,contact = ?,dob = ?,gender =?,email =?,weigth = ?,height = ? where cusId =?";
-        return CrudUtil.executeUpdate(sql,s.getCustName(),s.getCustAddress(),s.getCustContact(),s.getCustDate(),s.getCustGender(),s.getCustEmail(),s.getCustWeigth(),s.getCustHeight(),s.getCustID());
+        String sql ="Update customer set cusName =?,nic = ?,address = ?,contact = ?,dob = ?,gender =?,email =? where cusId =?";
+        return CrudUtil.executeUpdate(sql,s.getCustName(),s.getCustNic(),s.getCustAddress(),s.getCustContact(),s.getCustDOB(),s.getCustGender(),s.getCustEmail(),s.getCustID());
     }
 
     @Override
@@ -40,9 +40,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                     rst.getString(5),
                     rst.getString(6),
                     rst.getString(7),
-                    rst.getString(8),
-                    rst.getString(9)
-
+                    rst.getString(8)
             );
         }
         return null;
@@ -62,9 +60,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                     rst.getString(5),
                     rst.getString(6),
                     rst.getString(7),
-                    rst.getString(8),
-                    rst.getString(9)
-
+                    rst.getString(8)
             ));
         }
         return list;

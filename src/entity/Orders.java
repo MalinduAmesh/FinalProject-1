@@ -4,14 +4,16 @@ public class Orders {
     private String ordersID;
     private String ordersDate;
     private String ordersCustomerID;
+    private String ordType;
 
     public Orders() {
     }
 
-    public Orders(String ordersID, String ordersDate, String ordersCustomerID) {
+    public Orders(String ordersID, String ordersDate, String ordersCustomerID, String ordType) {
         this.ordersID = ordersID;
         this.ordersDate = ordersDate;
         this.ordersCustomerID = ordersCustomerID;
+        this.ordType = ordType;
     }
 
     public String getOrdersID() {
@@ -36,6 +38,14 @@ public class Orders {
 
     public void setOrdersCustomerID(String ordersCustomerID) {
         this.ordersCustomerID = ordersCustomerID;
+    }
+
+    public String getOrdType() {
+        return ordType;
+    }
+
+    public void setOrdType(String ordType) {
+        this.ordType = ordType;
     }
 }
 

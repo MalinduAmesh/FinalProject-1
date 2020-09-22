@@ -4,27 +4,25 @@ public class Customer {
 
     private String custID;
     private String custName;
+    private String custNic;
     private String custAddress;
     private String custContact;
     private String custDOB;
     private String custGender;
     private String custEmail;
-    private String custWeigth;
-    private String custHeight;
 
     public Customer() {
     }
 
-    public Customer(String custID, String custName, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String custWeigth, String custHeight) {
+    public Customer(String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail) {
         this.custID = custID;
         this.custName = custName;
+        this.custNic = custNic;
         this.custAddress = custAddress;
         this.custContact = custContact;
         this.custDOB = custDOB;
         this.custGender = custGender;
         this.custEmail = custEmail;
-        this.custWeigth = custWeigth;
-        this.custHeight = custHeight;
     }
 
     public String getCustID() {
@@ -43,6 +41,14 @@ public class Customer {
         this.custName = custName;
     }
 
+    public String getCustNic() {
+        return custNic;
+    }
+
+    public void setCustNic(String custNic) {
+        this.custNic = custNic;
+    }
+
     public String getCustAddress() {
         return custAddress;
     }
@@ -59,12 +65,12 @@ public class Customer {
         this.custContact = custContact;
     }
 
-    public String getCustDate() {
+    public String getCustDOB() {
         return custDOB;
     }
 
-    public void setCustDate(String custDate) {
-        this.custDOB = custDate;
+    public void setCustDOB(String custDOB) {
+        this.custDOB = custDOB;
     }
 
     public String getCustGender() {
@@ -81,21 +87,5 @@ public class Customer {
 
     public void setCustEmail(String custEmail) {
         this.custEmail = custEmail;
-    }
-
-    public String getCustWeigth() {
-        return custWeigth;
-    }
-
-    public void setCustWeigth(String custWeigth) {
-        this.custWeigth = custWeigth;
-    }
-
-    public String getCustHeight() {
-        return custHeight;
-    }
-
-    public void setCustHeight(String custHeight) {
-        this.custHeight = custHeight;
     }
 }

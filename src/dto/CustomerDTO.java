@@ -3,28 +3,30 @@ package dto;
 public class CustomerDTO {
     private String custID;
     private String custName;
+    private String custNic;
     private String custAddress;
     private String custContact;
     private String custDOB;
     private String custGender;
     private String custEmail;
-    private String custWeigth;
-    private String custHeight;
 
-    public CustomerDTO() {
+    public CustomerDTO(String custName) {
     }
 
-    public CustomerDTO(String custID, String custName, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String custWeigth, String custHeight) {
+    public CustomerDTO(String custID, String custName) {
         this.custID = custID;
         this.custName = custName;
+    }
+
+    public CustomerDTO(String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail) {
+        this.custID = custID;
+        this.custName = custName;
+        this.custNic = custNic;
         this.custAddress = custAddress;
         this.custContact = custContact;
         this.custDOB = custDOB;
         this.custGender = custGender;
         this.custEmail = custEmail;
-        this.custWeigth = custWeigth;
-        this.custHeight = custHeight;
-
     }
 
     public String getCustID() {
@@ -41,6 +43,14 @@ public class CustomerDTO {
 
     public void setCustName(String custName) {
         this.custName = custName;
+    }
+
+    public String getCustNic() {
+        return custNic;
+    }
+
+    public void setCustNic(String custNic) {
+        this.custNic = custNic;
     }
 
     public String getCustAddress() {
@@ -81,21 +91,5 @@ public class CustomerDTO {
 
     public void setCustEmail(String custEmail) {
         this.custEmail = custEmail;
-    }
-
-    public String getCustWeigth() {
-        return custWeigth;
-    }
-
-    public void setCustWeigth(String custWeigth) {
-        this.custWeigth = custWeigth;
-    }
-
-    public String getCustHeight() {
-        return custHeight;
-    }
-
-    public void setCustHeight(String custHeight) {
-        this.custHeight = custHeight;
     }
 }

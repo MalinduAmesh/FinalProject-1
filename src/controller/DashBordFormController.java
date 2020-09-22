@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.input.MouseEvent;
@@ -66,5 +67,9 @@ public class DashBordFormController {
 
     public void btnPaymentOnAction(MouseEvent mouseEvent) throws IOException {
         setUi("MemberPaymentForm");
+    }
+
+    public void btnExitOnAction(MouseEvent mouseEvent) {
+        Platform.exit();
     }
 }

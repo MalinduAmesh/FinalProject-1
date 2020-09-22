@@ -1,19 +1,19 @@
 package dto;
 
 public class CustomDTO {
+
     private String attendID;
-    //private String customerID;
+    private String customerID;
     private String attendDate;
 
     private String custID;
     private String custName;
+    private String custNic;
     private String custAddress;
     private String custContact;
     private String custDOB;
     private String custGender;
     private String custEmail;
-    private String custWeigth;
-    private String custHeight;
 
     private String equipmentId;
     private String equipmentName;
@@ -29,42 +29,110 @@ public class CustomDTO {
     private String InstructCost;
     private String InstructPayMonth;
 
-    //private String OrderDetailID;
-    //private String suplimeID;
+    private String OrderDetailID;
     private String orederDetailQTY;
     private String orederDetailUnitP;
 
     private String ordersID;
     private String ordersDate;
-    //private String ordersCustomerID;
+    private String ordersCustomerID;
+    private String ordType;
 
     private String payID;
-    //private String customerId;
     private String payType;
     private String payAmount;
     private String payStatus;
 
     private String regID;
-    //private String traID;
-    //private String cusID;
     private String memShip;
     private String regStartDate;
     private String regEndDate;
     private String regFeeType;
     private String regFee;
 
-    private String schedulID;
-    private String schedulName;
-    //private String equipID;
-    private String schedulAddTime;
-    private String schedulDuration;
+    private String schId;
+    private String schGoal;
+    private String schType;
+    private String schLevel;
+    private String schDuration;
+    private String schPerWeek;
+    private String schPerTime;
 
     private String suplimId;
     private String suplimName;
     private String suplimQTY;
     private String suplimCost;
 
+    private String total;
+    private String discount;
+
+
+
     public CustomDTO() {
+    }
+
+    public CustomDTO(String attendID, String customerID, String attendDate, String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String equipmentId, String equipmentName, String equipmentImage, String equipmentQty, String equipmentCost, String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth, String orderDetailID, String orederDetailQTY, String orederDetailUnitP, String ordersID, String ordersDate, String ordersCustomerID, String ordType, String payID, String payType, String payAmount, String payStatus, String regID, String memShip, String regStartDate, String regEndDate, String regFeeType, String regFee, String schId, String schGoal, String schType, String schLevel, String schDuration, String schPerWeek, String schPerTime, String suplimId, String suplimName, String suplimQTY, String suplimCost, String total, String discount) {
+        this.attendID = attendID;
+        this.customerID = customerID;
+        this.attendDate = attendDate;
+        this.custID = custID;
+        this.custName = custName;
+        this.custNic = custNic;
+        this.custAddress = custAddress;
+        this.custContact = custContact;
+        this.custDOB = custDOB;
+        this.custGender = custGender;
+        this.custEmail = custEmail;
+        this.equipmentId = equipmentId;
+        this.equipmentName = equipmentName;
+        this.equipmentImage = equipmentImage;
+        this.equipmentQty = equipmentQty;
+        this.equipmentCost = equipmentCost;
+        InstructID = instructID;
+        InstructName = instructName;
+        InstructGender = instructGender;
+        InstructNumber = instructNumber;
+        InstructJoinDate = instructJoinDate;
+        InstructCost = instructCost;
+        InstructPayMonth = instructPayMonth;
+        OrderDetailID = orderDetailID;
+        this.orederDetailQTY = orederDetailQTY;
+        this.orederDetailUnitP = orederDetailUnitP;
+        this.ordersID = ordersID;
+        this.ordersDate = ordersDate;
+        this.ordersCustomerID = ordersCustomerID;
+        this.ordType = ordType;
+        this.payID = payID;
+        this.payType = payType;
+        this.payAmount = payAmount;
+        this.payStatus = payStatus;
+        this.regID = regID;
+        this.memShip = memShip;
+        this.regStartDate = regStartDate;
+        this.regEndDate = regEndDate;
+        this.regFeeType = regFeeType;
+        this.regFee = regFee;
+        this.schId = schId;
+        this.schGoal = schGoal;
+        this.schType = schType;
+        this.schLevel = schLevel;
+        this.schDuration = schDuration;
+        this.schPerWeek = schPerWeek;
+        this.schPerTime = schPerTime;
+        this.suplimId = suplimId;
+        this.suplimName = suplimName;
+        this.suplimQTY = suplimQTY;
+        this.suplimCost = suplimCost;
+        this.total = total;
+        this.discount = discount;
+    }
+
+    public CustomDTO(String orederDetailQTY, String orederDetailUnitP, String suplimName, String total, String discount) {
+        this.orederDetailQTY = orederDetailQTY;
+        this.orederDetailUnitP = orederDetailUnitP;
+        this.suplimName = suplimName;
+        this.total = total;
+        this.discount = discount;
     }
 
     public String getAttendID() {
@@ -73,6 +141,14 @@ public class CustomDTO {
 
     public void setAttendID(String attendID) {
         this.attendID = attendID;
+    }
+
+    public String getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
     }
 
     public String getAttendDate() {
@@ -97,6 +173,14 @@ public class CustomDTO {
 
     public void setCustName(String custName) {
         this.custName = custName;
+    }
+
+    public String getCustNic() {
+        return custNic;
+    }
+
+    public void setCustNic(String custNic) {
+        this.custNic = custNic;
     }
 
     public String getCustAddress() {
@@ -137,22 +221,6 @@ public class CustomDTO {
 
     public void setCustEmail(String custEmail) {
         this.custEmail = custEmail;
-    }
-
-    public String getCustWeigth() {
-        return custWeigth;
-    }
-
-    public void setCustWeigth(String custWeigth) {
-        this.custWeigth = custWeigth;
-    }
-
-    public String getCustHeight() {
-        return custHeight;
-    }
-
-    public void setCustHeight(String custHeight) {
-        this.custHeight = custHeight;
     }
 
     public String getEquipmentId() {
@@ -251,6 +319,14 @@ public class CustomDTO {
         InstructPayMonth = instructPayMonth;
     }
 
+    public String getOrderDetailID() {
+        return OrderDetailID;
+    }
+
+    public void setOrderDetailID(String orderDetailID) {
+        OrderDetailID = orderDetailID;
+    }
+
     public String getOrederDetailQTY() {
         return orederDetailQTY;
     }
@@ -281,6 +357,22 @@ public class CustomDTO {
 
     public void setOrdersDate(String ordersDate) {
         this.ordersDate = ordersDate;
+    }
+
+    public String getOrdersCustomerID() {
+        return ordersCustomerID;
+    }
+
+    public void setOrdersCustomerID(String ordersCustomerID) {
+        this.ordersCustomerID = ordersCustomerID;
+    }
+
+    public String getOrdType() {
+        return ordType;
+    }
+
+    public void setOrdType(String ordType) {
+        this.ordType = ordType;
     }
 
     public String getPayID() {
@@ -363,36 +455,60 @@ public class CustomDTO {
         this.regFee = regFee;
     }
 
-    public String getSchedulID() {
-        return schedulID;
+    public String getSchId() {
+        return schId;
     }
 
-    public void setSchedulID(String schedulID) {
-        this.schedulID = schedulID;
+    public void setSchId(String schId) {
+        this.schId = schId;
     }
 
-    public String getSchedulName() {
-        return schedulName;
+    public String getSchGoal() {
+        return schGoal;
     }
 
-    public void setSchedulName(String schedulName) {
-        this.schedulName = schedulName;
+    public void setSchGoal(String schGoal) {
+        this.schGoal = schGoal;
     }
 
-    public String getSchedulAddTime() {
-        return schedulAddTime;
+    public String getSchType() {
+        return schType;
     }
 
-    public void setSchedulAddTime(String schedulAddTime) {
-        this.schedulAddTime = schedulAddTime;
+    public void setSchType(String schType) {
+        this.schType = schType;
     }
 
-    public String getSchedulDuration() {
-        return schedulDuration;
+    public String getSchLevel() {
+        return schLevel;
     }
 
-    public void setSchedulDuration(String schedulDuration) {
-        this.schedulDuration = schedulDuration;
+    public void setSchLevel(String schLevel) {
+        this.schLevel = schLevel;
+    }
+
+    public String getSchDuration() {
+        return schDuration;
+    }
+
+    public void setSchDuration(String schDuration) {
+        this.schDuration = schDuration;
+    }
+
+    public String getSchPerWeek() {
+        return schPerWeek;
+    }
+
+    public void setSchPerWeek(String schPerWeek) {
+        this.schPerWeek = schPerWeek;
+    }
+
+    public String getSchPerTime() {
+        return schPerTime;
+    }
+
+    public void setSchPerTime(String schPerTime) {
+        this.schPerTime = schPerTime;
     }
 
     public String getSuplimId() {
@@ -425,5 +541,21 @@ public class CustomDTO {
 
     public void setSuplimCost(String suplimCost) {
         this.suplimCost = suplimCost;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    public String getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
     }
 }

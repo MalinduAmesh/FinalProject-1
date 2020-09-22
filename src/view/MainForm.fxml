@@ -6,57 +6,52 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1666.0" style="-fx-background-color: #dfe4ea;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="903.0" prefWidth="1647.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
    <children>
-      <Label layoutX="97.0" layoutY="35.0" prefHeight="161.0" prefWidth="325.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20;" textAlignment="CENTER" />
-      <Label layoutX="480.0" layoutY="35.0" prefHeight="161.0" prefWidth="325.0" style="-fx-background-color: #ffffff;" />
-      <Label layoutX="913.0" layoutY="39.0" prefHeight="161.0" prefWidth="325.0" style="-fx-background-color: #ffffff;" textAlignment="CENTER" />
-      <Label layoutX="1299.0" layoutY="35.0" prefHeight="161.0" prefWidth="325.0" style="-fx-background-color: #ffffff;" textAlignment="CENTER" />
-      <ImageView fitHeight="77.0" fitWidth="94.0" layoutX="326.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="56.0" layoutY="36.0" prefHeight="217.0" prefWidth="452.0" style="-fx-background-color: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); -fx-background-radius: 20;" textAlignment="CENTER" />
+      <Label layoutX="587.0" layoutY="31.0" prefHeight="217.0" prefWidth="452.0" style="-fx-background-color: linear-gradient(to right top, #a11f6e, #ac3c89, #b554a3, #bd6bbd, #c482d6, #c684dd, #c785e4, #c887eb, #c672e2, #c55bd7, #c43fca, #c40dbc); -fx-background-radius: 30;" />
+      <Label layoutX="1121.0" layoutY="31.0" prefHeight="217.0" prefWidth="452.0" style="-fx-background-color: linear-gradient(to right top, #02127c, #062b8e, #14419f, #2456ae, #376cbc, #356cbd, #346bbd, #326bbe, #1b54b1, #053da2, #002491, #02027e); -fx-background-radius: 30;" textAlignment="CENTER" />
+      <ImageView fitHeight="151.0" fitWidth="151.0" layoutX="347.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Assests/Money.png" />
+            <Image url="@../Assests/money3.png" />
          </image>
       </ImageView>
-      <Label layoutX="125.0" layoutY="43.0" prefHeight="40.0" prefWidth="121.0" text="Earnings">
+      <Label layoutX="111.0" layoutY="58.0" prefHeight="42.0" prefWidth="161.0" text="Earnings">
          <font>
-            <Font size="27.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Label layoutX="508.0" layoutY="46.0" text="Members">
+      <Label layoutX="645.0" layoutY="64.0" text="Members">
          <font>
-            <Font size="27.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Label layoutX="933.0" layoutY="51.0" text="Instructors">
+      <Label layoutX="1179.0" layoutY="58.0" text="Instructors">
          <font>
-            <Font size="27.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Label layoutX="1331.0" layoutY="47.0" text="Stock">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="77.0" fitWidth="94.0" layoutX="716.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="151.0" fitWidth="157.0" layoutX="873.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Assests/Users.png" />
+            <Image url="@../Assests/users6.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="77.0" fitWidth="94.0" layoutX="1140.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="151.0" fitWidth="151.0" layoutX="1407.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Assests/Instructor.png" />
+            <Image url="@../Assests/instruc2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="77.0" fitWidth="94.0" layoutX="1534.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Assests/Stock.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="txtTotalEarnings" layoutX="141.0" layoutY="98.0" prefHeight="42.0" prefWidth="118.0" text="0" />
-      <Label fx:id="txtTotalGoldMembers" layoutX="660.0" layoutY="61.0" prefHeight="42.0" prefWidth="118.0" text="Gold Members  :" />
-      <Label fx:id="txtTotalInstructors" layoutX="958.0" layoutY="104.0" prefHeight="42.0" prefWidth="110.0" text="0" textAlignment="CENTER" />
-      <Label fx:id="txtTotalSupliment" layoutX="1467.0" layoutY="61.0" prefHeight="42.0" prefWidth="118.0" text=" Supliment   : " textAlignment="RIGHT" />
-      <Label fx:id="txtTotalEquipment" layoutX="1469.0" layoutY="104.0" prefHeight="42.0" prefWidth="118.0" text="Equipment  : " />
-      <Label fx:id="txtTotalGenarlMembers" layoutX="656.0" layoutY="99.0" prefHeight="42.0" prefWidth="118.0" text="         Genaral     :" textAlignment="RIGHT" />
+      <Label fx:id="txtTotalEarnings" layoutX="138.0" layoutY="108.0" prefHeight="51.0" prefWidth="161.0" text="0" textFill="WHITE" />
+      <Label fx:id="txtTotalGoldMembers" layoutX="810.0" layoutY="93.0" prefHeight="42.0" prefWidth="151.0" text="Gold Members  :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="txtTotalInstructors" layoutX="1275.0" layoutY="113.0" prefHeight="42.0" prefWidth="110.0" text="0" textAlignment="CENTER" textFill="WHITE" />
+      <Label fx:id="txtTotalGenarlMembers" layoutX="805.0" layoutY="132.0" prefHeight="42.0" prefWidth="151.0" text="         Genaral     :" textAlignment="RIGHT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="967.0" layoutY="100.0" prefHeight="34.0" prefWidth="55.0" text="0" textFill="WHITE" />
+      <Label layoutX="967.0" layoutY="142.0" prefHeight="34.0" prefWidth="55.0" text="0" textFill="WHITE" />
    </children>
 </AnchorPane>

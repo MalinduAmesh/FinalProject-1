@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 public class SuplimentDAOImpl implements SuplimentDAO {
     @Override
     public boolean add(Supliment a) throws SQLException, ClassNotFoundException {
@@ -62,5 +63,14 @@ public class SuplimentDAOImpl implements SuplimentDAO {
             ));
         }
         return list;
+    }
+
+
+    @Override
+    public String getLastOrderID() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM orders ORDER BY ordId DESC LIMIT 3";
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        return rst.next() ? rst.getString("ordId"):null;
+
     }
 }

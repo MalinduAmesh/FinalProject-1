@@ -7,6 +7,7 @@ public class CustomEntity {
 
     private String custID;
     private String custName;
+    private String custNic;
     private String custAddress;
     private String custContact;
     private String custDOB;
@@ -67,11 +68,12 @@ public class CustomEntity {
     public CustomEntity() {
     }
 
-    public CustomEntity(String attendID, String attendDate, String custID, String custName, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String custWeigth, String custHeight, String equipmentId, String equipmentName, String equipmentImage, String equipmentQty, String equipmentCost, String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth, String orederDetailQTY, String orederDetailUnitP, String ordersID, String ordersDate, String payID, String payType, String payAmount, String payStatus, String regID, String memShip, String regStartDate, String regEndDate, String regFeeType, String regFee, String schedulID, String schedulName, String schedulAddTime, String schedulDuration, String suplimId, String suplimName, String suplimQTY, String suplimCost) {
+    public CustomEntity(String attendID, String attendDate, String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String custWeigth, String custHeight, String equipmentId, String equipmentName, String equipmentImage, String equipmentQty, String equipmentCost, String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth, String orederDetailQTY, String orederDetailUnitP, String ordersID, String ordersDate, String payID, String payType, String payAmount, String payStatus, String regID, String memShip, String regStartDate, String regEndDate, String regFeeType, String regFee, String schedulID, String schedulName, String schedulAddTime, String schedulDuration, String suplimId, String suplimName, String suplimQTY, String suplimCost) {
         this.attendID = attendID;
         this.attendDate = attendDate;
         this.custID = custID;
         this.custName = custName;
+        this.custNic = custNic;
         this.custAddress = custAddress;
         this.custContact = custContact;
         this.custDOB = custDOB;
@@ -145,6 +147,14 @@ public class CustomEntity {
 
     public void setCustName(String custName) {
         this.custName = custName;
+    }
+
+    public String getCustNic() {
+        return custNic;
+    }
+
+    public void setCustNic(String custNic) {
+        this.custNic = custNic;
     }
 
     public String getCustAddress() {

@@ -17,9 +17,16 @@ public class AppIntializer extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("view/MemberPaymentForm.fxml"))));
+        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("view/DashBordForm.fxml"))));
+        System.out.println("Custom Entity Want Create");
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        primaryStage.show();
+/*
+
+        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("view/SuplimentOrderDetailsForm.fxml"))));
         System.out.println("Custom Entity Want Create");
         primaryStage.show();
+*/
 
 
     }
