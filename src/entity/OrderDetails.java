@@ -3,13 +3,13 @@ package entity;
 public class OrderDetails {
     private String OrderDetailID;
     private String suplimeID;
-    private String orederDetailQTY;
-    private String orederDetailUnitP;
+    private int orederDetailQTY;
+    private double orederDetailUnitP;
 
     public OrderDetails() {
     }
 
-    public OrderDetails(String orderDetailID, String suplimeID, String orederDetailQTY, String orederDetailUnitP) {
+    public OrderDetails(String orderDetailID, String suplimeID, int orederDetailQTY, double orederDetailUnitP) {
         OrderDetailID = orderDetailID;
         this.suplimeID = suplimeID;
         this.orederDetailQTY = orederDetailQTY;
@@ -32,19 +32,19 @@ public class OrderDetails {
         this.suplimeID = suplimeID;
     }
 
-    public String getOrederDetailQTY() {
+    public int getOrederDetailQTY() {
         return orederDetailQTY;
     }
 
-    public void setOrederDetailQTY(String orederDetailQTY) {
+    public void setOrederDetailQTY(int orederDetailQTY) {
         this.orederDetailQTY = orederDetailQTY;
     }
 
-    public String getOrederDetailUnitP() {
+    public double getOrederDetailUnitP() {
         return orederDetailUnitP;
     }
 
-    public void setOrederDetailUnitP(String orederDetailUnitP) {
+    public void setOrederDetailUnitP(double orederDetailUnitP) {
         this.orederDetailUnitP = orederDetailUnitP;
     }
 }

@@ -30,7 +30,7 @@ public class AddSuplimentBOImpl implements AddSuplimentBo {
     @Override
     public boolean updateSupliment(SuplimentDTO a) throws SQLException, ClassNotFoundException {
 
-        Supliment supliment = new Supliment(a.getSuplimName(),a.getSuplimQTY(),a.getSuplimCost());
+        Supliment supliment = new Supliment(a.getSuplimId(),a.getSuplimName(),a.getSuplimQTY(),a.getSuplimCost());
         return suplimentDAO.update(supliment);
     }
 

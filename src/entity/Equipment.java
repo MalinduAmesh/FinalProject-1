@@ -3,19 +3,21 @@ package entity;
 public class Equipment {
     private String equipmentId;
     private String equipmentName;
-    private String equipmentImage;
     private String equipmentQty;
     private String equipmentCost;
 
-    public Equipment(String equipmentId, String equipmentName, String equipmentImage, String equipmentQty, String equipmentCost) {
-        this.equipmentId = equipmentId;
-        this.equipmentName = equipmentName;
-        this.equipmentImage = equipmentImage;
-        this.equipmentQty = equipmentQty;
-        this.equipmentCost = equipmentCost;
+    public Equipment() {
     }
 
-    public Equipment() {
+    public Equipment(String equipmentName) {
+        this.equipmentName = equipmentName;
+    }
+
+    public Equipment(String equipmentId, String equipmentName, String equipmentQty, String equipmentCost) {
+        this.equipmentId = equipmentId;
+        this.equipmentName = equipmentName;
+        this.equipmentQty = equipmentQty;
+        this.equipmentCost = equipmentCost;
     }
 
     public String getEquipmentId() {
@@ -32,14 +34,6 @@ public class Equipment {
 
     public void setEquipmentName(String equipmentName) {
         this.equipmentName = equipmentName;
-    }
-
-    public String getEquipmentImage() {
-        return equipmentImage;
-    }
-
-    public void setEquipmentImage(String equipmentImage) {
-        this.equipmentImage = equipmentImage;
     }
 
     public String getEquipmentQty() {

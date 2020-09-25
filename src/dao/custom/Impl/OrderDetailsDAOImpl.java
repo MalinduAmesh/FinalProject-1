@@ -37,8 +37,8 @@ public class OrderDetailsDAOImpl implements OrderDetailsDAO {
             return new OrderDetails(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4)
+                    rst.getInt(3),
+                    rst.getDouble(4)
             );
         }
         return null;
@@ -54,8 +54,8 @@ public class OrderDetailsDAOImpl implements OrderDetailsDAO {
             list.add(new OrderDetails(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4)
+                    rst.getInt(3),
+                    rst.getDouble(4)
             ));
         }
         return list;

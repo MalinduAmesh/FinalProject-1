@@ -67,7 +67,6 @@ public void initialize() throws SQLException, ClassNotFoundException {
     colName.setCellValueFactory(new PropertyValueFactory<>("suplimName"));
     colQty.setCellValueFactory(new PropertyValueFactory<>("suplimQTY"));
     colCost.setCellValueFactory(new PropertyValueFactory<>("suplimCost"));
-    colTools.setCellValueFactory(new PropertyValueFactory<>("btn"));
 
     tblSupliment.setItems(loadAllTables());
 
@@ -78,43 +77,18 @@ public void initialize() throws SQLException, ClassNotFoundException {
 
     private ObservableList<SuplimentDTO> loadAllTables() throws SQLException, ClassNotFoundException {
         ObservableList<SuplimentDTO> all = addSuplimentBo.getAllSupliment();
-        ObservableList<SuplimentDTO> suplimentDTOObservableList = FXCollections.observableArrayList();
+        ObservableList<SuplimentDTO> allSupliment = FXCollections.observableArrayList();
 
 
         for (SuplimentDTO dto:all) {
-            Button button = new Button("Delete");
-
-            suplimentDTOObservableList.add(new SuplimentDTO(
+            allSupliment.add(new SuplimentDTO(
                     dto.getSuplimId(),
                     dto.getSuplimName(),
                     dto.getSuplimQTY(),
-                    dto.getSuplimCost(),
-                    button
+                    dto.getSuplimCost()
             ));
-
-            button.setOnAction((event -> {
-
-            }));
         }
-
-/*        btn.setOnAction((e)->{
-            try {
-                boolean isDelete=DBConnection.getInstance().getConnection().prepareStatement("DELETE FROM Customer WHERE id='"+dto.getId()+"'").executeUpdate()>0;
-                if (isDelete){
-                    new Alert(Alert.AlertType.CONFIRMATION,
-                            "Deleted", ButtonType.OK).show();
-                }
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            } catch (ClassNotFoundException e1) {
-                e1.printStackTrace();
-            }
-        });
-
-        tblCustomer.setItems(tmObservableList);
-    }*/
-
-        return all;
+        return allSupliment;
     }
 
     private void setValuesToCmbBox() throws SQLException, ClassNotFoundException {
@@ -134,7 +108,7 @@ public void initialize() throws SQLException, ClassNotFoundException {
         String qty = txtTotQty.getText();
         String cost = txtCost.getText();
 
-        SuplimentDTO suplimentDTO = new SuplimentDTO(id,name,qty,cost);
+        SuplimentDTO suplimentDTO = new SuplimentDTO(id,name,Integer.parseInt(qty),Double.parseDouble(cost));
 
         boolean isAdded = false;
         try {
@@ -186,7 +160,7 @@ public void initialize() throws SQLException, ClassNotFoundException {
         String TotQty = txtTotQty.getText();
         String cost = txtCost.getText();
 
-        SuplimentDTO suplimentDTO =new SuplimentDTO(id,name,TotQty,cost);
+        SuplimentDTO suplimentDTO =new SuplimentDTO(id,name,Integer.parseInt(TotQty),Double.parseDouble(cost));
 
         try {
             boolean isUpdate = addSuplimentBo.updateSupliment(suplimentDTO);
@@ -211,9 +185,9 @@ public void initialize() throws SQLException, ClassNotFoundException {
             suplimentDTO = addSuplimentBo.searchSupliment(cmbSearchID.getSelectionModel().getSelectedItem().toString());
             txtID.setText(suplimentDTO.getSuplimId());
             txtName.setText(suplimentDTO.getSuplimName());
-            txtTotQty.setText(suplimentDTO.getSuplimQTY());
-            txtAvalbleQty.setText(suplimentDTO.getSuplimQTY());
-            txtCost.setText(suplimentDTO.getSuplimCost());
+            txtTotQty.setText(suplimentDTO.getSuplimQTY()+"");
+            txtAvalbleQty.setText(suplimentDTO.getSuplimQTY()+"");
+            txtCost.setText(suplimentDTO.getSuplimCost()+"");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {

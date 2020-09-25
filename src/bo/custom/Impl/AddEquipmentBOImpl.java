@@ -1,10 +1,19 @@
 package bo.custom.Impl;
 
 import bo.custom.AddEquipmentBO;
+import dao.custom.EquipmentDAO;
+import dao.custom.Impl.EquipmentDAOImpl;
 import dto.EquipmentDTO;
+import entity.Equipment;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class AddEquipmentBOImpl implements AddEquipmentBO {
+
+    EquipmentDAO equipmentDAO = new EquipmentDAOImpl();
 
     @Override
     public boolean addEqupment(EquipmentDTO a) {
@@ -27,7 +36,17 @@ public class AddEquipmentBOImpl implements AddEquipmentBO {
     }
 
     @Override
-    public ObservableList<EquipmentDTO> getAllEqupment() {
-        return null;
+    public ObservableList<EquipmentDTO> getAllEqupment() throws SQLException, ClassNotFoundException {
+        ArrayList<Equipment> list = equipmentDAO.getAll();
+        ObservableList<EquipmentDTO> allEquipment = FXCollections.observableArrayList();
+        for (Equipment equipment:list) {
+            allEquipment.add(new EquipmentDTO(
+                    equipment.getEquipmentId(),
+                    equipment.getEquipmentName(),
+                    equipment.getEquipmentQty(),
+                    equipment.getEquipmentCost()
+            ));
+        }
+        return allEquipment;
     }
 }

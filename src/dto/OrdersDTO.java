@@ -1,23 +1,33 @@
 package dto;
 
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 
 public class OrdersDTO {
     private String ordersID;
     private String ordersDate;
     private String ordersCustomerID;
-    private String ordType;
-    private ArrayList<OrderDetailsDTO> allOrderDetails;
+    private ObservableList<OrderDetailsDTO> allOrderDetails;
+    private ObservableList<SuplimentDTO> suplimentDetailList;
 
     public OrdersDTO() {
     }
 
-    public OrdersDTO(String ordersID, String ordersDate, String ordersCustomerID, String ordType, ArrayList<OrderDetailsDTO> allOrderDetails) {
+    public OrdersDTO(String ordersID, String ordersDate, String ordersCustomerID,ObservableList<OrderDetailsDTO> allOrderDetails) {
         this.ordersID = ordersID;
         this.ordersDate = ordersDate;
         this.ordersCustomerID = ordersCustomerID;
-        this.ordType = ordType;
+
         this.allOrderDetails = allOrderDetails;
+    }
+
+    public OrdersDTO(String ordersID, String ordersDate, String ordersCustomerID,ObservableList<OrderDetailsDTO> allOrderDetails, ObservableList<SuplimentDTO> suplimentDetailList) {
+        this.ordersID = ordersID;
+        this.ordersDate = ordersDate;
+        this.ordersCustomerID = ordersCustomerID;
+        this.allOrderDetails = allOrderDetails;
+        this.suplimentDetailList = suplimentDetailList;
     }
 
     public String getOrdersID() {
@@ -44,19 +54,19 @@ public class OrdersDTO {
         this.ordersCustomerID = ordersCustomerID;
     }
 
-    public String getOrdType() {
-        return ordType;
-    }
-
-    public void setOrdType(String ordType) {
-        this.ordType = ordType;
-    }
-
-    public ArrayList<OrderDetailsDTO> getAllOrderDetails() {
+    public ObservableList<OrderDetailsDTO> getAllOrderDetails() {
         return allOrderDetails;
     }
 
-    public void setAllOrderDetails(ArrayList<OrderDetailsDTO> allOrderDetails) {
+    public void setAllOrderDetails(ObservableList<OrderDetailsDTO> allOrderDetails) {
         this.allOrderDetails = allOrderDetails;
+    }
+
+    public ObservableList<SuplimentDTO> getSuplimentDetailList() {
+        return suplimentDetailList;
+    }
+
+    public void setSuplimentDetailList(ObservableList<SuplimentDTO> suplimentDetailList) {
+        this.suplimentDetailList = suplimentDetailList;
     }
 }

@@ -4,19 +4,13 @@ public class Supliment {
 
     private String suplimId;
     private String suplimName;
-    private String suplimQTY;
-    private String suplimCost;
+    private int suplimQTY;
+    private double suplimCost;
 
     public Supliment() {
     }
 
-    public Supliment(String suplimName, String suplimQTY, String suplimCost) {
-        this.suplimName = suplimName;
-        this.suplimQTY = suplimQTY;
-        this.suplimCost = suplimCost;
-    }
-
-    public Supliment(String suplimId, String suplimName, String suplimQTY, String suplimCost) {
+    public Supliment(String suplimId, String suplimName, int suplimQTY, double suplimCost) {
         this.suplimId = suplimId;
         this.suplimName = suplimName;
         this.suplimQTY = suplimQTY;
@@ -39,21 +33,19 @@ public class Supliment {
         this.suplimName = suplimName;
     }
 
-    public String getSuplimQTY() {
+    public int getSuplimQTY() {
         return suplimQTY;
     }
 
-    public void setSuplimQTY(String suplimQTY) {
+    public void setSuplimQTY(int suplimQTY) {
         this.suplimQTY = suplimQTY;
     }
 
-    public String getSuplimCost() {
+    public double getSuplimCost() {
         return suplimCost;
     }
 
-    public void setSuplimCost(String suplimCost) {
+    public void setSuplimCost(double suplimCost) {
         this.suplimCost = suplimCost;
     }
-
-
 }

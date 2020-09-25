@@ -13,14 +13,14 @@
 
 <AnchorPane fx:id="root" prefHeight="956.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WorkOutFormController">
    <children>
-      <Label layoutX="66.0" layoutY="48.0" text="WorkOut Details">
+      <Label layoutX="66.0" layoutY="48.0" text="WorkOut Details" textFill="WHITE">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
       <Separator layoutY="101.0" prefHeight="0.0" prefWidth="1666.0" />
 
-      <JFXButton layoutX="1335.0" layoutY="38.0" onMouseClicked="#AssignworkoutOnAction" text="Assign WorkOut">
+      <JFXButton layoutX="1335.0" layoutY="38.0" onMouseClicked="#AssignworkoutOnAction" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;" text="Assign WorkOut">
          <graphic>
             <ImageView fitHeight="41.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -32,7 +32,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtSearch" layoutX="756.0" layoutY="132.0" prefHeight="63.0" prefWidth="278.0" promptText="Search" />
+      <JFXTextField fx:id="txtSearch" layoutX="756.0" layoutY="132.0" prefHeight="63.0" prefWidth="278.0" promptText="Search" unFocusColor="WHITE" />
       <TableView fx:id="tblWorkOutDetails" layoutX="139.0" layoutY="259.0" prefHeight="673.0" prefWidth="1388.0">
         <columns>
           <TableColumn fx:id="colPhoto" prefWidth="297.0" text="Photo" />
@@ -42,5 +42,17 @@
             <TableColumn fx:id="colTools" prefWidth="268.0" text="Tools" />
         </columns>
       </TableView>
+      <JFXButton fx:id="btnCreateWork" layoutX="1083.0" layoutY="37.0" onAction="#btnCreateWorkOnAction" onMouseClicked="#AssignworkoutOnAction" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;" text="Create WorkOut">
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/aasiignWorkOut.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

@@ -1,7 +1,6 @@
 package bo.custom.Impl;
 
-import bo.custom.SuplimentOrderBO;
-import bo.custom.SuplimentOrderDetailsBO;
+import bo.custom.PlaceOrderBO;
 import dao.custom.CustomerDAO;
 import dao.custom.Impl.CustomerDAOImpl;
 import dao.custom.Impl.OrderDAOImpl;
@@ -10,20 +9,23 @@ import dao.custom.Impl.SuplimentDAOImpl;
 import dao.custom.OrderDetailsDAO;
 import dao.custom.OrdersDAO;
 import dao.custom.SuplimentDAO;
+import db.DBConnection;
 import dto.CustomerDTO;
+import dto.OrderDetailsDTO;
 import dto.OrdersDTO;
 import dto.SuplimentDTO;
 import entity.Customer;
+import entity.OrderDetails;
+import entity.Orders;
 import entity.Supliment;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
 
-import java.awt.image.AreaAveragingScaleFilter;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class SuplimentOrderDetailsBOImpl implements SuplimentOrderDetailsBO {
+public class PlaceOrderBOImpl implements PlaceOrderBO {
 
     SuplimentDAO suplimentDAO = new SuplimentDAOImpl();
     OrdersDAO ordersDAO = new OrderDAOImpl();
@@ -45,9 +47,63 @@ public class SuplimentOrderDetailsBOImpl implements SuplimentOrderDetailsBO {
     }
 
     @Override
-    public boolean purchaseSupliment(OrdersDTO dto) {
+    public boolean purchaseOrder(OrdersDTO orderDTO) throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        connection.setAutoCommit(false);
 
-        return false;
+       /* Orders o = new Orders();
+        o.setOrdersID(orderDTO.getOrdersID());
+        o.setOrdersCustomerID(orderDTO.getOrdersCustomerID());
+        o.setOrdersDate(orderDTO.getOrdersDate());*/
+        Orders orders = new Orders(orderDTO.getOrdersID(), orderDTO.getOrdersDate(),orderDTO.getOrdersCustomerID());
+        System.out.println(orders);
+
+        try {
+            boolean isAddedOrder = ordersDAO.add(orders);
+            System.out.println(isAddedOrder);
+
+            if (isAddedOrder) {
+                for (OrderDetailsDTO od : orderDTO.getAllOrderDetails()) {
+                    boolean isAddedOrderDetail = orderDetailsDAO.add(new OrderDetails(orderDTO.getOrdersID(), od.getSuplimeID(), od.getOrederDetailQTY(), od.getOrederDetailUnitP()));
+                    System.out.println(isAddedOrderDetail);
+
+                    if (!isAddedOrderDetail) {
+                        connection.rollback();
+                        return false;
+                    }
+                }
+                if (isAddedOrder) {
+                    for (SuplimentDTO s : orderDTO.getSuplimentDetailList()) {
+                        boolean isUpdatedSupliment = suplimentDAO.update(new Supliment( s.getSuplimId(),s.getSuplimName(), s.getSuplimQTY(), s.getSuplimCost()));
+                        System.out.println(isUpdatedSupliment);
+
+                        if (!isUpdatedSupliment) {
+                            connection.rollback();
+                            return false;
+                        }
+                    }
+                    connection.commit();
+                    return true;
+
+                } else {
+                    connection.rollback();
+                    return false;
+                }
+
+            } else {
+                connection.rollback();
+                return false;
+            }
+        }catch (SQLException ex){
+            connection.rollback();
+            ex.printStackTrace();
+            return false;
+//
+        }
+        finally {
+            connection.setAutoCommit(true);
+        }
+
     }
 
     @Override

@@ -1,3 +1,4 @@
+import animatefx.animation.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,17 +18,19 @@ public class AppIntializer extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("view/DashBordForm.fxml"))));
-        System.out.println("Custom Entity Want Create");
+
+        Parent stage = FXMLLoader.load(this.getClass().getResource("view/DashBordForm.fxml"));
+        primaryStage.setScene(new Scene(stage));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
-/*
+        new FadeIn(stage).play();
 
-        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("view/SuplimentOrderDetailsForm.fxml"))));
+/*
+        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("view/MakeWorkoutDetailsForm.fxml"))));
         System.out.println("Custom Entity Want Create");
         primaryStage.show();
-*/
 
+*/
 
     }
 }

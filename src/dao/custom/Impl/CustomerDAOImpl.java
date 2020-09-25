@@ -63,6 +63,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                     rst.getString(8)
             ));
         }
+
         return list;
     }
 }

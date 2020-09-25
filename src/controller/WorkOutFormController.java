@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -25,5 +26,11 @@ public class WorkOutFormController {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource(""));
         root.getChildren().setAll(pane.getChildren());
 
+    }
+
+    public void btnCreateWorkOnAction(ActionEvent actionEvent) throws IOException {
+        root.getChildren().clear();
+        AnchorPane poot = FXMLLoader.load(this.getClass().getResource("../view/MakeWorkoutDetailsForm.fxml"));
+        root.getChildren().setAll(poot.getChildren());
     }
 }

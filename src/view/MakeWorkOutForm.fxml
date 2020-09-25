@@ -13,13 +13,13 @@
 
 <AnchorPane prefHeight="956.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MakeWorkOutFormController">
    <children>
-      <Label layoutX="54.0" layoutY="41.0" text="Workout Plans">
+      <Label layoutX="54.0" layoutY="41.0" text="Workout Plans" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="26.0" />
+            <Font name="System Bold" size="28.0" />
          </font>
       </Label>
       <Separator layoutY="112.0" prefHeight="1.0" prefWidth="1666.0" />
-      <JFXButton layoutX="1403.0" layoutY="41.0" onMouseClicked="#CreateSorkOnAction" text="Create Workout">
+      <JFXButton layoutX="1403.0" layoutY="41.0" onMouseClicked="#CreateSorkOnAction" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;" text="Create Workout">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -39,7 +39,7 @@
             <TableColumn fx:id="colGender" prefWidth="252.0" text="Gender" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="txtSearch" layoutX="701.0" layoutY="142.0" prefHeight="55.0" prefWidth="265.0" promptText="Search" />
+      <JFXTextField fx:id="txtSearch" layoutX="701.0" layoutY="142.0" prefHeight="55.0" prefWidth="265.0" promptText="Search" unFocusColor="WHITE" />
       <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assests/hambuger%20menu.png" />

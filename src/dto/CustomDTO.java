@@ -61,17 +61,36 @@ public class CustomDTO {
     private String suplimId;
     private String suplimName;
     private String suplimQTY;
-    private String suplimCost;
+    private double suplimCost;
 
-    private String total;
+    private double total;
     private String discount;
+    private String totalQTy;
 
 
+    // txtID.getText(), txtProductName.getText(),txtPrice.getText(),txtQTY.getText(),txtDiscount.getText(),txtTotal.getText());
 
-    public CustomDTO() {
+/*
+    public CustomDTO(String txtID, String suplimId, String suplimName, String total, String discount, String totalQTy) {
+        this.t
+        this.suplimId = suplimId;
+        this.suplimName = suplimName;
+        this.total = total;
+        this.discount = discount;
+        this.totalQTy = totalQTy;
+    }*/
+
+    public CustomDTO(String suplimId, String suplimName, double suplimCost,  String discount, String totalQTy,double total) {
+        this.suplimId = suplimId;
+        this.suplimName = suplimName;
+        this.suplimCost = suplimCost;
+
+        this.discount = discount;
+        this.totalQTy = totalQTy;
+        this.total = total;
     }
 
-    public CustomDTO(String attendID, String customerID, String attendDate, String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String equipmentId, String equipmentName, String equipmentImage, String equipmentQty, String equipmentCost, String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth, String orderDetailID, String orederDetailQTY, String orederDetailUnitP, String ordersID, String ordersDate, String ordersCustomerID, String ordType, String payID, String payType, String payAmount, String payStatus, String regID, String memShip, String regStartDate, String regEndDate, String regFeeType, String regFee, String schId, String schGoal, String schType, String schLevel, String schDuration, String schPerWeek, String schPerTime, String suplimId, String suplimName, String suplimQTY, String suplimCost, String total, String discount) {
+    public CustomDTO(String attendID, String customerID, String attendDate, String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String equipmentId, String equipmentName, String equipmentImage, String equipmentQty, String equipmentCost, String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth, String orderDetailID, String orederDetailQTY, String orederDetailUnitP, String ordersID, String ordersDate, String ordersCustomerID, String ordType, String payID, String payType, String payAmount, String payStatus, String regID, String memShip, String regStartDate, String regEndDate, String regFeeType, String regFee, String schId, String schGoal, String schType, String schLevel, String schDuration, String schPerWeek, String schPerTime, String suplimId, String suplimName, String suplimQTY, double suplimCost, double total, String discount, String totalQTy) {
         this.attendID = attendID;
         this.customerID = customerID;
         this.attendDate = attendDate;
@@ -125,14 +144,7 @@ public class CustomDTO {
         this.suplimCost = suplimCost;
         this.total = total;
         this.discount = discount;
-    }
-
-    public CustomDTO(String orederDetailQTY, String orederDetailUnitP, String suplimName, String total, String discount) {
-        this.orederDetailQTY = orederDetailQTY;
-        this.orederDetailUnitP = orederDetailUnitP;
-        this.suplimName = suplimName;
-        this.total = total;
-        this.discount = discount;
+        this.totalQTy = totalQTy;
     }
 
     public String getAttendID() {
@@ -535,19 +547,19 @@ public class CustomDTO {
         this.suplimQTY = suplimQTY;
     }
 
-    public String getSuplimCost() {
+    public double getSuplimCost() {
         return suplimCost;
     }
 
-    public void setSuplimCost(String suplimCost) {
+    public void setSuplimCost(double suplimCost) {
         this.suplimCost = suplimCost;
     }
 
-    public String getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 
@@ -557,5 +569,13 @@ public class CustomDTO {
 
     public void setDiscount(String discount) {
         this.discount = discount;
+    }
+
+    public String getTotalQTy() {
+        return totalQTy;
+    }
+
+    public void setTotalQTy(String totalQTy) {
+        this.totalQTy = totalQTy;
     }
 }

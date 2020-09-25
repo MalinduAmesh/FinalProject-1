@@ -13,13 +13,12 @@
 
 <AnchorPane prefHeight="952.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddSuplimentFormController">
    <children>
-      <TableView fx:id="tblSupliment" layoutX="389.0" layoutY="667.0" prefHeight="271.0" prefWidth="1015.0">
+      <TableView fx:id="tblSupliment" layoutX="389.0" layoutY="667.0" opacity="0.84" prefHeight="271.0" prefWidth="821.0">
         <columns>
             <TableColumn fx:id="colID" prefWidth="192.0" text="ID" />
           <TableColumn fx:id="colName" prefWidth="228.0" text="Name" />
             <TableColumn fx:id="colQty" prefWidth="205.0" text="Qty" />
             <TableColumn fx:id="colCost" prefWidth="192.0" text="Cost" />
-            <TableColumn fx:id="colTools" prefWidth="192.0" text="Tools" />
         </columns>
       </TableView>
       <AnchorPane layoutX="544.0" layoutY="545.0" prefHeight="100.0" prefWidth="557.0">
@@ -53,7 +52,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="290.0" layoutY="66.0" prefHeight="495.0" prefWidth="1064.0">
+      <AnchorPane layoutX="95.0" layoutY="50.0" opacity="0.79" prefHeight="495.0" prefWidth="1064.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
          <children>
             <JFXTextField fx:id="txtCost" layoutX="323.0" layoutY="404.0" prefHeight="55.0" prefWidth="355.0" promptText="Cost" />
             <JFXTextField fx:id="txtAvalbleQty" layoutX="153.0" layoutY="286.0" prefHeight="55.0" prefWidth="72.0" promptText="AvalibleQty" />

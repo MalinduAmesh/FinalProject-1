@@ -1,15 +1,21 @@
 package bo.custom;
 
 import bo.SuperBO;
-import dto.ScheduleDTO;
+import dto.*;
 import javafx.collections.ObservableList;
+
+import java.sql.SQLException;
 
 public interface MakeWorkOutDetailsBO extends SuperBO {
 
-    public boolean addMakeWorkOut(ScheduleDTO s);
-    public boolean deleteWorkOut(String s);
-    public boolean updateWorkOut(ScheduleDTO a);
-    public ScheduleDTO searchWorkOut(String s);
-    public ObservableList<ScheduleDTO> getAllWorkout();
+
+    EquipmentDTO searchEquipment(String s) throws SQLException, ClassNotFoundException;
+    boolean createSchedule(OrdersDTO dto) throws SQLException, ClassNotFoundException;
+
+    String getLastId() throws SQLException, ClassNotFoundException;
+
+    ObservableList<EquipmentDTO> getAllEquipments() throws SQLException, ClassNotFoundException;
+    ObservableList<ScheduleDTO> getAllSchedule() throws SQLException, ClassNotFoundException;
+
 
 }

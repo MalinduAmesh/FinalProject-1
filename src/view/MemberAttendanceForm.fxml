@@ -14,47 +14,87 @@
 
 <AnchorPane prefHeight="952.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MemberAttendanceFormController">
    <children>
-      <AnchorPane layoutX="322.0" layoutY="57.0" prefHeight="522.0" prefWidth="1022.0">
+      <AnchorPane layoutX="26.0" layoutY="25.0" prefHeight="405.0" prefWidth="723.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
          <children>
-            <Label layoutX="65.0" layoutY="37.0" text="Attendance">
+            <Label layoutX="42.0" layoutY="11.0" text="Member Attendance">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtMemberName" layoutX="276.0" layoutY="194.0" prefHeight="63.0" prefWidth="539.0" promptText="Member Name" />
-            <JFXComboBox fx:id="txtMemberId" layoutX="276.0" layoutY="89.0" prefHeight="63.0" prefWidth="539.0" promptText="Member ID" />
-            <JFXDatePicker fx:id="txtDate" layoutX="276.0" layoutY="305.0" prefHeight="63.0" prefWidth="539.0" promptText="Date" />
-            <AnchorPane layoutX="403.0" layoutY="386.0" prefHeight="105.0" prefWidth="330.0">
-               <children>
-                  <JFXButton layoutX="38.0" layoutY="23.0" text=".">
-                     <graphic>
-                        <ImageView fitHeight="56.0" fitWidth="56.0" onMouseClicked="#btnAddOnAction" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Assests/add%20list.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton layoutX="194.0" layoutY="23.0" text=".">
-                     <graphic>
-                        <ImageView fitHeight="56.0" fitWidth="56.0" onMouseClicked="#btnClearOnAction" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Assests/clear.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-               </children>
-            </AnchorPane>
+            <JFXTextField fx:id="txtMemberName" labelFloat="true" layoutX="159.0" layoutY="204.0" prefHeight="63.0" prefWidth="384.0" promptText="Member Name" unFocusColor="#f8f8f8">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXTextField>
+            <JFXComboBox fx:id="txtMemberId" labelFloat="true" layoutX="159.0" layoutY="105.0" prefHeight="53.0" prefWidth="384.0" promptText="Member ID" unFocusColor="WHITE" />
+            <JFXTextField fx:id="cmbMemberSearchOnAction" labelFloat="true" layoutX="475.0" layoutY="26.0" prefHeight="53.0" prefWidth="221.0" promptText="Search" />
+            <JFXDatePicker fx:id="txtMemberDate" layoutX="145.0" layoutY="315.0" prefHeight="63.0" prefWidth="384.0" promptText="DATE" />
          </children>
       </AnchorPane>
-      <TableView fx:id="tblAttendance" layoutX="510.0" layoutY="579.0" prefHeight="297.0" prefWidth="723.0">
+      <TableView fx:id="tblMemberAttendance" layoutX="26.0" layoutY="564.0" prefHeight="297.0" prefWidth="723.0">
         <columns>
-          <TableColumn fx:id="colID" prefWidth="151.0" text="ID" />
-          <TableColumn fx:id="colName" prefWidth="305.0" text="Name" />
-            <TableColumn fx:id="colDate" prefWidth="265.0" text="Date" />
+          <TableColumn fx:id="colMemberID" prefWidth="151.0" text="ID" />
+          <TableColumn fx:id="colMemberName" prefWidth="305.0" text="Name" />
+            <TableColumn fx:id="colMemberDate" prefWidth="265.0" text="Date" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="txtSearch" layoutX="1340.0" layoutY="109.0" prefHeight="53.0" prefWidth="221.0" promptText="Search" />
+      <AnchorPane layoutX="848.0" layoutY="27.0" prefHeight="405.0" prefWidth="723.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="42.0" layoutY="11.0" text="Staff Attendance">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtInstructorNsme" labelFloat="true" layoutX="159.0" layoutY="204.0" prefHeight="63.0" prefWidth="384.0" promptText="Instructor Name" unFocusColor="#f8f8f8">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXTextField>
+            <JFXComboBox fx:id="txtInstructorID" labelFloat="true" layoutX="159.0" layoutY="105.0" prefHeight="53.0" prefWidth="384.0" promptText="Instructor ID" unFocusColor="WHITE" />
+            <JFXTextField fx:id="cmbInstructorSearch" labelFloat="true" layoutX="475.0" layoutY="26.0" prefHeight="53.0" prefWidth="221.0" promptText="Search" />
+            <JFXDatePicker fx:id="txtInstrDate" layoutX="145.0" layoutY="315.0" overLay="true" prefHeight="63.0" prefWidth="384.0" promptText="DATE" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblInstructor" layoutX="844.0" layoutY="557.0" prefHeight="297.0" prefWidth="723.0">
+         <columns>
+            <TableColumn fx:id="colInstrucorID" prefWidth="151.0" text="ID" />
+            <TableColumn fx:id="colInstrucName" prefWidth="305.0" text="Name" />
+            <TableColumn fx:id="colInstruDate" prefWidth="265.0" text="Date" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="158.0" layoutY="448.0" onAction="#memberAddOnAction" prefHeight="82.0" prefWidth="156.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+         <graphic>
+            <ImageView fitHeight="56.0" fitWidth="56.0" onMouseClicked="#btnAddOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/add%20list.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="380.0" layoutY="456.0" onAction="#clearOnAction" prefHeight="82.0" prefWidth="156.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+         <graphic>
+            <ImageView fitHeight="56.0" fitWidth="56.0" onMouseClicked="#btnClearOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/clear.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="1014.0" layoutY="448.0" onAction="#InstructorAddOnAction" prefHeight="82.0" prefWidth="156.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+         <graphic>
+            <ImageView fitHeight="56.0" fitWidth="56.0" onMouseClicked="#btnAddOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/add%20list.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="1215.0" layoutY="448.0" onAction="#clearOnAction" prefHeight="82.0" prefWidth="156.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+         <graphic>
+            <ImageView fitHeight="56.0" fitWidth="56.0" onMouseClicked="#btnClearOnAction" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: f1f2f6; -fx-background-radius: 100 0 100 0;">
+               <image>
+                  <Image url="@../Assests/clear.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

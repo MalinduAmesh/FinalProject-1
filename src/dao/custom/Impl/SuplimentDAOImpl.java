@@ -41,8 +41,8 @@ public class SuplimentDAOImpl implements SuplimentDAO {
             return new Supliment(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4)
+                    rst.getInt(3),
+                    rst.getDouble(4)
             );
         }
         return null;
@@ -58,8 +58,8 @@ public class SuplimentDAOImpl implements SuplimentDAO {
             list.add(new Supliment(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4)
+                    rst.getInt(3),
+                    rst.getDouble(4)
             ));
         }
         return list;
@@ -71,6 +71,5 @@ public class SuplimentDAOImpl implements SuplimentDAO {
         String sql = "SELECT * FROM orders ORDER BY ordId DESC LIMIT 3";
         ResultSet rst = CrudUtil.executeQuery(sql);
         return rst.next() ? rst.getString("ordId"):null;
-
     }
 }

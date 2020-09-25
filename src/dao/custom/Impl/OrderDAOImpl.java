@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class OrderDAOImpl implements OrdersDAO {
     @Override
     public boolean add(Orders a) throws SQLException, ClassNotFoundException {
-        String sql = "Insert Into orders Values(?,?,?,?)";
-        return CrudUtil.executeUpdate(sql,a.getOrdersID(),a.getOrdersDate(),a.getOrdersCustomerID(),a.getOrdType());
+        String sql = "Insert Into orders Values(?,?,?)";
+        return CrudUtil.executeUpdate(sql,a.getOrdersID(),a.getOrdersDate(),a.getOrdersCustomerID());
     }
 
     @Override
@@ -23,8 +23,8 @@ public class OrderDAOImpl implements OrdersDAO {
 
     @Override
     public boolean update(Orders a) throws SQLException, ClassNotFoundException {
-        String sql = "Update orders set date =? ,cusId =?,ordType = ? where ordId = ?";
-        return CrudUtil.executeUpdate(sql,a.getOrdersDate(),a.getOrdersCustomerID(),a.getOrdType(),a.getOrdersID());
+        String sql = "Update orders set date =? ,cusId =? where ordId = ?";
+        return CrudUtil.executeUpdate(sql,a.getOrdersDate(),a.getOrdersCustomerID(),a.getOrdersID());
 
     }
 
@@ -36,8 +36,7 @@ public class OrderDAOImpl implements OrdersDAO {
             return new Orders(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4)
+                    rst.getString(3)
             );
         }
         return null;
@@ -53,8 +52,7 @@ public class OrderDAOImpl implements OrdersDAO {
             list.add(new Orders(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4)
+                    rst.getString(3)
             ));
         }
         return list;

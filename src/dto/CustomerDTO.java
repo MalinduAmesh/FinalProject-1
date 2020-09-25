@@ -10,6 +10,7 @@ public class CustomerDTO {
     private String custGender;
     private String custEmail;
 
+
     public CustomerDTO(String custName) {
     }
 

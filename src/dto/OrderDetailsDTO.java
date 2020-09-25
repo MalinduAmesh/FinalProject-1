@@ -3,13 +3,15 @@ package dto;
 public class OrderDetailsDTO {
     private String OrderDetailID;
     private String suplimeID;
-    private String orederDetailQTY;
-    private String orederDetailUnitP;
+    private int orederDetailQTY;
+    private double orederDetailUnitP;
+
+
 
     public OrderDetailsDTO() {
     }
 
-    public OrderDetailsDTO(String orderDetailID, String suplimeID, String orederDetailQTY, String orederDetailUnitP) {
+    public OrderDetailsDTO(String orderDetailID, String suplimeID, int orederDetailQTY, double orederDetailUnitP) {
         OrderDetailID = orderDetailID;
         this.suplimeID = suplimeID;
         this.orederDetailQTY = orederDetailQTY;
@@ -32,19 +34,19 @@ public class OrderDetailsDTO {
         this.suplimeID = suplimeID;
     }
 
-    public String getOrederDetailQTY() {
+    public int getOrederDetailQTY() {
         return orederDetailQTY;
     }
 
-    public void setOrederDetailQTY(String orederDetailQTY) {
+    public void setOrederDetailQTY(int orederDetailQTY) {
         this.orederDetailQTY = orederDetailQTY;
     }
 
-    public String getOrederDetailUnitP() {
+    public double getOrederDetailUnitP() {
         return orederDetailUnitP;
     }
 
-    public void setOrederDetailUnitP(String orederDetailUnitP) {
+    public void setOrederDetailUnitP(double orederDetailUnitP) {
         this.orederDetailUnitP = orederDetailUnitP;
     }
 }

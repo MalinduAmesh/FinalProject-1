@@ -2,7 +2,6 @@ package dao.custom.Impl;
 
 import dao.CrudUtil;
 import dao.custom.EquipmentDAO;
-import entity.Attendance;
 import entity.Equipment;
 
 import java.sql.ResultSet;
@@ -12,8 +11,8 @@ import java.util.ArrayList;
 public class EquipmentDAOImpl implements EquipmentDAO {
     @Override
     public boolean add(Equipment s) throws SQLException, ClassNotFoundException {
-        String sql ="Insert Into equipment Values (?,?,?,?,?)";
-        return CrudUtil.executeUpdate(sql,s.getEquipmentId(),s.getEquipmentName(),s.getEquipmentImage(),s.getEquipmentQty(),s.getEquipmentCost());
+        String sql ="Insert Into equipment Values (?,?,?,?)";
+        return CrudUtil.executeUpdate(sql,s.getEquipmentId(),s.getEquipmentName(),s.getEquipmentQty(),s.getEquipmentCost());
 
     }
 
@@ -25,8 +24,8 @@ public class EquipmentDAOImpl implements EquipmentDAO {
 
     @Override
     public boolean update(Equipment a) throws SQLException, ClassNotFoundException {
-        String sql ="update equipment set name = ?,image = ?,equQty = ?,equCost = ? where equId =?";
-        return CrudUtil.executeUpdate(sql,a.getEquipmentName(),a.getEquipmentImage(),a.getEquipmentQty(),a.getEquipmentQty(),a.getEquipmentId());
+        String sql ="update equipment set name = ?,equQty = ?,equCost = ? where equId =?";
+        return CrudUtil.executeUpdate(sql,a.getEquipmentName(),a.getEquipmentQty(),a.getEquipmentQty(),a.getEquipmentId());
 
     }
 
@@ -39,8 +38,7 @@ public class EquipmentDAOImpl implements EquipmentDAO {
                     rst.getString(1),
                     rst.getString(2),
                     rst.getString(3),
-                    rst.getString(4),
-                    rst.getString(5)
+                    rst.getString(4)
             );
         }
         return null;
@@ -56,10 +54,25 @@ public class EquipmentDAOImpl implements EquipmentDAO {
                     rst.getString(1),
                     rst.getString(2),
                     rst.getString(3),
-                    rst.getString(4),
-                    rst.getString(5)
+                    rst.getString(4)
             ));
         }
         return list;
+    }
+
+    @Override
+    public Equipment searchName(String name) throws SQLException, ClassNotFoundException {
+        String sql = "Select * from equipment where name  LIKE '"+name+"%'";
+        ResultSet rst = CrudUtil.executeQuery(sql,name);
+        if(rst.next()) {
+            return new Equipment(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4)
+            );
+
+        }
+        return null;
     }
 }
