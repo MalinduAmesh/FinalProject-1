@@ -16,18 +16,21 @@ public class AddEquipmentBOImpl implements AddEquipmentBO {
     EquipmentDAO equipmentDAO = new EquipmentDAOImpl();
 
     @Override
-    public boolean addEqupment(EquipmentDTO a) {
-        return false;
+    public boolean addEqupment(EquipmentDTO a) throws SQLException, ClassNotFoundException {
+        Equipment equipment = new Equipment(a.getEquipmentId(),a.getEquipmentName(),a.getEquipmentQty(),a.getEquipmentCost());
+        return equipmentDAO.add(equipment);
     }
 
     @Override
-    public boolean deleteEquipment(String s) {
-        return false;
+    public boolean deleteEquipment(String s) throws SQLException, ClassNotFoundException {
+        return equipmentDAO.delete(s);
     }
 
     @Override
-    public boolean updateEquipment(EquipmentDTO a) {
-        return false;
+    public boolean updateEquipment(EquipmentDTO a) throws SQLException, ClassNotFoundException {
+
+        Equipment equipment = new Equipment(a.getEquipmentId(),a.getEquipmentName(),a.getEquipmentQty(),a.getEquipmentCost());
+        return equipmentDAO.update(equipment);
     }
 
     @Override
@@ -48,5 +51,17 @@ public class AddEquipmentBOImpl implements AddEquipmentBO {
             ));
         }
         return allEquipment;
+    }
+
+    @Override
+    public EquipmentDTO setAllEquipment(String a) throws SQLException, ClassNotFoundException {
+        Equipment equipment =equipmentDAO.search(a);
+        return  new EquipmentDTO(equipment.getEquipmentId(),equipment.getEquipmentName(),equipment.getEquipmentQty(),equipment.getEquipmentCost());
+    }
+
+    @Override
+    public EquipmentDTO search(String text) throws SQLException, ClassNotFoundException {
+        Equipment equipment = equipmentDAO.searchName(text);
+        return new EquipmentDTO(equipment.getEquipmentId(),equipment.getEquipmentName(),equipment.getEquipmentQty(),equipment.getEquipmentCost());
     }
 }

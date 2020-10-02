@@ -2,17 +2,21 @@ package dto;
 
 public class EquipmentDTO {
     private String equipmentId;
-    private String equipmentQty;
+    private int equipmentQty;
     private String equipmentName;
-    private String equipmentCost;
+    private double equipmentCost;
 
     public EquipmentDTO() {
     }
 
-    public EquipmentDTO(String equipmentId, String equipmentQty, String equipmentName, String equipmentCost) {
+    public EquipmentDTO(String equipmentId) {
         this.equipmentId = equipmentId;
-        this.equipmentQty = equipmentQty;
+    }
+
+    public EquipmentDTO(String equipmentId,  String equipmentName,int equipmentQty, double equipmentCost) {
+        this.equipmentId = equipmentId;
         this.equipmentName = equipmentName;
+        this.equipmentQty = equipmentQty;
         this.equipmentCost = equipmentCost;
     }
 
@@ -24,11 +28,11 @@ public class EquipmentDTO {
         this.equipmentId = equipmentId;
     }
 
-    public String getEquipmentQty() {
+    public int getEquipmentQty() {
         return equipmentQty;
     }
 
-    public void setEquipmentQty(String equipmentQty) {
+    public void setEquipmentQty(int equipmentQty) {
         this.equipmentQty = equipmentQty;
     }
 
@@ -40,11 +44,11 @@ public class EquipmentDTO {
         this.equipmentName = equipmentName;
     }
 
-    public String getEquipmentCost() {
+    public double getEquipmentCost() {
         return equipmentCost;
     }
 
-    public void setEquipmentCost(String equipmentCost) {
+    public void setEquipmentCost(double equipmentCost) {
         this.equipmentCost = equipmentCost;
     }
 }

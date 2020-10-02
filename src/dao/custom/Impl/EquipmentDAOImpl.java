@@ -37,8 +37,8 @@ public class EquipmentDAOImpl implements EquipmentDAO {
             return new Equipment(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4)
+                    Integer.parseInt(rst.getString(3)),
+                    rst.getDouble(4)
             );
         }
         return null;
@@ -53,14 +53,34 @@ public class EquipmentDAOImpl implements EquipmentDAO {
             list.add(new Equipment(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4)
+                    rst.getInt(3),
+                    rst.getDouble(4)
+
             ));
+
         }
         return list;
     }
 
     @Override
+    public Equipment searchName(String name) throws SQLException, ClassNotFoundException {
+
+        String sql = "Select * from equipment where name  LIKE '"+name+"%'";
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        if (rst.next()){
+         return new Equipment(
+                 rst.getString(1),
+                 rst.getString(2),
+                 rst.getInt(3),
+                 rst.getDouble(4)
+         );
+        }
+
+
+        return null;
+    }
+
+/*    @Override
     public Equipment searchName(String name) throws SQLException, ClassNotFoundException {
         String sql = "Select * from equipment where name  LIKE '"+name+"%'";
         ResultSet rst = CrudUtil.executeQuery(sql,name);
@@ -68,11 +88,11 @@ public class EquipmentDAOImpl implements EquipmentDAO {
             return new Equipment(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4)
+                    rst.getInt(3),
+                    rst.getDouble(4)
             );
 
         }
         return null;
-    }
+    }*/
 }

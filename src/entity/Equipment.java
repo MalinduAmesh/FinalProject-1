@@ -3,8 +3,8 @@ package entity;
 public class Equipment {
     private String equipmentId;
     private String equipmentName;
-    private String equipmentQty;
-    private String equipmentCost;
+    private int equipmentQty;
+    private double equipmentCost;
 
     public Equipment() {
     }
@@ -13,11 +13,21 @@ public class Equipment {
         this.equipmentName = equipmentName;
     }
 
-    public Equipment(String equipmentId, String equipmentName, String equipmentQty, String equipmentCost) {
+    public Equipment(String equipmentId, String equipmentName, int equipmentQty, double equipmentCost) {
         this.equipmentId = equipmentId;
         this.equipmentName = equipmentName;
         this.equipmentQty = equipmentQty;
         this.equipmentCost = equipmentCost;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipment{" +
+                "equipmentId='" + equipmentId + '\'' +
+                ", equipmentName='" + equipmentName + '\'' +
+                ", equipmentQty=" + equipmentQty +
+                ", equipmentCost=" + equipmentCost +
+                '}';
     }
 
     public String getEquipmentId() {
@@ -36,19 +46,19 @@ public class Equipment {
         this.equipmentName = equipmentName;
     }
 
-    public String getEquipmentQty() {
+    public int getEquipmentQty() {
         return equipmentQty;
     }
 
-    public void setEquipmentQty(String equipmentQty) {
+    public void setEquipmentQty(int equipmentQty) {
         this.equipmentQty = equipmentQty;
     }
 
-    public String getEquipmentCost() {
+    public double getEquipmentCost() {
         return equipmentCost;
     }
 
-    public void setEquipmentCost(String equipmentCost) {
+    public void setEquipmentCost(double equipmentCost) {
         this.equipmentCost = equipmentCost;
     }
 }

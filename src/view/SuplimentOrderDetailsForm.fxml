@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -27,12 +28,12 @@
          <graphic>
             <ImageView fitHeight="65.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assests/Ok.png" />
+                  <Image url="@../Assests/pay.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton layoutX="1049.0" layoutY="831.0" onAction="#btnClearOnAction" prefHeight="78.0" prefWidth="176.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
+      <JFXButton layoutX="1055.0" layoutY="836.0" onAction="#btnClearOnAction" prefHeight="78.0" prefWidth="176.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
          <graphic>
             <ImageView fitHeight="55.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -48,43 +49,54 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="420.0" layoutY="212.0" prefHeight="51.0" prefWidth="215.0" promptText="Customer Name" style="-fx-background-radius: 30;" />
+            <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="420.0" layoutY="212.0" prefHeight="51.0" prefWidth="215.0" promptText="Customer Name" style="-fx-front-size: 25;" />
             <JFXComboBox fx:id="cmbCustomerId" layoutX="136.0" layoutY="212.0" onAction="#cmbCustomerIdOnAction" prefHeight="55.0" prefWidth="215.0" promptText="Customer ID" style="-fx-background-radius: 30;" />
-            <JFXTextField fx:id="txtCustEmail" labelFloat="true" layoutX="431.0" layoutY="320.0" prefHeight="51.0" prefWidth="215.0" promptText="Email" style="-fx-background-radius: 30;" />
-            <JFXTextField fx:id="txtCustContact" labelFloat="true" layoutX="148.0" layoutY="320.0" prefHeight="51.0" prefWidth="215.0" promptText="Contact" style="-fx-background-radius: 30;" />
-            <JFXTextField fx:id="txtOrderDate" labelFloat="true" layoutX="420.0" layoutY="100.0" prefHeight="55.0" prefWidth="215.0" promptText="Date" style="-fx-background-radius: 30;" />
+            <JFXTextField fx:id="txtCustEmail" labelFloat="true" layoutX="420.0" layoutY="320.0" prefHeight="51.0" prefWidth="215.0" promptText="Email" style="-fx-front-size: 25;" />
+            <JFXTextField fx:id="txtCustContact" labelFloat="true" layoutX="136.0" layoutY="320.0" prefHeight="51.0" prefWidth="215.0" promptText="Contact" style="-fx-front-size: 25;" />
+            <JFXTextField fx:id="txtOrderDate" labelFloat="true" layoutX="420.0" layoutY="100.0" prefHeight="55.0" prefWidth="215.0" promptText="Date" style="-fx-front-size: 25;" />
+            <Label fx:id="lblOrdId" layoutX="184.0" layoutY="117.0" prefHeight="44.0" prefWidth="155.0" style="-fx-background-color: #1abc9c; -fx-background-radius: 30;" text=" " />
          </children>
       </AnchorPane>
       <Label layoutX="123.0" layoutY="147.0" text="Order ID :" />
-      <JFXTextField fx:id="lblOrdID" layoutX="211.0" layoutY="142.0" style="-fx-background-radius: 30;" />
-      <AnchorPane layoutX="1258.0" layoutY="477.0" opacity="0.74" prefHeight="349.0" prefWidth="383.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
+      <AnchorPane layoutX="1269.0" layoutY="573.0" opacity="0.74" prefHeight="349.0" prefWidth="383.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
          <children>
             <Label layoutX="76.0" layoutY="31.0" text="Purchase Details">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtTotal" labelFloat="true" layoutX="87.0" layoutY="98.0" prefHeight="51.0" prefWidth="238.0" promptText="Total" style="-fx-background-color: white; -fx-background-radius: 30;" />
-            <JFXTextField labelFloat="true" layoutX="87.0" layoutY="269.0" prefHeight="51.0" prefWidth="238.0" promptText="Balance" style="-fx-background-color: white; -fx-background-radius: 30;" />
-            <JFXTextField labelFloat="true" layoutX="83.0" layoutY="181.0" prefHeight="51.0" prefWidth="238.0" promptText="Cash" style="-fx-background-color: white; -fx-background-radius: 30;" />
+            <JFXTextField fx:id="txtTotal" labelFloat="true" layoutX="87.0" layoutY="98.0" prefHeight="51.0" prefWidth="238.0" promptText="Total" style="-fx-background-color: f1f2f6;" />
+            <JFXTextField fx:id="txtBalance" labelFloat="true" layoutX="87.0" layoutY="269.0" prefHeight="51.0" prefWidth="238.0" promptText="Balance" style="-fx-background-color: f1f2f6;" />
+            <JFXTextField fx:id="txtPaidCash" labelFloat="true" layoutX="83.0" layoutY="181.0" onAction="#txtPaidCashOnAction" prefHeight="51.0" prefWidth="238.0" promptText="Cash" style="-fx-background-color: f1f2f6;" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="749.0" layoutY="18.0" opacity="0.74" prefHeight="429.0" prefWidth="837.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
          <children>
-            <JFXTextField fx:id="txtQTY" labelFloat="true" layoutX="101.0" layoutY="331.0" onKeyReleased="#calEvent" prefHeight="51.0" prefWidth="281.0" promptText="Quantity" style="-fx-background-color: white; -fx-background-radius: 30;" />
-            <JFXTextField fx:id="txtDiscount" labelFloat="true" layoutX="532.0" layoutY="331.0" onKeyReleased="#txtDiscountOnAction" prefHeight="51.0" prefWidth="281.0" promptText="Discount" style="-fx-background-color: white; -fx-background-radius: 30;" />
+            <JFXTextField fx:id="txtQTY" labelFloat="true" layoutX="95.0" layoutY="331.0" onAction="#txtQTYOnAcion" onKeyReleased="#calEvent" prefHeight="51.0" prefWidth="281.0" promptText="Quantity" style="-fx-front-size: 25;" />
+            <JFXTextField fx:id="txtDiscount" labelFloat="true" layoutX="532.0" layoutY="331.0" onKeyReleased="#txtDiscountOnAction" prefHeight="51.0" prefWidth="281.0" promptText="Discount" style="-fx-front-size: 25;" />
+            <JFXComboBox fx:id="cmbSuplimetnId" editable="true" layoutX="376.0" layoutY="85.0" onAction="#cmbSuplimetnIdOnAction" prefHeight="55.0" prefWidth="130.0" promptText="Supliment ID" style="-fx-background-radius: 30;" />
+            <JFXComboBox fx:id="cmbType" layoutX="595.0" layoutY="29.0" onAction="#cmbTypeOnAction" prefHeight="51.0" prefWidth="228.0" promptText="Type" />
+            <Label fx:id="lblSupliments" layoutX="46.0" layoutY="14.0" text="Supliment Details">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPayments" layoutX="43.0" layoutY="13.0" text="Payments">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtMemSalary" labelFloat="true" layoutX="312.0" layoutY="306.0" prefHeight="51.0" prefWidth="281.0" promptText="MemberShip Fee" style="-fx-front-size: 25;" />
+            <JFXTextField fx:id="txtGoalName" labelFloat="true" layoutX="312.0" layoutY="104.0" prefHeight="51.0" prefWidth="281.0" promptText="Goal" style="-fx-front-size: 25;" />
+            <JFXTextField fx:id="txtMemShip" labelFloat="true" layoutX="312.0" layoutY="203.0" prefHeight="51.0" prefWidth="281.0" promptText="Member Ship" style="-fx-front-size: 25;" />
+            <Label fx:id="lblPayID" layoutX="132.0" layoutY="81.0" prefHeight="44.0" prefWidth="155.0" style="-fx-background-color: #1abc9c; -fx-background-radius: 30;" text=" " />
+            <Label layoutX="56.0" layoutY="96.0" text="Pay ID" />
          </children>
       </AnchorPane>
-      <Label layoutX="782.0" layoutY="67.0" text="Supliment Details">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <JFXComboBox fx:id="cmbSuplimetnId" layoutX="1132.0" layoutY="55.0" onAction="#cmbSuplimetnIdOnAction" prefHeight="55.0" prefWidth="215.0" promptText="Supliment ID" style="-fx-background-radius: 30;" />
-      <JFXTextField fx:id="txtProductName" labelFloat="true" layoutX="1278.0" layoutY="151.0" prefHeight="51.0" prefWidth="281.0" promptText="Product Name" style="-fx-background-radius: 30;" />
-      <JFXTextField fx:id="txtPrice" labelFloat="true" layoutX="842.0" layoutY="256.0" prefHeight="51.0" prefWidth="281.0" promptText="Price" style="-fx-background-radius: 30;" />
-      <JFXTextField fx:id="txtAvalbleQTY" labelFloat="true" layoutX="1278.0" layoutY="256.0" prefHeight="51.0" prefWidth="281.0" promptText="Available Quantity" style="-fx-background-radius: 30;" />
-      <JFXTextField fx:id="txtID" labelFloat="true" layoutX="842.0" layoutY="151.0" prefHeight="55.0" prefWidth="281.0" promptText="ID" style="-fx-background-radius: 30;" />
+      <JFXTextField fx:id="txtProductName" labelFloat="true" layoutX="1278.0" layoutY="151.0" prefHeight="51.0" prefWidth="281.0" promptText="Product Name" style="-fx-front-size: 25;" />
+      <JFXTextField fx:id="txtPrice" labelFloat="true" layoutX="842.0" layoutY="256.0" prefHeight="51.0" prefWidth="281.0" promptText="Price" style="-fx-front-size: 25;" />
+      <JFXTextField fx:id="txtAvalbleQTY" labelFloat="true" layoutX="1278.0" layoutY="256.0" prefHeight="51.0" prefWidth="281.0" promptText="Available Quantity" style="-fx-front-size: 25;" />
+      <JFXTextField fx:id="txtID" labelFloat="true" layoutX="842.0" layoutY="151.0" prefHeight="55.0" prefWidth="281.0" promptText="ID" style="-fx-front-size: 25;" />
       <TableView fx:id="tblSupliment" layoutX="14.0" layoutY="486.0" opacity="0.83" prefHeight="398.0" prefWidth="1000.0">
          <columns>
             <TableColumn fx:id="colID" prefWidth="120.0" text="ID" />
@@ -106,6 +118,16 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <JFXRadioButton fx:id="rdoCash" layoutX="1277.0" layoutY="525.0" onAction="#rdoCashOnAction" selected="true" text="Cash">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="rdoCard" layoutX="1469.0" layoutY="525.0" onAction="#rdoCardOnAction" text="Card">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXRadioButton>
    </children>
    <effect>
       <DropShadow />

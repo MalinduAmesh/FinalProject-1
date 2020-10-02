@@ -19,18 +19,12 @@ public class AppIntializer extends Application {
     public void start(Stage primaryStage) throws IOException {
 
 
-        Parent stage = FXMLLoader.load(this.getClass().getResource("view/DashBordForm.fxml"));
+        Parent stage = FXMLLoader.load(this.getClass().getResource("view/InstructorForm.fxml"));
         primaryStage.setScene(new Scene(stage));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
         new FadeIn(stage).play();
 
-/*
-        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("view/MakeWorkoutDetailsForm.fxml"))));
-        System.out.println("Custom Entity Want Create");
-        primaryStage.show();
-
-*/
 
     }
 }

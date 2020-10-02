@@ -8,6 +8,16 @@ public class SuplimentDTO {
     private int suplimQTY;
     private double suplimCost;
 
+    @Override
+    public String toString() {
+        return "SuplimentDTO{" +
+                "suplimId='" + suplimId + '\'' +
+                ", suplimName='" + suplimName + '\'' +
+                ", suplimQTY=" + suplimQTY +
+                ", suplimCost=" + suplimCost +
+                '}';
+    }
+
     public SuplimentDTO() {
     }
 

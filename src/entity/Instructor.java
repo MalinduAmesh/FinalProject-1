@@ -4,23 +4,31 @@ public class Instructor {
 
     private String InstructID;
     private String InstructName;
+    private String InstructorNIC;
     private String InstructGender;
     private String InstructNumber;
-    private String InstructJoinDate;
-    private String InstructCost;
-    private String InstructPayMonth;
+    private String InstrDOB;
+    private String InsStatus;
 
     public Instructor() {
     }
 
-    public Instructor(String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth) {
+    public Instructor(String instructID, String instructName, String instructorNIC, String instructGender, String instructNumber, String instrDOB, String insStatus) {
         InstructID = instructID;
         InstructName = instructName;
+        InstructorNIC = instructorNIC;
         InstructGender = instructGender;
         InstructNumber = instructNumber;
-        InstructJoinDate = instructJoinDate;
-        InstructCost = instructCost;
-        InstructPayMonth = instructPayMonth;
+        InstrDOB = instrDOB;
+        InsStatus = insStatus;
+    }
+
+    public String getInsStatus() {
+        return InsStatus;
+    }
+
+    public void setInsStatus(String insStatus) {
+        InsStatus = insStatus;
     }
 
     public String getInstructID() {
@@ -39,6 +47,14 @@ public class Instructor {
         InstructName = instructName;
     }
 
+    public String getInstructorNIC() {
+        return InstructorNIC;
+    }
+
+    public void setInstructorNIC(String instructorNIC) {
+        InstructorNIC = instructorNIC;
+    }
+
     public String getInstructGender() {
         return InstructGender;
     }
@@ -55,27 +71,11 @@ public class Instructor {
         InstructNumber = instructNumber;
     }
 
-    public String getInstructJoinDate() {
-        return InstructJoinDate;
+    public String getInstrDOB() {
+        return InstrDOB;
     }
 
-    public void setInstructJoinDate(String instructJoinDate) {
-        InstructJoinDate = instructJoinDate;
-    }
-
-    public String getInstructCost() {
-        return InstructCost;
-    }
-
-    public void setInstructCost(String instructCost) {
-        InstructCost = instructCost;
-    }
-
-    public String getInstructPayMonth() {
-        return InstructPayMonth;
-    }
-
-    public void setInstructPayMonth(String instructPayMonth) {
-        InstructPayMonth = instructPayMonth;
+    public void setInstrDOB(String instrDOB) {
+        InstrDOB = instrDOB;
     }
 }

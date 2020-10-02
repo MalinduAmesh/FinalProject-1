@@ -12,7 +12,15 @@ public class InstructorDAOImpl implements InstructorDAO {
     @Override
     public boolean add(Instructor a) throws SQLException, ClassNotFoundException {
         String sql = "Insert Into instructor values(?,?,?,?,?,?,?)";
-        return CrudUtil.executeUpdate(sql,a.getInstructID(),a.getInstructName(),a.getInstructGender(),a.getInstructNumber(),a.getInstructJoinDate(),a.getInstructCost(),a.getInstructPayMonth());
+        return CrudUtil.executeUpdate(sql,
+                a.getInstructID(),
+                a.getInstructName(),
+                a.getInstructorNIC(),
+                a.getInstructGender(),
+                a.getInstructNumber(),
+                a.getInstrDOB(),
+                a.getInsStatus()
+        );
     }
 
     @Override
@@ -23,8 +31,16 @@ public class InstructorDAOImpl implements InstructorDAO {
 
     @Override
     public boolean update(Instructor a) throws SQLException, ClassNotFoundException {
-        String sql = "update instructor set traName = ?,tragender = ?,traNum = ?,traJoinDate =?,traCost =?,traPayMonth =? where traId =?";
-        return CrudUtil.executeUpdate(sql,a.getInstructName(),a.getInstructGender(),a.getInstructNumber(),a.getInstructJoinDate(),a.getInstructCost(),a.getInstructPayMonth(),a.getInstructID());
+        String sql = "update instructor set traName = ?,nic = ?,tragender = ?,traContact =?,traDOB=?,traStatus=? where traId =?";
+        return CrudUtil.executeUpdate(sql,
+                a.getInstructName(),
+                a.getInstructorNIC(),
+                a.getInstructGender(),
+                a.getInstructNumber(),
+                a.getInstrDOB(),
+                a.getInstructID(),
+                a.getInsStatus()
+        );
     }
 
     @Override

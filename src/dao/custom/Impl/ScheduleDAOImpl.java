@@ -1,5 +1,7 @@
 package dao.custom.Impl;
 
+import com.sun.org.apache.bcel.internal.generic.Select;
+import dao.CrudDAO;
 import dao.CrudUtil;
 import dao.custom.ScheduleDAO;
 import entity.Schedule;
@@ -68,4 +70,31 @@ public class ScheduleDAOImpl implements ScheduleDAO {
         }
         return list;
     }
+
+    @Override
+    public String getLastID() throws SQLException, ClassNotFoundException {
+       String sql = "Select schId from schedule order BY schId desc LIMIT 1";
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        return rst.next() ? rst.getString("schId") :null;
+    }
+
+    @Override
+    public Schedule getGoalAll(String a) throws SQLException, ClassNotFoundException {
+        String sql ="Select * from schedule where schGoal = ?";
+        ResultSet rst = CrudUtil.executeQuery(sql,a);
+            if (rst.next()){
+                return new Schedule(
+                        rst.getString(1),
+                        rst.getString(2),
+                        rst.getString(3),
+                        rst.getString(4),
+                        rst.getString(5),
+                        rst.getString(6),
+                        rst.getString(7)
+                );
+        }
+        return null;
+    }
+
 }
+

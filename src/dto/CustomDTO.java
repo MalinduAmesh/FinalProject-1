@@ -17,9 +17,8 @@ public class CustomDTO {
 
     private String equipmentId;
     private String equipmentName;
-    private String equipmentImage;
-    private String equipmentQty;
-    private String equipmentCost;
+    private int equipmentQty;
+    private double equipmentCost;
 
     private String InstructID;
     private String InstructName;
@@ -44,7 +43,9 @@ public class CustomDTO {
     private String payStatus;
 
     private String regID;
-    private String memShip;
+    private String regInsId;
+    private String regCusId;
+    private String reMmemShip;
     private String regStartDate;
     private String regEndDate;
     private String regFeeType;
@@ -67,30 +68,66 @@ public class CustomDTO {
     private String discount;
     private String totalQTy;
 
+    private String memShipid;
+    private String name;
+    private String duration;
+    private String Fee;
 
-    // txtID.getText(), txtProductName.getText(),txtPrice.getText(),txtQTY.getText(),txtDiscount.getText(),txtTotal.getText());
+    private String assWorkId;
+    private String assMemID;
+    private String assSchID;
+    private String assInDate;
+    private String assOutDate;
 
-/*
-    public CustomDTO(String txtID, String suplimId, String suplimName, String total, String discount, String totalQTy) {
-        this.t
-        this.suplimId = suplimId;
-        this.suplimName = suplimName;
-        this.total = total;
-        this.discount = discount;
-        this.totalQTy = totalQTy;
-    }*/
+
+
+    public CustomDTO(String customerID, String schGoal, String assWorkId, String assInDate, String assOutDate) {
+        this.customerID = customerID;
+        this.schGoal = schGoal;
+        this.assWorkId = assWorkId;
+        this.assInDate = assInDate;
+        this.assOutDate = assOutDate;
+    }
+
+    public CustomDTO(String equipmentId, String equipmentName, double equipmentCost, String schGoal) {
+            this.equipmentId = equipmentId;
+        this.equipmentName = equipmentName;
+        this.equipmentCost = equipmentCost;
+        this.schGoal = schGoal;
+    }
+
+    public CustomDTO(String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String regID, String regInsId, String regCusId, String reMmemShip, String regStartDate, String regEndDate, String regFeeType, String regFee) {
+        this.custID = custID;
+        this.custName = custName;
+        this.custNic = custNic;
+        this.custAddress = custAddress;
+        this.custContact = custContact;
+        this.custDOB = custDOB;
+        this.custGender = custGender;
+        this.custEmail = custEmail;
+        this.regID = regID;
+        this.regInsId =regInsId;
+        this.regCusId = regCusId;
+        this.reMmemShip = reMmemShip;
+        this.regStartDate = regStartDate;
+        this.regEndDate = regEndDate;
+        this.regFeeType = regFeeType;
+        this.regFee = regFee;
+
+    }
+
 
     public CustomDTO(String suplimId, String suplimName, double suplimCost,  String discount, String totalQTy,double total) {
         this.suplimId = suplimId;
         this.suplimName = suplimName;
         this.suplimCost = suplimCost;
-
         this.discount = discount;
         this.totalQTy = totalQTy;
         this.total = total;
     }
 
-    public CustomDTO(String attendID, String customerID, String attendDate, String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String equipmentId, String equipmentName, String equipmentImage, String equipmentQty, String equipmentCost, String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth, String orderDetailID, String orederDetailQTY, String orederDetailUnitP, String ordersID, String ordersDate, String ordersCustomerID, String ordType, String payID, String payType, String payAmount, String payStatus, String regID, String memShip, String regStartDate, String regEndDate, String regFeeType, String regFee, String schId, String schGoal, String schType, String schLevel, String schDuration, String schPerWeek, String schPerTime, String suplimId, String suplimName, String suplimQTY, double suplimCost, double total, String discount, String totalQTy) {
+
+    public CustomDTO(String attendID, String customerID, String attendDate, String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String equipmentId, String equipmentName, int equipmentQty, double equipmentCost, String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth, String orderDetailID, String orederDetailQTY, String orederDetailUnitP, String ordersID, String ordersDate, String ordersCustomerID, String ordType, String payID, String payType, String payAmount, String payStatus, String regID, String regInsId, String regCusId, String reMmemShip, String regStartDate, String regEndDate, String regFeeType, String regFee, String schId, String schGoal, String schType, String schLevel, String schDuration, String schPerWeek, String schPerTime, String suplimId, String suplimName, String suplimQTY, double suplimCost, double total, String discount, String totalQTy, String memShipid, String name, String duration, String fee) {
         this.attendID = attendID;
         this.customerID = customerID;
         this.attendDate = attendDate;
@@ -104,7 +141,6 @@ public class CustomDTO {
         this.custEmail = custEmail;
         this.equipmentId = equipmentId;
         this.equipmentName = equipmentName;
-        this.equipmentImage = equipmentImage;
         this.equipmentQty = equipmentQty;
         this.equipmentCost = equipmentCost;
         InstructID = instructID;
@@ -126,7 +162,9 @@ public class CustomDTO {
         this.payAmount = payAmount;
         this.payStatus = payStatus;
         this.regID = regID;
-        this.memShip = memShip;
+        this.regInsId = regInsId;
+        this.regCusId = regCusId;
+        this.reMmemShip = reMmemShip;
         this.regStartDate = regStartDate;
         this.regEndDate = regEndDate;
         this.regFeeType = regFeeType;
@@ -145,6 +183,50 @@ public class CustomDTO {
         this.total = total;
         this.discount = discount;
         this.totalQTy = totalQTy;
+        this.memShipid = memShipid;
+        this.name = name;
+        this.duration = duration;
+        Fee = fee;
+    }
+
+    public String getAssWorkId() {
+        return assWorkId;
+    }
+
+    public void setAssWorkId(String assWorkId) {
+        this.assWorkId = assWorkId;
+    }
+
+    public String getAssMemID() {
+        return assMemID;
+    }
+
+    public void setAssMemID(String assMemID) {
+        this.assMemID = assMemID;
+    }
+
+    public String getAssSchID() {
+        return assSchID;
+    }
+
+    public void setAssSchID(String assSchID) {
+        this.assSchID = assSchID;
+    }
+
+    public String getAssInDate() {
+        return assInDate;
+    }
+
+    public void setAssInDate(String assInDate) {
+        this.assInDate = assInDate;
+    }
+
+    public String getAssOutDate() {
+        return assOutDate;
+    }
+
+    public void setAssOutDate(String assOutDate) {
+        this.assOutDate = assOutDate;
     }
 
     public String getAttendID() {
@@ -251,27 +333,19 @@ public class CustomDTO {
         this.equipmentName = equipmentName;
     }
 
-    public String getEquipmentImage() {
-        return equipmentImage;
-    }
-
-    public void setEquipmentImage(String equipmentImage) {
-        this.equipmentImage = equipmentImage;
-    }
-
-    public String getEquipmentQty() {
+    public int getEquipmentQty() {
         return equipmentQty;
     }
 
-    public void setEquipmentQty(String equipmentQty) {
+    public void setEquipmentQty(int equipmentQty) {
         this.equipmentQty = equipmentQty;
     }
 
-    public String getEquipmentCost() {
+    public double getEquipmentCost() {
         return equipmentCost;
     }
 
-    public void setEquipmentCost(String equipmentCost) {
+    public void setEquipmentCost(double equipmentCost) {
         this.equipmentCost = equipmentCost;
     }
 
@@ -427,12 +501,28 @@ public class CustomDTO {
         this.regID = regID;
     }
 
-    public String getMemShip() {
-        return memShip;
+    public String getRegInsId() {
+        return regInsId;
     }
 
-    public void setMemShip(String memShip) {
-        this.memShip = memShip;
+    public void setRegInsId(String regInsId) {
+        this.regInsId = regInsId;
+    }
+
+    public String getRegCusId() {
+        return regCusId;
+    }
+
+    public void setRegCusId(String regCusId) {
+        this.regCusId = regCusId;
+    }
+
+    public String getReMmemShip() {
+        return reMmemShip;
+    }
+
+    public void setReMmemShip(String reMmemShip) {
+        this.reMmemShip = reMmemShip;
     }
 
     public String getRegStartDate() {
@@ -577,5 +667,37 @@ public class CustomDTO {
 
     public void setTotalQTy(String totalQTy) {
         this.totalQTy = totalQTy;
+    }
+
+    public String getMemShipid() {
+        return memShipid;
+    }
+
+    public void setMemShipid(String memShipid) {
+        this.memShipid = memShipid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getFee() {
+        return Fee;
+    }
+
+    public void setFee(String fee) {
+        Fee = fee;
     }
 }

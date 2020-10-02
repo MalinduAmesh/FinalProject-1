@@ -4,8 +4,12 @@ import bo.SuperBO;
 import dto.CustomerDTO;
 import javafx.collections.ObservableList;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public interface MemberForm extends SuperBO {
 
-    public CustomerDTO searchCustomer(String s);
-    public ObservableList<CustomerDTO> getAllCustomer();
+    CustomerDTO searchAllMemeName();
+
+    ObservableList<CustomerDTO> loadTables() throws SQLException, ClassNotFoundException;
 }

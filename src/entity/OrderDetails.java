@@ -9,6 +9,16 @@ public class OrderDetails {
     public OrderDetails() {
     }
 
+    @Override
+    public String toString() {
+        return "OrderDetails{" +
+                "OrderDetailID='" + OrderDetailID + '\'' +
+                ", suplimeID='" + suplimeID + '\'' +
+                ", orederDetailQTY=" + orederDetailQTY +
+                ", orederDetailUnitP=" + orederDetailUnitP +
+                '}';
+    }
+
     public OrderDetails(String orderDetailID, String suplimeID, int orederDetailQTY, double orederDetailUnitP) {
         OrderDetailID = orderDetailID;
         this.suplimeID = suplimeID;

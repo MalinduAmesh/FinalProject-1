@@ -68,4 +68,15 @@ public class RegisterDAOImpl implements RegisterDAO {
         }
         return list;
     }
+
+    @Override
+    public String getLastID() throws SQLException, ClassNotFoundException {
+
+        String sql = "Select regId from register order BY regId desc LIMIT 1";
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        return rst.next() ? rst.getString("regId") : null;
+
+
+    }
+
 }

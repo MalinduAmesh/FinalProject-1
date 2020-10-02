@@ -22,15 +22,25 @@ public class WorkOutFormController {
 
 
     public void AssignworkoutOnAction(MouseEvent mouseEvent) throws IOException {
-        root.getChildren().clear();
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource(""));
-        root.getChildren().setAll(pane.getChildren());
+
 
     }
 
     public void btnCreateWorkOnAction(ActionEvent actionEvent) throws IOException {
         root.getChildren().clear();
         AnchorPane poot = FXMLLoader.load(this.getClass().getResource("../view/MakeWorkoutDetailsForm.fxml"));
+        root.getChildren().setAll(poot.getChildren());
+    }
+
+    public void AssignworkoutOnActionn(ActionEvent actionEvent) throws IOException {
+        root.getChildren().clear();
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../view/AssignWorkOutForm.fxml"));
+        root.getChildren().setAll(pane.getChildren());
+    }
+
+    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
+        root.getChildren().clear();
+        AnchorPane poot = FXMLLoader.load(this.getClass().getResource("../view/WorkOutForm.fxml"));
         root.getChildren().setAll(poot.getChildren());
     }
 }

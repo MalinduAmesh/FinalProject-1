@@ -18,16 +18,16 @@
       <AnchorPane prefHeight="927.0" prefWidth="1356.0" />
       <AnchorPane fx:id="root" prefHeight="940.0" prefWidth="1647.0">
          <children>
-            <TableView layoutX="82.0" layoutY="262.0" prefHeight="607.0" prefWidth="1521.0" style="-fx-background-color: #e6f4f1;">
+            <TableView fx:id="tblMemebers" layoutX="32.0" layoutY="262.0" opacity="0.81" prefHeight="607.0" prefWidth="1588.0" style="-fx-background-color: #e6f4f1;">
                <columns>
-                  <TableColumn prefWidth="130.0" text="Photo" />
-                  <TableColumn prefWidth="116.0" text="Member ID" />
-                  <TableColumn prefWidth="244.0" text="Member Name" />
-                  <TableColumn prefWidth="203.0" text="Contact" />
-                  <TableColumn prefWidth="164.0" text="Gender" />
-                  <TableColumn minWidth="0.0" prefWidth="219.0" text="Joining Date" />
-                  <TableColumn prefWidth="214.0" text="Expire Date" />
-                  <TableColumn prefWidth="230.0" text="Tools" />
+                  <TableColumn fx:id="colPhoto" prefWidth="130.0" text="Photo" />
+                  <TableColumn fx:id="colMemID" prefWidth="142.0" text="Member ID" />
+                  <TableColumn fx:id="colMemName" prefWidth="218.0" text="Member Name" />
+                  <TableColumn fx:id="colNIC" prefWidth="203.0" text="NIC" />
+                  <TableColumn fx:id="colContact" prefWidth="164.0" text="Member Contact" />
+                  <TableColumn fx:id="colGender" minWidth="0.0" prefWidth="219.0" text="Member Gender" />
+                  <TableColumn fx:id="colDOB" prefWidth="251.0" text="Member DOB" />
+                  <TableColumn fx:id="colTools" prefWidth="260.0" text="Tools" />
                </columns>
             </TableView>
             <Label layoutX="93.0" layoutY="64.0" text="Member List" textFill="WHITE">
@@ -45,7 +45,7 @@
                   <Font size="16.0" />
                </font></JFXTextField>
             <JFXButton layoutX="99.0" layoutY="26.0" text="." />
-            <Button layoutX="1401.0" layoutY="53.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="66.0" prefWidth="212.0" style="-fx-background-radius: 30; -fx-border-color: red; -fx-border-image-insets: 0.5; -fx-border-radius: 30; -fx-background-color: f1f2f6;" text="Register Member">
+            <Button fx:id="btnRegister" layoutX="1401.0" layoutY="53.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="66.0" prefWidth="212.0" style="-fx-background-radius: 30; -fx-border-color: red; -fx-border-image-insets: 0.5; -fx-border-radius: 30; -fx-background-color: f1f2f6;" text="Register Member">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>

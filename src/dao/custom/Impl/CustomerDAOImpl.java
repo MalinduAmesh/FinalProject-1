@@ -66,4 +66,17 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         return list;
     }
+
+    @Override
+    public String getLastID() throws SQLException, ClassNotFoundException {
+/*
+        String sql = "Select memShipid From memberShip order BY memShipid desc LIMIT 1";
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        return rst.next() ? rst.getString("memShipid") : null;
+*/
+
+        String sql ="Select cusId From customer order BY cusId desc LIMIT 1";
+        ResultSet rsr = CrudUtil.executeQuery(sql);
+        return rsr.next() ? rsr.getString("cusId") : null;
+    }
 }

@@ -13,6 +13,10 @@ public class RegisterDTO {
     public RegisterDTO() {
     }
 
+    public RegisterDTO(String regID) {
+        this.regID = regID;
+    }
+
     public RegisterDTO(String regID, String traID, String cusID, String memShip, String regStartDate, String regEndDate, String regFeeType, String regFee) {
         this.regID = regID;
         this.traID = traID;

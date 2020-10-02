@@ -47,7 +47,7 @@ public class DashBordFormController {
         Parent stage = FXMLLoader.load(this.getClass().getResource("../view/MemberAttendanceForm.fxml"));
         root.getChildren().clear();
         root.getChildren().add(stage);
-        new BounceIn(stage).play();
+        new FadeIn(stage).play();
         /*etUi("MemberAttendanceForm");*/
 
     }
@@ -67,7 +67,7 @@ public class DashBordFormController {
         Parent stage = FXMLLoader.load(this.getClass().getResource("../view/WorkOutForm.fxml"));
         root.getChildren().clear();
         root.getChildren().add(stage);
-        new BounceIn(stage).play();
+        new FadeIn(stage).play();
         /*setUi("WorkOutForm");*/
     }
 

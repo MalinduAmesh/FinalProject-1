@@ -46,9 +46,9 @@ public class CustomEntity {
     private String payStatus;
 
     private String regID;
-    //private String traID;
-    //private String cusID;
-    private String memShip;
+    private String regInsId;
+    private String regCusId;
+    private String reMmemShip;
     private String regStartDate;
     private String regEndDate;
     private String regFeeType;
@@ -56,7 +56,7 @@ public class CustomEntity {
 
     private String schedulID;
     private String schedulName;
-    //private String equipID;
+    //private String reMmemShip;
     private String schedulAddTime;
     private String schedulDuration;
 
@@ -69,9 +69,53 @@ public class CustomEntity {
     private String discount;
     private String totalQTy;
 
+    private String memShipid;
+    private String name;
+    private String duration;
+    private String Fee;
+
+    private String assWorkId;
+    private String assMemID;
+    private String assSchID;
+    private String assInDate;
+    private String assOutDate;
+
+    private String schId;
+    private String schGoal;
+    private String schType;
+    private String schLevel;
+    private String schDuration;
+    private String schPerWeek;
+    private String schPerTime;
+
+    public CustomEntity(String custID, String schGoal, String assWorkId, String assInDate, String assOutDate) {
+        this.custID = custID;
+        this.schGoal = schGoal;
+        this.assWorkId = assWorkId;
+        this.assInDate = assInDate;
+        this.assOutDate = assOutDate;
+    }
     public CustomEntity() {
     }
+    public CustomEntity(String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String regID,String regInsId,String regCusId, String reMmemShip,String regStartDate, String regEndDate, String regFeeType, String regFee) {
+        this.custID = custID;
+        this.custName = custName;
+        this.custNic = custNic;
+        this.custAddress = custAddress;
+        this.custContact = custContact;
+        this.custDOB = custDOB;
+        this.custGender = custGender;
+        this.custEmail = custEmail;
+        this.regID = regID;
+        this.regInsId =regInsId;
+        this.regCusId = regCusId;
+        this.reMmemShip = reMmemShip;
+        this.regStartDate = regStartDate;
+        this.regEndDate = regEndDate;
+        this.regFeeType = regFeeType;
+        this.regFee = regFee;
 
+    }
     public CustomEntity(String suplimId, String suplimName, double suplimCost, double total, String discount, String totalQTy) {
         this.suplimId = suplimId;
         this.suplimName = suplimName;
@@ -81,7 +125,127 @@ public class CustomEntity {
         this.totalQTy = totalQTy;
     }
 
-    public CustomEntity(String attendID, String attendDate, String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String custWeigth, String custHeight, String equipmentId, String equipmentName, String equipmentImage, String equipmentQty, String equipmentCost, String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth, String orederDetailQTY, String orederDetailUnitP, String ordersID, String ordersDate, String payID, String payType, String payAmount, String payStatus, String regID, String memShip, String regStartDate, String regEndDate, String regFeeType, String regFee, String schedulID, String schedulName, String schedulAddTime, String schedulDuration, String suplimId, String suplimName, String suplimQTY, double suplimCost, double total, String discount, String totalQTy) {
+    public String getSchId() {
+        return schId;
+    }
+
+    public void setSchId(String schId) {
+        this.schId = schId;
+    }
+
+    public String getSchGoal() {
+        return schGoal;
+    }
+
+    public void setSchGoal(String schGoal) {
+        this.schGoal = schGoal;
+    }
+
+    public String getSchType() {
+        return schType;
+    }
+
+    public void setSchType(String schType) {
+        this.schType = schType;
+    }
+
+    public String getSchLevel() {
+        return schLevel;
+    }
+
+    public void setSchLevel(String schLevel) {
+        this.schLevel = schLevel;
+    }
+
+    public String getSchDuration() {
+        return schDuration;
+    }
+
+    public void setSchDuration(String schDuration) {
+        this.schDuration = schDuration;
+    }
+
+    public String getSchPerWeek() {
+        return schPerWeek;
+    }
+
+    public void setSchPerWeek(String schPerWeek) {
+        this.schPerWeek = schPerWeek;
+    }
+
+    public String getSchPerTime() {
+        return schPerTime;
+    }
+
+    public void setSchPerTime(String schPerTime) {
+        this.schPerTime = schPerTime;
+    }
+
+    public String getAssWorkId() {
+        return assWorkId;
+    }
+
+    public void setAssWorkId(String assWorkId) {
+        this.assWorkId = assWorkId;
+    }
+
+    public String getAssMemID() {
+        return assMemID;
+    }
+
+    public void setAssMemID(String assMemID) {
+        this.assMemID = assMemID;
+    }
+
+    public String getAssSchID() {
+        return assSchID;
+    }
+
+    public void setAssSchID(String assSchID) {
+        this.assSchID = assSchID;
+    }
+
+    public String getAssInDate() {
+        return assInDate;
+    }
+
+    public void setAssInDate(String assInDate) {
+        this.assInDate = assInDate;
+    }
+
+    public String getAssOutDate() {
+        return assOutDate;
+    }
+
+    public void setAssOutDate(String assOutDate) {
+        this.assOutDate = assOutDate;
+    }
+
+    public String getRegInsId() {
+        return regInsId;
+    }
+
+    public void setRegInsId(String regInsId) {
+        this.regInsId = regInsId;
+    }
+
+    public String getRegCusId() {
+        return regCusId;
+    }
+
+    public void setRegCusId(String regCusId) {
+        this.regCusId = regCusId;
+    }
+
+    public String getReMmemShip() {
+        return reMmemShip;
+    }
+
+    public void setReMmemShip(String reMmemShip) {
+        this.reMmemShip = reMmemShip;
+    }
+
+    public CustomEntity(String attendID, String attendDate, String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail, String custWeigth, String custHeight, String equipmentId, String equipmentName, String equipmentImage, String equipmentQty, String equipmentCost, String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth, String orederDetailQTY, String orederDetailUnitP, String ordersID, String ordersDate, String payID, String payType, String payAmount, String payStatus, String regID, String reMmemShip, String regStartDate, String regEndDate, String regFeeType, String regFee, String schedulID, String schedulName, String schedulAddTime, String schedulDuration, String suplimId, String suplimName, String suplimQTY, double suplimCost, double total, String discount, String totalQTy, String memShipid, String name, String duration, String fee) {
         this.attendID = attendID;
         this.attendDate = attendDate;
         this.custID = custID;
@@ -115,7 +279,7 @@ public class CustomEntity {
         this.payAmount = payAmount;
         this.payStatus = payStatus;
         this.regID = regID;
-        this.memShip = memShip;
+        this.reMmemShip = reMmemShip;
         this.regStartDate = regStartDate;
         this.regEndDate = regEndDate;
         this.regFeeType = regFeeType;
@@ -131,30 +295,10 @@ public class CustomEntity {
         this.total = total;
         this.discount = discount;
         this.totalQTy = totalQTy;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public String getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(String discount) {
-        this.discount = discount;
-    }
-
-    public String getTotalQTy() {
-        return totalQTy;
-    }
-
-    public void setTotalQTy(String totalQTy) {
-        this.totalQTy = totalQTy;
+        this.memShipid = memShipid;
+        this.name = name;
+        this.duration = duration;
+        Fee = fee;
     }
 
     public String getAttendID() {
@@ -422,11 +566,11 @@ public class CustomEntity {
     }
 
     public String getMemShip() {
-        return memShip;
+        return reMmemShip;
     }
 
-    public void setMemShip(String memShip) {
-        this.memShip = memShip;
+    public void setMemShip(String reMmemShip) {
+        this.reMmemShip = reMmemShip;
     }
 
     public String getRegStartDate() {
@@ -523,5 +667,61 @@ public class CustomEntity {
 
     public void setSuplimCost(double suplimCost) {
         this.suplimCost = suplimCost;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public String getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
+    }
+
+    public String getTotalQTy() {
+        return totalQTy;
+    }
+
+    public void setTotalQTy(String totalQTy) {
+        this.totalQTy = totalQTy;
+    }
+
+    public String getMemShipid() {
+        return memShipid;
+    }
+
+    public void setMemShipid(String memShipid) {
+        this.memShipid = memShipid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getFee() {
+        return Fee;
+    }
+
+    public void setFee(String fee) {
+        Fee = fee;
     }
 }

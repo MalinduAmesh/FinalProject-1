@@ -20,7 +20,7 @@
       </Label>
       <Separator layoutY="101.0" prefHeight="0.0" prefWidth="1666.0" />
 
-      <JFXButton layoutX="1335.0" layoutY="38.0" onMouseClicked="#AssignworkoutOnAction" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;" text="Assign WorkOut">
+      <JFXButton layoutX="1335.0" layoutY="38.0" onAction="#AssignworkoutOnActionn" style="-fx-background-color: white; -fx-background-radius: 30;" text="Assign WorkOut" textAlignment="RIGHT">
          <graphic>
             <ImageView fitHeight="41.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -33,7 +33,7 @@
          </font>
       </JFXButton>
       <JFXTextField fx:id="txtSearch" layoutX="756.0" layoutY="132.0" prefHeight="63.0" prefWidth="278.0" promptText="Search" unFocusColor="WHITE" />
-      <TableView fx:id="tblWorkOutDetails" layoutX="139.0" layoutY="259.0" prefHeight="673.0" prefWidth="1388.0">
+      <TableView fx:id="tblWorkOutDetails" layoutX="139.0" layoutY="259.0" opacity="0.81" prefHeight="673.0" prefWidth="1388.0">
         <columns>
           <TableColumn fx:id="colPhoto" prefWidth="297.0" text="Photo" />
           <TableColumn fx:id="colMemberName" prefWidth="285.0" text="Member Name" />
@@ -42,7 +42,7 @@
             <TableColumn fx:id="colTools" prefWidth="268.0" text="Tools" />
         </columns>
       </TableView>
-      <JFXButton fx:id="btnCreateWork" layoutX="1083.0" layoutY="37.0" onAction="#btnCreateWorkOnAction" onMouseClicked="#AssignworkoutOnAction" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;" text="Create WorkOut">
+      <JFXButton fx:id="btnCreateWork" layoutX="1083.0" layoutY="37.0" onAction="#btnCreateWorkOnAction" onMouseClicked="#AssignworkoutOnAction" style="-fx-background-color: white; -fx-background-radius: 30;" text="Create WorkOut">
          <graphic>
             <ImageView fitHeight="41.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -54,5 +54,6 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
+      <JFXButton layoutX="66.0" layoutY="121.0" onAction="#btnBackOnAction" prefHeight="53.0" prefWidth="133.0" style="-fx-background-color: white; -fx-background-radius: 100;" text="Back" />
    </children>
 </AnchorPane>

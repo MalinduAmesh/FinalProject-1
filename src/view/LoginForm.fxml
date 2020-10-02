@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1024.0" prefWidth="1544.0" style="-fx-background-radius: 100;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="1100.0" fitWidth="1544.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assests/11799.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane id=" linear-gradient(to right top, #372c05, #5d5631, #85845e, #b0b48f, #dce7c4)" fx:id="root" layoutX="-1.0" opacity="0.91" prefHeight="1029.0" prefWidth="486.0" style="-fx-background-color: #dcdde1;">
+         <children>
+            <JFXTextField fx:id="txtUserName" focusColor="#214ccd" layoutX="88.0" layoutY="363.0" onAction="#txtUserNameOnAction" prefHeight="75.0" prefWidth="331.0" promptText="UserName" style="-fx-: red;" unFocusColor="BLACK">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXTextField>
+            <ImageView fx:id="con" fitHeight="236.0" fitWidth="250.0" layoutX="118.0" layoutY="119.0" onMouseEntered="#lblIconOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/BH%20logo%20non%20embosed.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnLogin" fitHeight="86.0" fitWidth="201.0" layoutX="147.0" layoutY="666.0" onMouseEntered="#enter" onMouseReleased="#btnLoginOnAcrtionFucka" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/login-button-png-18021(1).png" />
+               </image>
+            </ImageView>
+            <JFXPasswordField fx:id="txtPass" layoutX="88.0" layoutY="499.0" onAction="#txtPasswordOnAction" opacity="0.74" prefHeight="75.0" prefWidth="331.0" promptText="Password">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXPasswordField>
+            <ImageView fitHeight="50.0" fitWidth="39.0" layoutX="427.0" layoutY="28.0" onMouseReleased="#ExitOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/close-button-png-30225.png" />
+               </image>
+            </ImageView>
+         </children>
+         <styleClass>
+            <String fx:value="#095e5a" />
+            <String fx:value="#477f70" />
+            <String fx:value="#78a188" />
+            <String fx:value="#a9c4a4" />
+            <String fx:value="#dce7c4);" />
+         </styleClass>
+         <effect>
+            <DropShadow />
+         </effect></AnchorPane>
+   </children>
+</AnchorPane>

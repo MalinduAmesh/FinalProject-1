@@ -1,6 +1,22 @@
 package entity;
 
+import dto.RegisterDTO;
+import javafx.collections.ObservableList;
+
 public class Customer {
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "custID='" + custID + '\'' +
+                ", custName='" + custName + '\'' +
+                ", custNic='" + custNic + '\'' +
+                ", custAddress='" + custAddress + '\'' +
+                ", custContact='" + custContact + '\'' +
+                ", custDOB='" + custDOB + '\'' +
+                ", custGender='" + custGender + '\'' +
+                ", custEmail='" + custEmail + '\'' +
+                '}';
+    }
 
     private String custID;
     private String custName;
@@ -12,6 +28,24 @@ public class Customer {
     private String custEmail;
 
     public Customer() {
+    }
+
+    public Customer(String custID) {
+        this.custID = custID;
+    }
+
+    public Customer(String custID, String custName) {
+        this.custID = custID;
+        this.custName = custName;
+    }
+
+    public Customer(String custID, String custName, String custNic, String custAddress, String custContact, String custDOB) {
+        this.custID = custID;
+        this.custName = custName;
+        this.custNic = custNic;
+        this.custAddress = custAddress;
+        this.custContact = custContact;
+        this.custDOB = custDOB;
     }
 
     public Customer(String custID, String custName, String custNic, String custAddress, String custContact, String custDOB, String custGender, String custEmail) {

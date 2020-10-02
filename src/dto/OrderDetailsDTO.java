@@ -7,6 +7,15 @@ public class OrderDetailsDTO {
     private double orederDetailUnitP;
 
 
+    @Override
+    public String toString() {
+        return "OrderDetailsDTO{" +
+                "OrderDetailID='" + OrderDetailID + '\'' +
+                ", suplimeID='" + suplimeID + '\'' +
+                ", orederDetailQTY=" + orederDetailQTY +
+                ", orederDetailUnitP=" + orederDetailUnitP +
+                '}';
+    }
 
     public OrderDetailsDTO() {
     }

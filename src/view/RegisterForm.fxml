@@ -2,9 +2,12 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,60 +15,54 @@
 
 <AnchorPane prefHeight="926.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterFormController">
    <children>
-      <AnchorPane layoutX="842.0" layoutY="390.0" prefHeight="522.0" prefWidth="763.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
+      <AnchorPane layoutX="839.0" layoutY="23.0" opacity="0.78" prefHeight="486.0" prefWidth="763.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
          <children>
             <Label layoutX="24.0" layoutY="24.0" text="Register Details">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
             </Label>
-            <JFXComboBox fx:id="cmbRegMemberShip" layoutX="51.0" layoutY="282.0" prefHeight="40.0" prefWidth="286.0" promptText="Package" />
-            <JFXTextField fx:id="txtRegInstructor" labelFloat="true" layoutX="51.0" layoutY="195.0" prefHeight="40.0" prefWidth="286.0" promptText="Instructor" />
-            <JFXTextField fx:id="txtRegId" labelFloat="true" layoutX="51.0" layoutY="112.0" prefHeight="40.0" prefWidth="286.0" promptText="Reg  Id" />
-            <JFXTextField fx:id="txtRegEndDate" labelFloat="true" layoutX="439.0" layoutY="187.0" prefHeight="40.0" prefWidth="286.0" promptText="End Date" />
-            <JFXTextField fx:id="txtRegStartDate" labelFloat="true" layoutX="439.0" layoutY="112.0" prefHeight="40.0" prefWidth="286.0" promptText="Start Date" />
-            <JFXTextField fx:id="txtRegTotalFee" labelFloat="true" layoutX="439.0" layoutY="282.0" prefHeight="40.0" prefWidth="286.0" promptText="Total Fee" />
-            <JFXTextField fx:id="txtCusPaidFee" labelFloat="true" layoutX="439.0" layoutY="362.0" prefHeight="40.0" prefWidth="286.0" promptText="Paid Fee" />
-            <JFXTextField fx:id="txtCusChange" labelFloat="true" layoutX="51.0" layoutY="362.0" prefHeight="40.0" prefWidth="286.0" promptText="Change" />
-            <JFXRadioButton fx:id="rdoRegCash" layoutX="291.0" layoutY="460.0" text="Cash">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </JFXRadioButton>
-            <JFXRadioButton fx:id="rdoRegCard" layoutX="417.0" layoutY="460.0" text="Card">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </JFXRadioButton>
+            <JFXComboBox fx:id="cmbRegMemberShip" layoutX="50.0" layoutY="263.0" onAction="#cmbRegMemberShipOnAction" prefHeight="40.0" prefWidth="286.0" promptText="Package" />
+            <JFXDatePicker fx:id="dateStartDate" layoutX="50.0" layoutY="345.0" onAction="#dateStartDateOnAction" prefHeight="40.0" prefWidth="286.0" promptText="Start Date" />
+            <JFXDatePicker fx:id="dateEndDate" layoutX="410.0" layoutY="345.0" onAction="#dateEndDateOnAction" prefHeight="40.0" prefWidth="286.0" promptText="End Date" />
+            <Label layoutX="57.0" layoutY="124.0" text="Reg ID :" />
+            <Label fx:id="lblRegID" layoutX="142.0" layoutY="107.0" prefHeight="50.0" prefWidth="144.0" text=" " />
+            <JFXTextField fx:id="txtPacName" labelFloat="true" layoutX="410.0" layoutY="263.0" prefHeight="40.0" prefWidth="286.0" promptText="Package Name" />
+            <JFXComboBox fx:id="cmbSearch" layoutX="373.0" layoutY="15.0" onAction="#cmbSearchOnAction" prefHeight="50.0" prefWidth="205.0" promptText="Search ID" />
+            <JFXTextField fx:id="txtStartDate" labelFloat="true" layoutX="50.0" layoutY="408.0" prefHeight="40.0" prefWidth="286.0" promptText="Start DATE" />
+            <JFXTextField fx:id="txtEndDate" labelFloat="true" layoutX="404.0" layoutY="414.0" prefHeight="40.0" prefWidth="286.0" promptText="End DATE" />
+            <JFXComboBox fx:id="txtRegInstructor" layoutX="50.0" layoutY="184.0" onAction="#txtRegInstructorOnAction" prefHeight="40.0" prefWidth="286.0" promptText="Instructors" />
+            <JFXTextField fx:id="txtInstructorName" labelFloat="true" layoutX="410.0" layoutY="184.0" prefHeight="40.0" prefWidth="286.0" promptText="Instructor Name" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="14.0" layoutY="50.0" prefHeight="468.0" prefWidth="791.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
+      <AnchorPane layoutX="14.0" layoutY="23.0" opacity="0.78" prefHeight="468.0" prefWidth="791.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
          <children>
             <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="55.0" layoutY="190.0" prefHeight="40.0" prefWidth="286.0" promptText="Name" />
             <JFXTextField fx:id="txtCustomerAddress" labelFloat="true" layoutX="55.0" layoutY="347.0" prefHeight="40.0" prefWidth="286.0" promptText="Address" />
             <JFXTextField fx:id="txtCusContact" labelFloat="true" layoutX="413.0" layoutY="111.0" prefHeight="40.0" prefWidth="286.0" promptText="Contact" />
-            <JFXTextField fx:id="txtCusDOB" labelFloat="true" layoutX="413.0" layoutY="190.0" prefHeight="40.0" prefWidth="286.0" promptText="DOB" />
             <JFXTextField fx:id="txtCusEmail" labelFloat="true" layoutX="413.0" layoutY="268.0" prefHeight="40.0" prefWidth="286.0" promptText="Email" />
-            <JFXTextField fx:id="txtCustomerID" labelFloat="true" layoutX="55.0" layoutY="111.0" prefHeight="40.0" prefWidth="286.0" promptText="Customer ID" />
             <Label layoutX="23.0" layoutY="33.0" text="Customer Details">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
             </Label>
-            <JFXRadioButton fx:id="rdoCusMale" layoutX="429.0" layoutY="358.0" text="Male">
+            <JFXTextField fx:id="txtCustomerNIC" labelFloat="true" layoutX="55.0" layoutY="268.0" prefHeight="40.0" prefWidth="286.0" promptText="NIC" />
+            <Label layoutX="23.0" layoutY="123.0" text="Customer ID  :" />
+            <Label fx:id="lblCusID" layoutX="129.0" layoutY="106.0" prefHeight="50.0" prefWidth="167.0" />
+            <JFXDatePicker fx:id="dateDOB" layoutX="411.0" layoutY="188.0" prefHeight="40.0" prefWidth="286.0" promptText="DOB" />
+            <JFXRadioButton fx:id="rdoCusMale" layoutX="427.0" layoutY="368.0" onAction="#rdoCusMaleOnAction" text="Male">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </JFXRadioButton>
-            <JFXRadioButton fx:id="rdoCusFemale" layoutX="574.0" layoutY="357.0" text="Female">
+            <JFXRadioButton fx:id="rdoCusFemale" layoutX="572.0" layoutY="367.0" onAction="#rdoCusFemaleOnAction" text="Female">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </JFXRadioButton>
-            <JFXTextField fx:id="txtCustomerID1" labelFloat="true" layoutX="55.0" layoutY="268.0" prefHeight="40.0" prefWidth="286.0" promptText="NIC" />
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnPaid" layoutX="484.0" layoutY="643.0" onAction="#btnPaidOnAction" opacity="0.8" prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: f1f2f6;" text=" ">
+      <JFXButton fx:id="btnPaid" layoutX="1462.0" layoutY="657.0" onAction="#btnPaidOnAction" opacity="0.8" prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -77,7 +74,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton layoutX="218.0" layoutY="651.0" onAction="#btnClearOnAction" opacity="0.8" prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: f1f2f6;" text=" ">
+      <JFXButton layoutX="1478.0" layoutY="788.0" onAction="#btnClearOnAction" opacity="0.8" prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -89,5 +86,35 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <TableView fx:id="tblMemberShip" layoutX="68.0" layoutY="561.0" opacity="0.78" prefHeight="336.0" prefWidth="906.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="151.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="248.0" text="Name" />
+            <TableColumn fx:id="colDuration" prefWidth="276.0" text="Duration" />
+            <TableColumn fx:id="colFee" prefWidth="229.0" text="Fee" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="1016.0" layoutY="623.0" prefHeight="281.0" prefWidth="410.0">
+         <children>
+            <Label layoutX="29.0" layoutY="6.0" text="Amount Info">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtRegTotalFee" labelFloat="true" layoutX="95.0" layoutY="78.0" prefHeight="40.0" prefWidth="286.0" promptText="Total Fee" />
+            <JFXTextField fx:id="txtCusPaidFee" labelFloat="true" layoutX="95.0" layoutY="151.0" prefHeight="40.0" prefWidth="286.0" promptText="Paid Fee" />
+            <JFXTextField fx:id="txtCusChange" labelFloat="true" layoutX="95.0" layoutY="231.0" prefHeight="40.0" prefWidth="286.0" promptText="Change" />
+         </children>
+      </AnchorPane>
+      <JFXRadioButton fx:id="rdoRegCash" layoutX="1294.0" layoutY="575.0" onAction="#rdoRegCashOnAction" text="Cash">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="rdoRegCard" layoutX="1099.0" layoutY="575.0" onAction="#rdoRegCardOnAction" text="Card">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXRadioButton>
    </children>
 </AnchorPane>

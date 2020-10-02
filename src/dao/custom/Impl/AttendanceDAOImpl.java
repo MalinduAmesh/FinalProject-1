@@ -58,4 +58,10 @@ public class AttendanceDAOImpl implements AttendaceDAO {
     return list;
     }
 
+    @Override
+    public String getLastID() throws SQLException, ClassNotFoundException {
+        String sql ="Select attId from attendance order BY attId desc LIMIT 1";
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        return rst.next() ? rst.getString("attId") :null;
+    }
 }

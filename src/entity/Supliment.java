@@ -10,6 +10,16 @@ public class Supliment {
     public Supliment() {
     }
 
+    @Override
+    public String toString() {
+        return "Supliment{" +
+                "suplimId='" + suplimId + '\'' +
+                ", suplimName='" + suplimName + '\'' +
+                ", suplimQTY=" + suplimQTY +
+                ", suplimCost=" + suplimCost +
+                '}';
+    }
+
     public Supliment(String suplimId, String suplimName, int suplimQTY, double suplimCost) {
         this.suplimId = suplimId;
         this.suplimName = suplimName;

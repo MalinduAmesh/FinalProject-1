@@ -1,5 +1,7 @@
 package dto;
 
+import javafx.collections.ObservableList;
+
 public class ScheduleDTO {
     private String schId;
     private String schGoal;
@@ -9,7 +11,29 @@ public class ScheduleDTO {
     private String schPerWeek;
     private String schPerTime;
 
+    ObservableList<ScheduleDetailsDTO>scheduleDetailsList;
+
     public ScheduleDTO() {
+    }
+
+    public ScheduleDTO(String schGoal, String schDuration) {
+        this.schGoal = schGoal;
+        this.schDuration = schDuration;
+    }
+
+    public ScheduleDTO(String schGoal) {
+        this.schGoal = schGoal;
+    }
+
+    public ScheduleDTO(String schId, String schGoal, String schType, String schLevel, String schDuration, String schPerWeek, String schPerTime, ObservableList<ScheduleDetailsDTO> scheduleDetailsList) {
+        this.schId = schId;
+        this.schGoal = schGoal;
+        this.schType = schType;
+        this.schLevel = schLevel;
+        this.schDuration = schDuration;
+        this.schPerWeek = schPerWeek;
+        this.schPerTime = schPerTime;
+        this.scheduleDetailsList = scheduleDetailsList;
     }
 
     public ScheduleDTO(String schId, String schGoal, String schType, String schLevel, String schDuration, String schPerWeek, String schPerTime) {
@@ -20,6 +44,14 @@ public class ScheduleDTO {
         this.schDuration = schDuration;
         this.schPerWeek = schPerWeek;
         this.schPerTime = schPerTime;
+    }
+
+    public ObservableList<ScheduleDetailsDTO> getScheduleDetailsList() {
+        return scheduleDetailsList;
+    }
+
+    public void setScheduleDetailsList(ObservableList<ScheduleDetailsDTO> scheduleDetailsList) {
+        this.scheduleDetailsList = scheduleDetailsList;
     }
 
     public String getSchId() {

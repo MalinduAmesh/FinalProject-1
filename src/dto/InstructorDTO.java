@@ -3,23 +3,49 @@ package dto;
 public class InstructorDTO {
     private String InstructID;
     private String InstructName;
+    private String InstructorNIC;
     private String InstructGender;
     private String InstructNumber;
-    private String InstructJoinDate;
-    private String InstructCost;
-    private String InstructPayMonth;
+    private String InstrDOB;
+    private String InsStatus;
 
     public InstructorDTO() {
     }
 
-    public InstructorDTO(String instructID, String instructName, String instructGender, String instructNumber, String instructJoinDate, String instructCost, String instructPayMonth) {
+    public InstructorDTO(String instructID, String instructName) {
+        InstructID = instructID;
+        InstructName = instructName;
+    }
+
+    public InstructorDTO(String instructID, String instructName, String instructGender, String instructNumber, String instrDOB) {
         InstructID = instructID;
         InstructName = instructName;
         InstructGender = instructGender;
         InstructNumber = instructNumber;
-        InstructJoinDate = instructJoinDate;
-        InstructCost = instructCost;
-        InstructPayMonth = instructPayMonth;
+        InstrDOB = instrDOB;
+    }
+
+    public InstructorDTO(String instructID, String instructName, String instructorNIC, String instructGender, String instructNumber, String instrDOB, String insStatus) {
+        InstructID = instructID;
+        InstructName = instructName;
+        InstructorNIC = instructorNIC;
+        InstructGender = instructGender;
+        InstructNumber = instructNumber;
+        InstrDOB = instrDOB;
+        InsStatus = insStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "InstructorDTO{" +
+                "InstructID='" + InstructID + '\'' +
+                ", InstructName='" + InstructName + '\'' +
+                ", InstructorNIC='" + InstructorNIC + '\'' +
+                ", InstructGender='" + InstructGender + '\'' +
+                ", InstructNumber='" + InstructNumber + '\'' +
+                ", InstrDOB='" + InstrDOB + '\'' +
+                ", InsStatus='" + InsStatus + '\'' +
+                '}';
     }
 
     public String getInstructID() {
@@ -38,6 +64,14 @@ public class InstructorDTO {
         InstructName = instructName;
     }
 
+    public String getInstructorNIC() {
+        return InstructorNIC;
+    }
+
+    public void setInstructorNIC(String instructorNIC) {
+        InstructorNIC = instructorNIC;
+    }
+
     public String getInstructGender() {
         return InstructGender;
     }
@@ -54,27 +88,19 @@ public class InstructorDTO {
         InstructNumber = instructNumber;
     }
 
-    public String getInstructJoinDate() {
-        return InstructJoinDate;
+    public String getInstrDOB() {
+        return InstrDOB;
     }
 
-    public void setInstructJoinDate(String instructJoinDate) {
-        InstructJoinDate = instructJoinDate;
+    public void setInstrDOB(String instrDOB) {
+        InstrDOB = instrDOB;
     }
 
-    public String getInstructCost() {
-        return InstructCost;
+    public String getInsStatus() {
+        return InsStatus;
     }
 
-    public void setInstructCost(String instructCost) {
-        InstructCost = instructCost;
-    }
-
-    public String getInstructPayMonth() {
-        return InstructPayMonth;
-    }
-
-    public void setInstructPayMonth(String instructPayMonth) {
-        InstructPayMonth = instructPayMonth;
+    public void setInsStatus(String insStatus) {
+        InsStatus = insStatus;
     }
 }

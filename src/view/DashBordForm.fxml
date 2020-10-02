@@ -37,7 +37,7 @@
       <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="1070.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane layoutY="-2.0" prefHeight="1057.0" prefWidth="217.0" style="-fx-background-color: transparent;">
          <children>
-            <JFXButton layoutX="18.0" layoutY="150.0" onAction="#btnAttndanceOnAction" prefHeight="72.0" prefWidth="182.0" text="Attendance" textFill="WHITE">
+            <JFXButton fx:id="btnAttendance" layoutX="18.0" layoutY="150.0" onAction="#btnAttndanceOnAction" prefHeight="72.0" prefWidth="182.0" stylesheets="@../css/styles.css" text="Attendance" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="62.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -49,7 +49,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="21.0" layoutY="256.0" onAction="#btnMemberOnAction" prefHeight="49.0" prefWidth="167.0" text="Customers" textFill="WHITE">
+            <JFXButton fx:id="btnMem" layoutX="21.0" layoutY="256.0" onAction="#btnMemberOnAction" prefHeight="49.0" prefWidth="167.0" stylesheets="@../css/styles.css" text="Customers" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="52.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -61,7 +61,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="10.0" layoutY="357.0" onAction="#btnInstructorOnAction" prefHeight="79.0" prefWidth="182.0" text="Instructors" textFill="WHITE">
+            <JFXButton fx:id="btnInstructor" layoutX="10.0" layoutY="357.0" onAction="#btnInstructorOnAction" prefHeight="79.0" prefWidth="182.0" stylesheets="@../css/styles.css" text="Instructors" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="62.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -85,7 +85,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="14.0" layoutY="710.0" onAction="#btnProductSOnAction" prefHeight="72.0" prefWidth="167.0" text="Products" textFill="WHITE">
+            <JFXButton fx:id="btnProduct" layoutX="14.0" layoutY="710.0" onAction="#btnProductSOnAction" prefHeight="72.0" prefWidth="167.0" stylesheets="@../css/styles.css" text="Products" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="62.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -109,7 +109,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="18.0" layoutY="486.0" onAction="#workOutOnAction" prefHeight="68.0" prefWidth="160.0" text="WorkOut" textFill="WHITE">
+            <JFXButton fx:id="btnWorkOut" layoutX="18.0" layoutY="486.0" onAction="#workOutOnAction" prefHeight="68.0" prefWidth="160.0" stylesheets="@../css/styles.css" text="WorkOut" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="62.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -128,7 +128,7 @@
             <Font name="System Bold" size="50.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="root" layoutX="237.0" layoutY="95.0" prefHeight="926.0" prefWidth="1666.0" style="-fx-background-color: transparent;" />
+      <AnchorPane fx:id="root" layoutX="237.0" layoutY="95.0" prefHeight="926.0" prefWidth="1666.0" style="-fx-background-color: transparent;" stylesheets="@../css/styles.css" />
       <JFXButton layoutX="1853.0" layoutY="6.0" onAction="#ExittOnAction" prefHeight="49.0" prefWidth="51.0" text=" ">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">

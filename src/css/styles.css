@@ -1,0 +1,20 @@
+
+
+#newButton:hover{
+    -fx-background-color: aqua;
+}
+#btnMem:hover{
+    -fx-background-color: darkgoldenrod;
+}
+#btnAttendance:hover{
+    -fx-background-color: thistle;
+}
+#btnInstructor:hover{
+    -fx-background-color: aqua;
+}
+#btnWorkOut:hover{
+    -fx-background-color: aquamarine;
+}
+#btnProduct:hover{
+    -fx-background-color: darkgoldenrod;
+}
