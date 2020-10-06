@@ -1,9 +1,9 @@
 package controller;
 
 import bo.custom.Impl.MemberFormBOImpl;
-import bo.custom.MemberForm;
+import bo.custom.MemberFormBO;
+import com.jfoenix.controls.JFXTextField;
 import dto.CustomerDTO;
-import entity.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,12 +17,12 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class MemberFormController {
 
 
     public Button btnRegister;
+    public JFXTextField txtMemID;
     @FXML
     private TableView<CustomerDTO> tblMemebers;
 
@@ -50,7 +50,7 @@ public class MemberFormController {
     @FXML
     private TableColumn<CustomerDTO,String> colTools;
 
-    MemberForm memberForm = new MemberFormBOImpl();
+    MemberFormBO memberForm = new MemberFormBOImpl();
 
     public AnchorPane root;
 
@@ -113,5 +113,8 @@ public class MemberFormController {
         root.getChildren().clear();
         AnchorPane pane = (AnchorPane) FXMLLoader.load(this.getClass().getResource("../view/RegisterForm.fxml"));
         root.getChildren().setAll(pane.getChildren());
+    }
+
+    public void txtMemIDOnAction(ActionEvent actionEvent) {
     }
 }

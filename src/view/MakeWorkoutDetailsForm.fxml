@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="root" prefHeight="956.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MakeWorkoutDetailsFormController">
    <children>
-      <AnchorPane layoutX="1082.0" layoutY="22.0" opacity="0.79" prefHeight="552.0" prefWidth="504.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
+      <AnchorPane layoutX="1051.0" layoutY="57.0" opacity="0.79" prefHeight="552.0" prefWidth="504.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
          <children>
             <Label layoutX="62.0" layoutY="40.0" text="Equipment Details">
                <font>
@@ -27,15 +27,7 @@
             <JFXTextField fx:id="txtEquID" labelFloat="true" layoutX="101.0" layoutY="201.0" prefHeight="45.0" prefWidth="342.0" promptText="ID" />
          </children>
       </AnchorPane>
-      <TableView fx:id="tblSchDetails" blendMode="DARKEN" layoutX="94.0" layoutY="637.0" prefHeight="294.0" prefWidth="688.0" style="-fx-background-color: transparent;">
-        <columns>
-            <TableColumn fx:id="colID" prefWidth="154.0" text="ID" />
-            <TableColumn fx:id="colEquName" prefWidth="183.0" text="Equipment Name" />
-          <TableColumn fx:id="colEquPrice" prefWidth="154.0" text="Price" />
-          <TableColumn fx:id="colSchName" prefWidth="194.0" text="Schedule Name" />
-        </columns>
-      </TableView>
-      <JFXButton fx:id="btnAddCart" layoutX="930.0" layoutY="667.0" onAction="#btnAddCartOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnAddCart" layoutX="1076.0" layoutY="658.0" onAction="#btnAddCartOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
          <graphic>
             <ImageView fitHeight="67.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -44,16 +36,16 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnPay" layoutX="1130.0" layoutY="674.0" onAction="#btnPayOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnPay" layoutX="1276.0" layoutY="665.0" onAction="#btnPayOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assests/pay.png" />
+                  <Image url="@../Assests/Schedule.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnClear" layoutX="1137.0" layoutY="804.0" onAction="#btnClearOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnClear" layoutX="1283.0" layoutY="795.0" onAction="#btnClearOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
          <graphic>
             <ImageView fitHeight="63.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -62,8 +54,16 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <AnchorPane layoutX="31.0" layoutY="57.0" opacity="0.79" prefHeight="552.0" prefWidth="971.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
+      <AnchorPane layoutX="14.0" layoutY="8.0" opacity="0.79" prefHeight="940.0" prefWidth="971.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
          <children>
+            <TableView fx:id="tblSchDetails" blendMode="DARKEN" layoutX="62.0" layoutY="538.0" prefHeight="294.0" prefWidth="688.0" style="-fx-background-color: transparent;">
+              <columns>
+                  <TableColumn fx:id="colID" prefWidth="154.0" text="ID" />
+                  <TableColumn fx:id="colEquName" prefWidth="183.0" text="Equipment Name" />
+                <TableColumn fx:id="colEquPrice" prefWidth="154.0" text="Price" />
+                <TableColumn fx:id="colSchName" prefWidth="194.0" text="Schedule Name" />
+              </columns>
+            </TableView>
             <Label layoutX="45.0" layoutY="41.0" text="Schedule Details">
                <font>
                   <Font name="System Bold" size="26.0" />
@@ -75,16 +75,25 @@
             <JFXTextField fx:id="txtSchTime" layoutX="333.0" layoutY="435.0" prefHeight="52.0" prefWidth="342.0" promptText="Per Time" />
             <JFXTextField fx:id="txtSchDuration" layoutX="139.0" layoutY="336.0" prefHeight="52.0" prefWidth="342.0" promptText="Duration" />
             <JFXTextField fx:id="txtSchLevel" layoutX="579.0" layoutY="245.0" prefHeight="52.0" prefWidth="342.0" promptText="Level" />
-            <JFXComboBox fx:id="cmbSchID" layoutX="432.0" layoutY="56.0" onAction="#cmbSchIDOnAction" prefHeight="52.0" prefWidth="278.0" promptText="ID" />
+            <JFXComboBox fx:id="cmbSchID" layoutX="614.0" layoutY="46.0" onAction="#cmbSchIDOnAction" prefHeight="52.0" prefWidth="278.0" promptText="ID" />
             <Label layoutX="147.0" layoutY="173.0" text="Schedule ID :">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
             <Label fx:id="lblSchID" layoutX="274.0" layoutY="155.0" prefHeight="52.0" prefWidth="207.0" style="-fx-background-radius: 40; -fx-background-color: #1abc9c;" />
+            <JFXButton fx:id="Back" layoutX="15.0" layoutY="82.0" onAction="#BackOnAction" prefHeight="73.0" prefWidth="95.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assests/back3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnremoveCart" layoutX="938.0" layoutY="804.0" onAction="#btnremoveCartOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnremoveCart" layoutX="1084.0" layoutY="795.0" onAction="#btnremoveCartOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
          <graphic>
             <ImageView fitHeight="69.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -93,6 +102,5 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton layoutX="109.0" layoutY="14.0" onAction="#BackOnAction" text="BAck" />
    </children>
 </AnchorPane>

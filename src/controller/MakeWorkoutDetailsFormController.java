@@ -21,6 +21,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.Glow;
@@ -92,10 +93,10 @@ public class MakeWorkoutDetailsFormController {
 
         if(lastId!= null){
             lastId = lastId.split("[A-Z]")[1];
-            lastId = "K00" + (Integer.parseInt(lastId)+1);
+            lastId = "P00" + (Integer.parseInt(lastId)+1);
             lblSchID.setText(lastId);
         }else {
-            lblSchID.setText("K001");
+            lblSchID.setText("P001");
         }
     }
 
@@ -105,7 +106,7 @@ public class MakeWorkoutDetailsFormController {
 
         ObservableList<EquipmentDTO>list = makeWorkOutDetailsBO.getAllEquipment();
         for (EquipmentDTO dto:list) {
-
+            System.out.println(dto.getEquipmentId());
             cmbEquID.getItems().add(dto.getEquipmentId());
         }
     }
@@ -116,7 +117,7 @@ public class MakeWorkoutDetailsFormController {
         ObservableList<ScheduleDTO>scheduleDTOS = makeWorkOutDetailsBO.getAllSchedule();
 
         for (ScheduleDTO scheduleDTO:scheduleDTOS) {
-
+            System.out.println(scheduleDTO.getSchId());
             cmbSchID.getItems().add(scheduleDTO.getSchId());
 
         }
@@ -201,8 +202,9 @@ public class MakeWorkoutDetailsFormController {
 
 
     public void BackOnAction(ActionEvent actionEvent) throws IOException {
+        Parent stage = FXMLLoader.load(this.getClass().getResource("../view/WorkOutForm.fxml"));
         root.getChildren().clear();
-        AnchorPane poot = FXMLLoader.load(this.getClass().getResource("../view/WorkOutForm.fxml"));
-        root.getChildren().setAll(poot.getChildren());
+        root.getChildren().add(stage);
+        new FadeIn(stage).play();
     }
 }

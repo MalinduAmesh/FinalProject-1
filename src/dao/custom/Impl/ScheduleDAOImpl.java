@@ -68,6 +68,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
                     rst.getString(7)
             ));
         }
+        System.out.println(list);
         return list;
     }
 

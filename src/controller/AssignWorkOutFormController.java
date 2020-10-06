@@ -105,7 +105,7 @@ public class AssignWorkOutFormController {
 
         ArrayList<ScheduleDTO>list =assignWorkOutBO.getAllSchID();
         for (ScheduleDTO scheduleDTO:list) {
-            cmbSchID.getItems().add(scheduleDTO.getSchGoal());
+            cmbSchID.getItems().add(scheduleDTO.getSchId());
         }
 
     }
@@ -155,6 +155,14 @@ public class AssignWorkOutFormController {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
+        lblAssWorkID.setText("");
+        cmbSchID.setValue("");
+        cmbMemIID.setValue("");
+        txtMemName.setText("");
+        txtSchWeek.setText("");
+        dateIN.setValue(LocalDate.parse(""));
+        DateOut.setValue(LocalDate.parse(""));
+        lblTotalPln.setText("");
     }
 
     public void DateOutOnAction(ActionEvent actionEvent) throws ParseException {

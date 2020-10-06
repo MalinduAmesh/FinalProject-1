@@ -180,51 +180,51 @@ public class RegisterFormController {
 
     public void btnPaidOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-        CustomerDTO dto = new CustomerDTO();
-
-        dto.setCustID(lblCusID.getText());
-        dto.setCustName(txtCustomerName.getText());
-        dto.setCustNic(txtCustomerNIC.getText());
-        dto.setCustContact(txtCusContact.getText());
-        dto.setCustAddress(txtCustomerAddress.getText());
-        dto.setCustDOB(dateDOB.getValue().toString());
-        dto.setCustEmail(txtCusEmail.getText());
-        dto.setCustGender(sexType);
-
-        dto.setRegID(lblRegID.getText());
-        dto.setTraID(txtRegInstructor.getSelectionModel().getSelectedItem().toString());
-        dto.setCusID(lblCusID.getText());
-        dto.setMemShip(cmbRegMemberShip.getSelectionModel().getSelectedItem().toString());
-        dto.setRegStartDate(dateStartDate.getValue().toString());
-        dto.setRegEndDate(dateEndDate.getValue().toString());
-        dto.setRegFeeType(paymentType);
-        dto.setRegFee(txtRegTotalFee.getText());
+        try {
 
 
-        boolean isAdded = registerBO.registerCustomer(dto);
-        if (isAdded){
-            new Alert(Alert.AlertType.CONFIRMATION,"Added", ButtonType.OK).show();
-        }else {
-            new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
+            CustomerDTO dto = new CustomerDTO();
+
+            dto.setCustID(lblCusID.getText());
+            dto.setCustName(txtCustomerName.getText());
+            dto.setCustNic(txtCustomerNIC.getText());
+            dto.setCustContact(txtCusContact.getText());
+            dto.setCustAddress(txtCustomerAddress.getText());
+            dto.setCustDOB(dateDOB.getValue().toString());
+            dto.setCustEmail(txtCusEmail.getText());
+            dto.setCustGender(sexType);
+
+            dto.setRegID(lblRegID.getText());
+            dto.setTraID(txtRegInstructor.getSelectionModel().getSelectedItem().toString());
+            dto.setCusID(lblCusID.getText());
+            dto.setMemShip(cmbRegMemberShip.getSelectionModel().getSelectedItem().toString());
+            dto.setRegStartDate(dateStartDate.getValue().toString());
+            dto.setRegEndDate(dateEndDate.getValue().toString());
+            dto.setRegFeeType(paymentType);
+            dto.setRegFee(txtRegTotalFee.getText());
+
+
+            boolean isAdded = registerBO.registerCustomer(dto);
+            if (isAdded) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }catch (NullPointerException e){
+            new Alert(Alert.AlertType.WARNING,"Error Some Text Feilds Uncomplete",ButtonType.OK).show();
         }
-
-
-
 
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
     }
-
-
-
-
-
-
     public void dateStartDateOnAction(ActionEvent actionEvent) {
-
     }
-
     public void dateEndDateOnAction(ActionEvent actionEvent) {
     }
 
@@ -232,6 +232,7 @@ public class RegisterFormController {
     public void cmbRegMemberShipOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         MemberShipDTO memberShipDTO = registerBO.searchMemShip(cmbRegMemberShip.getSelectionModel().getSelectedItem().toString());
         txtPacName.setText(memberShipDTO.getName());
+        txtRegTotalFee.setText(memberShipDTO.getFee());
     }
     public void txtRegInstructorOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         InstructorDTO instructorDTO = registerBO.searchAllInstrutors(txtRegInstructor.getSelectionModel().getSelectedItem().toString());
@@ -290,6 +291,17 @@ public class RegisterFormController {
         txtRegTotalFee.setText(customDTO.getRegFee());
 
     }
+    private void Calculate(){
+        double toatal = Double.parseDouble(txtRegTotalFee.getText());
+        int paid = Integer.parseInt(txtCusPaidFee.getText());
+
+        double x= (paid-toatal);
+
+        txtCusChange.setText(String.valueOf(x));
+    }
 
 
+    public void txtCusPaidFeeOnAction(ActionEvent actionEvent) {
+        Calculate();
+    }
 }

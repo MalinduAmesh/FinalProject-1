@@ -1,6 +1,6 @@
 package bo.custom.Impl;
 
-import bo.custom.MemberForm;
+import bo.custom.MemberFormBO;
 import dao.custom.CustomerDAO;
 import dao.custom.Impl.CustomerDAOImpl;
 import dto.CustomerDTO;
@@ -11,7 +11,7 @@ import javafx.collections.ObservableList;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class MemberFormBOImpl implements MemberForm {
+public class MemberFormBOImpl implements MemberFormBO {
 
     CustomerDAO customerDAO = new CustomerDAOImpl();
 

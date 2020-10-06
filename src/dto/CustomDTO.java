@@ -79,7 +79,13 @@ public class CustomDTO {
     private String assInDate;
     private String assOutDate;
 
+    public CustomDTO() {
+    }
 
+    public CustomDTO(String custID, String instructID) {
+        this.custID = custID;
+        InstructID = instructID;
+    }
 
     public CustomDTO(String customerID, String schGoal, String assWorkId, String assInDate, String assOutDate) {
         this.customerID = customerID;

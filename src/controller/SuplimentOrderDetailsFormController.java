@@ -293,17 +293,34 @@ public class SuplimentOrderDetailsFormController {
 
     }
 
+    private int isExists(String id){
+        for (int i = 0; i <tblSupliment.getItems().size() ; i++) {
+            if (id.equalsIgnoreCase(tblSupliment.getItems().get(i).getSuplimId())){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public void btnAddToCartOnAction(ActionEvent actionEvent) {
-        CustomDTO c = new CustomDTO(
-                txtID.getText(),
-                txtProductName.getText(),
-                Double.parseDouble(txtPrice.getText()),
-                txtQTY.getText(), txtDiscount.getText(),
-                Double.parseDouble(txtTotal.getText()));
+       int count = isExists(txtID.getText());
+       if (count==-1) {
+           CustomDTO c = new CustomDTO(
 
-        customDTOS.add(c);
+                   txtID.getText(),
+                   txtProductName.getText(),
+                   Double.parseDouble(txtPrice.getText()),
+                   txtQTY.getText(), txtDiscount.getText(),
+                   Double.parseDouble(txtTotal.getText()));
 
-        tblSupliment.getItems().add(c);
+           customDTOS.add(c);
+           tblSupliment.getItems().add(c);
+       }else if (count>=0){
+           ObservableList<CustomDTO> list = FXCollections.observableArrayList();
+           CustomDTO customDTO = new CustomDTO(txtID.getText(),txtProductName.getText(),Double.parseDouble(txtPrice.getText()),txtQTY.getText(),txtDiscount.getText(),Double.parseDouble(txtTotal.getText()));
+           tblSupliment.getItems().set(count,customDTO);
+           calculateTotal();
+       }
 
     }
 
@@ -312,7 +329,10 @@ public class SuplimentOrderDetailsFormController {
     }
 
     public void txtDiscountOnAction(KeyEvent keyEvent) {
+        calculateTotal();
+    }
 
+    private void calculateTotal(){
         double price = Double.parseDouble(txtPrice.getText());
         double qty = Double.parseDouble(txtQTY.getText());
         double discount = Double.parseDouble(txtDiscount.getText());
@@ -327,8 +347,6 @@ public class SuplimentOrderDetailsFormController {
             txtTotal.setText(Double.toString(tot));
         }
     }
-
-
 
 
 /*   public void rdoCashOnAction(ActionEvent actionEvent) {
@@ -387,7 +405,6 @@ public class SuplimentOrderDetailsFormController {
             cmbSuplimetnId.setVisible(false);
 
 
-            System.out.println("fuck");
         }
 
 
@@ -414,8 +431,6 @@ public class SuplimentOrderDetailsFormController {
         }
     }
 
-    public void cmbMemberIDOnAction(ActionEvent actionEvent) {
-    }
 
     public void txtPaidCashOnAction(ActionEvent actionEvent) {
 
@@ -431,6 +446,6 @@ public class SuplimentOrderDetailsFormController {
     }
 
     public void txtQTYOnAcion(ActionEvent actionEvent) {
-        //txtDiscount.requestFocus();
+      //txtDiscount.requestFocus();
     }
 }

@@ -63,7 +63,7 @@ public class RegisterBOImpl implements RegisterBO {
     @Override
     public MemberShipDTO searchMemShip(String a) throws SQLException, ClassNotFoundException {
         MemberShip memberShip = memberShipDAO.search(a);
-        return new MemberShipDTO(memberShip.getMemShipid(), memberShip.getName());
+        return new MemberShipDTO(memberShip.getMemShipid(), memberShip.getName(),memberShip.getFee());
     }
 
     @Override
@@ -142,6 +142,7 @@ public class RegisterBOImpl implements RegisterBO {
         }
         
     }
+
 
 
 }

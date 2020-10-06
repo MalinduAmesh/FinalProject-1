@@ -10,9 +10,10 @@ public class MemberShipDTO {
     public MemberShipDTO() {
     }
 
-    public MemberShipDTO(String memShipid, String name) {
+    public MemberShipDTO(String memShipid, String name,String Fee) {
         this.memShipid = memShipid;
         this.name = name;
+        this.Fee =Fee;
     }
 
     public MemberShipDTO(String memShipid, String name, String duration, String fee) {

@@ -100,20 +100,25 @@ public class InstructorFormController {
 
     public void btnAddOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-        String id =txtID.getText();
-        String  name =txtName.getText();
-        String nic = txtNic.getText();
-        String gender = sexType;
-        String cont =txtContact.getText();
-        String dob = dateDOB.getValue().toString();
-        String status = cmbStatus.getValue().toString();
+        try {
 
-        InstructorDTO instructorDTO = new InstructorDTO(id,name,nic,gender,cont,dob,status);
-        boolean isAdded = instructorBO.addInstructors(instructorDTO);
-        if (isAdded){
-            new Alert(Alert.AlertType.CONFIRMATION,"Added", ButtonType.OK).show();
-        }else {
-            new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
+            String id = txtID.getText();
+            String name = txtName.getText();
+            String nic = txtNic.getText();
+            String gender = sexType;
+            String cont = txtContact.getText();
+            String dob = dateDOB.getValue().toString();
+            String status = cmbStatus.getValue().toString();
+
+            InstructorDTO instructorDTO = new InstructorDTO(id, name, nic, gender, cont, dob, status);
+            boolean isAdded = instructorBO.addInstructors(instructorDTO);
+            if (isAdded) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+            }
+        }catch (NullPointerException e){
+
         }
 
     }
@@ -165,7 +170,7 @@ public class InstructorFormController {
         InstructorDTO instructorDTO = new InstructorDTO(id,name,nic,gender,cont,dob,status);
         boolean isUpdated = instructorBO.updateInstructor(instructorDTO);
         if (isUpdated){
-            new Alert(Alert.AlertType.CONFIRMATION,"Addedd",ButtonType.OK).show();
+            new Alert(Alert.AlertType.CONFIRMATION,"Updated",ButtonType.OK).show();
         }else {
             new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
         }

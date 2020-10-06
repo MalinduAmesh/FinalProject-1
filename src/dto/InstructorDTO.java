@@ -12,6 +12,10 @@ public class InstructorDTO {
     public InstructorDTO() {
     }
 
+    public InstructorDTO(String instructID) {
+        InstructID = instructID;
+    }
+
     public InstructorDTO(String instructID, String instructName) {
         InstructID = instructID;
         InstructName = instructName;

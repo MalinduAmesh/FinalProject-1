@@ -11,6 +11,20 @@ public class ScheduleDTO {
     private String schPerWeek;
     private String schPerTime;
 
+    @Override
+    public String toString() {
+        return "ScheduleDTO{" +
+                "schId='" + schId + '\'' +
+                ", schGoal='" + schGoal + '\'' +
+                ", schType='" + schType + '\'' +
+                ", schLevel='" + schLevel + '\'' +
+                ", schDuration='" + schDuration + '\'' +
+                ", schPerWeek='" + schPerWeek + '\'' +
+                ", schPerTime='" + schPerTime + '\'' +
+                ", scheduleDetailsList=" + scheduleDetailsList +
+                '}';
+    }
+
     ObservableList<ScheduleDetailsDTO>scheduleDetailsList;
 
     public ScheduleDTO() {
@@ -21,8 +35,8 @@ public class ScheduleDTO {
         this.schDuration = schDuration;
     }
 
-    public ScheduleDTO(String schGoal) {
-        this.schGoal = schGoal;
+    public ScheduleDTO(String schId) {
+        this.schId = schId;
     }
 
     public ScheduleDTO(String schId, String schGoal, String schType, String schLevel, String schDuration, String schPerWeek, String schPerTime, ObservableList<ScheduleDetailsDTO> scheduleDetailsList) {

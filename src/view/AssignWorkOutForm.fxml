@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="root" prefHeight="926.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AssignWorkOutFormController">
    <children>
-      <AnchorPane layoutX="39.0" layoutY="128.0" opacity="0.79" prefHeight="566.0" prefWidth="746.0" style="-fx-background-color: f1f2f6;">
+      <AnchorPane layoutX="39.0" layoutY="128.0" opacity="0.79" prefHeight="566.0" prefWidth="746.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
          <children>
             <Label layoutX="61.0" layoutY="41.0" text="Assign WorkOuts">
                <font>
@@ -32,7 +32,7 @@
             <JFXComboBox fx:id="cmbMemIID" layoutX="72.0" layoutY="178.0" onAction="#cmbMemIDOnAction" prefHeight="48.0" prefWidth="263.0" promptText="Member ID" />
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnAdd" layoutX="122.0" layoutY="708.0" onAction="#btnAddOnAction" prefHeight="90.0" prefWidth="157.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnAdd" layoutX="122.0" layoutY="708.0" onAction="#btnAddOnAction" prefHeight="90.0" prefWidth="157.0" style="-fx-background-color: white; -fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -41,7 +41,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnClear" layoutX="472.0" layoutY="708.0" onAction="#btnClearOnAction" prefHeight="90.0" prefWidth="157.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnClear" layoutX="472.0" layoutY="708.0" onAction="#btnClearOnAction" prefHeight="90.0" prefWidth="157.0" style="-fx-background-color: white; -fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -50,7 +50,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <TableView fx:id="tblAssignWorkOut" layoutX="808.0" layoutY="260.0" opacity="0.81" prefHeight="396.0" prefWidth="848.0">
+      <TableView fx:id="tblAssignWorkOut" layoutX="808.0" layoutY="260.0" opacity="0.81" prefHeight="434.0" prefWidth="848.0">
         <columns>
           <TableColumn fx:id="colWorkID" prefWidth="124.0" text="WorkOUt ID" />
           <TableColumn fx:id="colMemID" prefWidth="151.0" text="Member ID" />
@@ -60,7 +60,7 @@
         </columns>
       </TableView>
       <JFXComboBox fx:id="cmbSearchOld" layoutX="1129.0" layoutY="139.0" onAction="#cmbSearchOldOnAction" prefHeight="48.0" prefWidth="263.0" promptText="Search" />
-      <JFXButton fx:id="btnAdd1" layoutX="292.0" layoutY="708.0" onAction="#btnAddOnAction" prefHeight="90.0" prefWidth="157.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text="Print">
+      <JFXButton fx:id="btnAdd1" layoutX="292.0" layoutY="708.0" onAction="#btnAddOnAction" prefHeight="90.0" prefWidth="157.0" style="-fx-background-color: white; -fx-background-radius: 50;" text="Print">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>

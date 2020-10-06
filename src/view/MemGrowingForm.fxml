@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="926.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MemGrowingFormController">
+   <children>
+      <Label layoutX="108.0" layoutY="50.0" text="Member Details">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnAdd" layoutX="525.0" layoutY="835.0" onAction="#btnAddOnAction" text=" ">
+         <graphic>
+            <ImageView fitHeight="67.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/Ok.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" layoutX="722.0" layoutY="825.0" onAction="#btnClearOnAction" text=" ">
+         <graphic>
+            <ImageView fitHeight="77.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/clear.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <AnchorPane layoutX="124.0" layoutY="115.0" prefHeight="95.0" prefWidth="325.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 50;" />
+      <Label layoutX="145.0" layoutY="152.0" text="ID :" />
+      <Label fx:id="lblID" layoutX="193.0" layoutY="138.0" prefHeight="44.0" prefWidth="157.0" style="-fx-background-color: #16a085;" />
+      <AnchorPane layoutX="140.0" layoutY="319.0" prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane layoutX="979.0" layoutY="105.0" prefHeight="95.0" prefWidth="325.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 50;">
+         <children>
+            <Label layoutX="25.0" layoutY="40.0" text="Date :" />
+            <Label fx:id="lblDate" layoutX="124.0" layoutY="26.0" prefHeight="44.0" prefWidth="157.0" style="-fx-background-color: #16a085;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="410.0" layoutY="192.0" prefHeight="616.0" prefWidth="531.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 50;" />
+      <JFXTextField fx:id="txtArms" labelFloat="true" layoutX="492.0" layoutY="656.0" prefHeight="53.0" prefWidth="401.0" promptText="arms" />
+      <JFXTextField fx:id="txtThigh" labelFloat="true" layoutX="492.0" layoutY="562.0" prefHeight="53.0" prefWidth="401.0" promptText="thigh" />
+      <JFXTextField fx:id="txtWaist" labelFloat="true" layoutX="492.0" layoutY="473.0" prefHeight="53.0" prefWidth="401.0" promptText="waist" />
+      <JFXTextField fx:id="txtHeight" labelFloat="true" layoutX="492.0" layoutY="384.0" prefHeight="53.0" prefWidth="401.0" promptText="height" />
+      <JFXTextField fx:id="txtWeigth" labelFloat="true" layoutX="492.0" layoutY="294.0" prefHeight="53.0" prefWidth="401.0" promptText="weigth" />
+      <JFXTextField fx:id="txtChest" labelFloat="true" layoutX="492.0" layoutY="749.0" prefHeight="53.0" prefWidth="401.0" promptText="chest" />
+      <JFXComboBox fx:id="cmbCusID" editable="true" labelFloat="true" layoutX="492.0" layoutY="210.0" prefHeight="53.0" prefWidth="401.0" promptText="Customer ID" />
+   </children>
+</AnchorPane>

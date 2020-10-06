@@ -80,4 +80,47 @@ public class InstructorDAOImpl implements InstructorDAO {
 
         return list;
     }
+
+    @Override
+    public Instructor searchIns(String a) throws SQLException, ClassNotFoundException {
+        String sql ="Select * from instructor where traStatus ='avalible'";
+        ResultSet rst = CrudUtil.executeQuery(sql, a);
+        if (rst.next()){
+            return new Instructor(
+            rst.getString(1),
+            rst.getString(2),
+            rst.getString(3),
+            rst.getString(4),
+            rst.getString(5),
+            rst.getString(6),
+            rst.getString(7)
+            );
+        }
+        return null;
+    }
+
+    @Override
+    public ArrayList<Instructor> searchIns() throws SQLException, ClassNotFoundException {
+        String sql ="Select * from instructor where traStatus ='avalible'";
+        ArrayList<Instructor>list =new ArrayList<>();
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        while (rst.next()){
+            list.add( new Instructor(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4),
+                    rst.getString(5),
+                    rst.getString(6),
+                    rst.getString(7)
+            ));
+        }
+        return list;
+    }
+
+    @Override
+    public boolean updateStatusOnly(Instructor a) throws Exception {
+        String sql="Update instructor set traStatus='Unavalible' where traId=? ";
+       return CrudUtil.executeUpdate(sql,a.getInstructID());
+    }
 }

@@ -54,6 +54,5 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="66.0" layoutY="121.0" onAction="#btnBackOnAction" prefHeight="53.0" prefWidth="133.0" style="-fx-background-color: white; -fx-background-radius: 100;" text="Back" />
    </children>
 </AnchorPane>

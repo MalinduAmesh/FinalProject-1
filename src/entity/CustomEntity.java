@@ -88,6 +88,11 @@ public class CustomEntity {
     private String schPerWeek;
     private String schPerTime;
 
+    public CustomEntity(String custID, String instructID) {
+        this.custID = custID;
+        InstructID = instructID;
+    }
+
     public CustomEntity(String custID, String schGoal, String assWorkId, String assInDate, String assOutDate) {
         this.custID = custID;
         this.schGoal = schGoal;

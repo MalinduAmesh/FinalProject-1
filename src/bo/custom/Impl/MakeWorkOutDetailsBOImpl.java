@@ -41,18 +41,19 @@ public class MakeWorkOutDetailsBOImpl implements MakeWorkOutDetailsBO {
     @Override
     public ObservableList<ScheduleDTO> getAllSchedule() throws SQLException, ClassNotFoundException {
         ArrayList<Schedule>list = scheduleDAO.getAll();
+
         ObservableList<ScheduleDTO>scheduleDTOS = FXCollections.observableArrayList();
         for (Schedule schedule:list) {
 
-            scheduleDTOS.add(new ScheduleDTO(schedule.getSchId()));
-
+            scheduleDTOS.add(new ScheduleDTO(schedule.getSchId(),schedule.getSchGoal()));
+            System.out.println(scheduleDTOS);
         }
         return scheduleDTOS;
     }
 
     @Override
     public EquipmentDTO setAllEquipmentsTotxt(String a) throws SQLException, ClassNotFoundException {
-        Equipment equipment = equipmentDAO.search(a);
+        Equipment equipment = equipmentDAO. search(a);
         return new EquipmentDTO(equipment.getEquipmentId(),equipment.getEquipmentName(),equipment.getEquipmentQty(),equipment.getEquipmentCost());
     }
 

@@ -2,6 +2,7 @@ package dao.custom.Impl;
 
 import dao.CrudUtil;
 import dao.custom.CustomerDAO;
+import entity.CustomEntity;
 import entity.Customer;
 
 import java.sql.ResultSet;
@@ -79,4 +80,31 @@ public class CustomerDAOImpl implements CustomerDAO {
         ResultSet rsr = CrudUtil.executeQuery(sql);
         return rsr.next() ? rsr.getString("cusId") : null;
     }
+ //   SELECT id, password, COUNT(id) AS count FROM users WHERE email = :email LIMIT 1";
+    @Override
+    public ArrayList<CustomEntity> lineChart() throws SQLException, ClassNotFoundException {
+        String sql = "Select cusId,count(*)as count from customer where email =? LIMIT 1";
+        ResultSet resultSet = CrudUtil.executeQuery(sql);
+        ArrayList<CustomEntity>list = new ArrayList<>();
+        while (resultSet.next()){
+            list.add(new CustomEntity(
+                    resultSet.getString(1),
+                    resultSet.getString(2)
+            ));
+        }
+        return list;
+    }
 }
+/*
+[14:45, 10/2/2020] Bahashana: public ArrayList<CustomChartEntity> chart() throws Exception {
+
+        String sql="select CheckInDate,count(*)from staffattendance where checkintime<'08:30:57' group by checkindate";
+        ResultSet rst=CrudUtil.executeQuery(sql);
+        ArrayList<CustomChartEntity> chart=new ArrayList<>();
+
+        while (rst.next()){
+
+        chart.add(new CustomChartEntity(rst.getString(1),rst.getInt(2)));
+        }
+        return chart;
+        }*/

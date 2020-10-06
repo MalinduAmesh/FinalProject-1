@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class AttendanceDAOImpl implements AttendaceDAO {
     @Override
     public boolean add(Attendance a) throws SQLException, ClassNotFoundException {
-        String sql = "Insert Into attendance Values(?,?,?)";
-        return CrudUtil.executeUpdate(sql,a.getAttendID(),a.getCustomerID(),a.getAttendDate());
+        String sql = "Insert Into attendance Values(?,?,?,?,?)";
+        return CrudUtil.executeUpdate(sql,a.getAttendID(),a.getCustomerID(),a.getInstId(),a.getAttendDate(),a.getAttInTime());
 
     }
 
@@ -25,7 +25,7 @@ public class AttendanceDAOImpl implements AttendaceDAO {
 
     @Override
     public boolean update(Attendance a) throws SQLException, ClassNotFoundException {
-        String sql ="Update attendance set cusId =?,date = ? where attId = ?";
+        String sql ="Update attendance set cusId =?,traId=?,attInDate = ?,attInTime=? where attId = ?";
         return CrudUtil.executeUpdate(sql,a.getCustomerID(),a.getAttendDate(),a.getAttendID());
     }
 
@@ -37,7 +37,9 @@ public class AttendanceDAOImpl implements AttendaceDAO {
             return new Attendance(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3)
+                    rst.getString(3),
+                    rst.getString(4),
+                    rst.getString(5)
             );
         }
         return null;
@@ -52,8 +54,10 @@ public class AttendanceDAOImpl implements AttendaceDAO {
             list.add(new Attendance(
             rst.getString(1),
             rst.getString(2),
-            rst.getString(3))
-            );
+            rst.getString(3),
+                    rst.getString(4),
+                    rst.getString(5)
+            ));
         }
     return list;
     }

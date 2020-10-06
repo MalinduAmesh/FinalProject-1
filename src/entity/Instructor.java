@@ -13,6 +13,23 @@ public class Instructor {
     public Instructor() {
     }
 
+    public Instructor(String InstructID) {
+        this.InstructID=InstructID;
+    }
+
+    @Override
+    public String toString() {
+        return "Instructor{" +
+                "InstructID='" + InstructID + '\'' +
+                ", InstructName='" + InstructName + '\'' +
+                ", InstructorNIC='" + InstructorNIC + '\'' +
+                ", InstructGender='" + InstructGender + '\'' +
+                ", InstructNumber='" + InstructNumber + '\'' +
+                ", InstrDOB='" + InstrDOB + '\'' +
+                ", InsStatus='" + InsStatus + '\'' +
+                '}';
+    }
+
     public Instructor(String instructID, String instructName, String instructorNIC, String instructGender, String instructNumber, String instrDOB, String insStatus) {
         InstructID = instructID;
         InstructName = instructName;

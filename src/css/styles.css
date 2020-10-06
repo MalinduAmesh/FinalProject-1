@@ -1,20 +1,32 @@
 
 
 #newButton:hover{
-    -fx-background-color: aqua;
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
 }
 #btnMem:hover{
-    -fx-background-color: darkgoldenrod;
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
 }
 #btnAttendance:hover{
-    -fx-background-color: thistle;
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
 }
 #btnInstructor:hover{
-    -fx-background-color: aqua;
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
 }
 #btnWorkOut:hover{
-    -fx-background-color: aquamarine;
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
 }
 #btnProduct:hover{
-    -fx-background-color: darkgoldenrod;
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnProducts:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnEqupment:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnStock:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnHome:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
 }

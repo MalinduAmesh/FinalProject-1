@@ -7,7 +7,7 @@ import javafx.collections.ObservableList;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface MemberForm extends SuperBO {
+public interface MemberFormBO extends SuperBO {
 
     CustomerDTO searchAllMemeName();
 

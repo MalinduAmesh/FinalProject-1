@@ -5,8 +5,6 @@ import dao.custom.Impl.InstructorDAOImpl;
 import dao.custom.InstructorDAO;
 import dto.InstructorDTO;
 import entity.Instructor;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -41,6 +39,7 @@ public class InstructorBOImpl implements InstructorBO {
     @Override
     public boolean updateInstructor(InstructorDTO a) throws SQLException, ClassNotFoundException {
         Instructor instructor = new Instructor(a.getInstructID(),a.getInstructName(),a.getInstructorNIC(),a.getInstructGender(),a.getInstructNumber(),a.getInstrDOB(),a.getInsStatus());
+        System.out.println(instructor);
         return instructorDAO.update(instructor);
     }
 

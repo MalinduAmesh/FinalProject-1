@@ -11,20 +11,19 @@ import java.io.IOException;
 
 public class AppIntializer extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
+    public static void main(String[] asd) {
+
+        launch(asd);
     }
 
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-
-        Parent stage = FXMLLoader.load(this.getClass().getResource("view/InstructorForm.fxml"));
+        Parent stage = FXMLLoader.load(this.getClass().getResource("view/MemGrowingForm.fxml"));
         primaryStage.setScene(new Scene(stage));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
         new FadeIn(stage).play();
-
 
     }
 }

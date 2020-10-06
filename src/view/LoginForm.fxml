@@ -18,7 +18,7 @@
       </ImageView>
       <AnchorPane id=" linear-gradient(to right top, #372c05, #5d5631, #85845e, #b0b48f, #dce7c4)" fx:id="root" layoutX="-1.0" opacity="0.91" prefHeight="1029.0" prefWidth="486.0" style="-fx-background-color: #dcdde1;">
          <children>
-            <JFXTextField fx:id="txtUserName" focusColor="#214ccd" layoutX="88.0" layoutY="363.0" onAction="#txtUserNameOnAction" prefHeight="75.0" prefWidth="331.0" promptText="UserName" style="-fx-: red;" unFocusColor="BLACK">
+            <JFXTextField fx:id="txtUserName" focusColor="#214ccd" labelFloat="true" layoutX="88.0" layoutY="363.0" onAction="#txtUserNameOnAction" prefHeight="75.0" prefWidth="331.0" promptText="UserName" style="-fx-: red;" unFocusColor="BLACK">
                <font>
                   <Font size="16.0" />
                </font></JFXTextField>
@@ -32,7 +32,7 @@
                   <Image url="@../Assests/login-button-png-18021(1).png" />
                </image>
             </ImageView>
-            <JFXPasswordField fx:id="txtPass" layoutX="88.0" layoutY="499.0" onAction="#txtPasswordOnAction" opacity="0.74" prefHeight="75.0" prefWidth="331.0" promptText="Password">
+            <JFXPasswordField fx:id="txtPass" labelFloat="true" layoutX="88.0" layoutY="499.0" onAction="#txtPasswordOnAction" opacity="0.74" prefHeight="75.0" prefWidth="331.0" promptText="Password">
                <font>
                   <Font size="16.0" />
                </font></JFXPasswordField>

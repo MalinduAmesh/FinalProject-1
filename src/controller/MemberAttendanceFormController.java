@@ -65,7 +65,6 @@ public class MemberAttendanceFormController {
 
     public void initialize() throws SQLException, ClassNotFoundException {
 
-        genarateMemAttID();
         genarateInsAttID();
         setValuesToMemcmb();
         setValuesToInscmb();
@@ -165,17 +164,17 @@ public class MemberAttendanceFormController {
     }
 
     public void InstructorAddOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        String id = lblInstAttID.getText();
+/*        String id = lblInstAttID.getText();
         String insId =cmbInsID.getValue().toString();
         String date = txtInstrDate.getText();
 
-        InsAttendanceDTO insAttendanceDTO = new InsAttendanceDTO(id,insId,date);
+     *//*   InsAttendanceDTO insAttendanceDTO = new InsAttendanceDTO(id,insId,date);*//*
         boolean isAdded = memberAttendnceBO.addInstructor(insAttendanceDTO);
         if (isAdded){
             new Alert(Alert.AlertType.CONFIRMATION,"Added",ButtonType.OK).show();
         }else {
             new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
-        }
+        }*/
     }
 
     public void clearInstructorOnAction(ActionEvent actionEvent) {

@@ -81,8 +81,9 @@ public class MemberAttendanceBOImpl implements MemberAttendnceBO {
 
     @Override
     public boolean addInstructor(InsAttendanceDTO a) throws SQLException, ClassNotFoundException {
-        InsAttendance insAttendance = new InsAttendance(a.getInsAttID(),a.getInsID(),a.getInsAttDate());
-        return instAttandanceDAO.add(insAttendance);
+/*        InsAttendance insAttendance = new InsAttendance(a.getInsAttID(),a.getInsID(),a.getInsAttDate());
+        return instAttandanceDAO.add(insAttendance);*/
+        return false;
     }
 
 

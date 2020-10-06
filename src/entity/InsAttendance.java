@@ -4,15 +4,30 @@ public class InsAttendance {
 
         private String insAttID;
         private String insID;
-        private String insAttDate;
+        private String insAttInDate;
+        private String insAttInTime;
+        private String insAttOutTime;
 
     public InsAttendance() {
     }
 
-    public InsAttendance(String insAttID, String insID, String insAttDate) {
+    @Override
+    public String toString() {
+        return "InsAttendance{" +
+                "insAttID='" + insAttID + '\'' +
+                ", insID='" + insID + '\'' +
+                ", insAttInDate='" + insAttInDate + '\'' +
+                ", insAttInTime='" + insAttInTime + '\'' +
+                ", insAttOutTime='" + insAttOutTime + '\'' +
+                '}';
+    }
+
+    public InsAttendance(String insAttID, String insID, String insAttInDate, String insAttInTime, String insAttOutTime) {
         this.insAttID = insAttID;
         this.insID = insID;
-        this.insAttDate = insAttDate;
+        this.insAttInDate = insAttInDate;
+        this.insAttInTime = insAttInTime;
+        this.insAttOutTime = insAttOutTime;
     }
 
     public String getInsAttID() {
@@ -31,11 +46,27 @@ public class InsAttendance {
         this.insID = insID;
     }
 
-    public String getInsAttDate() {
-        return insAttDate;
+    public String getInsAttInDate() {
+        return insAttInDate;
     }
 
-    public void setInsAttDate(String insAttDate) {
-        this.insAttDate = insAttDate;
+    public void setInsAttInDate(String insAttInDate) {
+        this.insAttInDate = insAttInDate;
+    }
+
+    public String getInsAttInTime() {
+        return insAttInTime;
+    }
+
+    public void setInsAttInTime(String insAttInTime) {
+        this.insAttInTime = insAttInTime;
+    }
+
+    public String getInsAttOutTime() {
+        return insAttOutTime;
+    }
+
+    public void setInsAttOutTime(String insAttOutTime) {
+        this.insAttOutTime = insAttOutTime;
     }
 }
