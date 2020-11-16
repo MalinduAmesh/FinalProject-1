@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.AddSuplimentBo;
 import bo.custom.Impl.AddSuplimentBOImpl;
 import com.jfoenix.controls.JFXComboBox;
@@ -22,6 +23,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class AddSuplimentFormController {
     public JFXTextField txtID;
@@ -29,7 +31,7 @@ public class AddSuplimentFormController {
     public Button btnClear;
     public Button btnUpdate;
     public Button btnDelete;
-    AddSuplimentBo addSuplimentBo = new AddSuplimentBOImpl();
+    AddSuplimentBo addSuplimentBo = (AddSuplimentBo) BOFactory.getInstance().getBO(BOFactory.BOTypes.ADDSUPLIMENT);
     public JFXComboBox cmbSearchID;
 
     @FXML
@@ -66,6 +68,8 @@ public void initialize() throws SQLException, ClassNotFoundException {
 }
 
     public void setToTable() throws SQLException, ClassNotFoundException {
+
+            genarateID();
             colID.setCellValueFactory(new PropertyValueFactory<>("suplimId"));
             colName.setCellValueFactory(new PropertyValueFactory<>("suplimName"));
             colQty.setCellValueFactory(new PropertyValueFactory<>("suplimQTY"));
@@ -74,6 +78,18 @@ public void initialize() throws SQLException, ClassNotFoundException {
             tblSupliment.setItems(loadAllTables());
 
         }
+
+    private void genarateID() throws SQLException, ClassNotFoundException {
+    String lastid = addSuplimentBo.getLastId();
+
+    if (lastid!=null){
+        lastid =lastid.split("[A-Z]")[1];
+        lastid ="Z00"+(Integer.parseInt(lastid)+1);
+        txtID.setText(lastid);
+    }else {
+        txtID.setText("Z001");
+    }
+    }
 
     private ObservableList<SuplimentDTO> loadAllTables() throws SQLException, ClassNotFoundException {
         ObservableList<SuplimentDTO> all = addSuplimentBo.getAllSupliment();

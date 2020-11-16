@@ -94,6 +94,13 @@ public class CustomerDAOImpl implements CustomerDAO {
         }
         return list;
     }
+
+    @Override
+    public String getCountGenaral() throws SQLException, ClassNotFoundException {
+        String sql = "Select COUNT(cusId) from customer order by cusId desc LIMIT 1";
+        ResultSet resultSet = CrudUtil.executeQuery(sql);
+        return resultSet.next()?resultSet.getString(1):null;
+    }
 }
 /*
 [14:45, 10/2/2020] Bahashana: public ArrayList<CustomChartEntity> chart() throws Exception {

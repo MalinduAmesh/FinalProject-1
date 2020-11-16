@@ -24,22 +24,28 @@
             </Label>
             <JFXTextField fx:id="txtID" focusColor="BLACK" labelFloat="true" layoutX="92.0" layoutY="84.0" prefHeight="43.0" prefWidth="375.0" promptText="ID" style="-fx-focus-color: red;" unFocusColor="#2a34a8">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="16.0" />
                </font></JFXTextField>
             <JFXTextField fx:id="txtName" focusColor="BLACK" labelFloat="true" layoutX="583.0" layoutY="84.0" prefHeight="43.0" prefWidth="375.0" promptText="Name" style="-fx-focus-color: red;" unFocusColor="#202086">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="16.0" />
                </font></JFXTextField>
             <JFXTextField fx:id="txtContact" focusColor="BLACK" labelFloat="true" layoutX="92.0" layoutY="250.0" prefHeight="43.0" prefWidth="375.0" promptText="contact" style="-fx-focus-color: red;" unFocusColor="#2a34a8">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="16.0" />
                </font></JFXTextField>
             <JFXDatePicker fx:id="dateDOB" layoutX="583.0" layoutY="164.0" prefHeight="43.0" prefWidth="375.0" promptText="DATE" />
-            <RadioButton fx:id="rdoMale" layoutX="384.0" layoutY="347.0" mnemonicParsing="false" onAction="#rdoMaleOnAction" text="Male" />
-            <RadioButton fx:id="rdoFemale" layoutX="545.0" layoutY="347.0" mnemonicParsing="false" onAction="#rdoFemaleOnAction" text="Female" />
-            <JFXTextField fx:id="txtNic" focusColor="BLACK" labelFloat="true" layoutX="92.0" layoutY="164.0" prefHeight="43.0" prefWidth="375.0" promptText="NIC" style="-fx-focus-color: red;" unFocusColor="#2a34a8">
+            <RadioButton fx:id="rdoMale" layoutX="384.0" layoutY="347.0" mnemonicParsing="false" onAction="#rdoMaleOnAction" text="Male">
                <font>
                   <Font size="16.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="rdoFemale" layoutX="545.0" layoutY="347.0" mnemonicParsing="false" onAction="#rdoFemaleOnAction" text="Female">
+               <font>
+                  <Font size="16.0" />
+               </font></RadioButton>
+            <JFXTextField fx:id="txtNic" focusColor="BLACK" labelFloat="true" layoutX="92.0" layoutY="164.0" prefHeight="43.0" prefWidth="375.0" promptText="NIC" style="-fx-focus-color: red;" unFocusColor="#2a34a8">
+               <font>
+                  <Font name="System Bold" size="16.0" />
                </font>
             </JFXTextField>
             <JFXComboBox fx:id="cmbStatus" layoutX="583.0" layoutY="250.0" onAction="#cmbStatusOnAction" prefHeight="43.0" prefWidth="375.0" promptText="Status" />
@@ -54,7 +60,7 @@
             <TableColumn fx:id="colDOB" prefWidth="202.0" text="Join Date" />
         </columns>
       </TableView>
-      <JFXButton fx:id="btnAdd" layoutX="415.0" layoutY="502.0" onAction="#btnAddOnAction" prefHeight="75.0" prefWidth="140.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
+      <JFXButton fx:id="btnAdd" layoutX="415.0" layoutY="502.0" onAction="#btnAddOnAction" prefHeight="75.0" prefWidth="140.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -63,7 +69,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnClear" layoutX="1028.0" layoutY="496.0" onAction="#btnClearOnAction" prefHeight="75.0" prefWidth="140.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
+      <JFXButton fx:id="btnClear" layoutX="1028.0" layoutY="496.0" onAction="#btnClearOnAction" prefHeight="75.0" prefWidth="140.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="72.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -72,7 +78,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnRemove" layoutX="811.0" layoutY="502.0" onAction="#btnRemoveOnAction" prefHeight="75.0" prefWidth="140.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
+      <JFXButton fx:id="btnRemove" layoutX="811.0" layoutY="502.0" onAction="#btnRemoveOnAction" prefHeight="75.0" prefWidth="140.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -81,7 +87,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnUpdate" layoutX="607.0" layoutY="502.0" onAction="#btnUpdateOnAction" prefHeight="75.0" prefWidth="140.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
+      <JFXButton fx:id="btnUpdate" layoutX="607.0" layoutY="502.0" onAction="#btnUpdateOnAction" prefHeight="75.0" prefWidth="140.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                <image>

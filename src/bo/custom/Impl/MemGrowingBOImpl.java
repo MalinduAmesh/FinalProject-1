@@ -1,8 +1,11 @@
 package bo.custom.Impl;
 
 import bo.custom.MemGrowingBo;
+import dao.DAOFactory;
 import dao.custom.CustomerDAO;
 import dao.custom.Impl.CustomerDAOImpl;
+import dao.custom.Impl.MemGrowthDAOImpl;
+import dao.custom.MemGrowthDAO;
 import dto.CustomerDTO;
 import dto.MemGrowthDTO;
 import entity.Customer;
@@ -16,8 +19,8 @@ import java.util.Arrays;
 
 public class MemGrowingBOImpl implements MemGrowingBo {
 
-    CustomerDAO customerDAO = new CustomerDAOImpl();
-
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+    MemGrowthDAO memGrowthDAO = (MemGrowthDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.MEMGROWTH);
 
     @Override
     public ObservableList<CustomerDTO> setValuesTocmb() throws SQLException, ClassNotFoundException {
@@ -32,7 +35,13 @@ public class MemGrowingBOImpl implements MemGrowingBo {
     }
 
     @Override
-    public boolean AddGrowth(MemGrowthDTO memGrowthDTO) {
-        MemGrowth memGrowth =
+    public boolean AddGrowth(MemGrowthDTO a) throws SQLException, ClassNotFoundException {
+        MemGrowth memGrowth = new MemGrowth(a.getGrID(),a.getGrCusId(),a.getGrdate(),a.getWeigth(),a.getHeight(),a.getWaist(),a.getThigh(),a.getArms(),a.getChest());
+        return memGrowthDAO.add(memGrowth);
+    }
+
+    @Override
+    public String getLastId() throws SQLException, ClassNotFoundException {
+        return memGrowthDAO.getLastId();
     }
 }

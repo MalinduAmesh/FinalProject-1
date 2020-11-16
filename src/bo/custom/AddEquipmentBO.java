@@ -16,4 +16,6 @@ public interface AddEquipmentBO extends SuperBO {
     EquipmentDTO setAllEquipment(String toString) throws SQLException, ClassNotFoundException;
 
     EquipmentDTO search(String text) throws SQLException, ClassNotFoundException;
+
+    String GetLastId() throws SQLException, ClassNotFoundException;
 }

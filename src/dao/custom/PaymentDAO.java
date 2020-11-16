@@ -7,4 +7,7 @@ import java.sql.SQLException;
 
 public interface PaymentDAO extends CrudDAO<Payment,String> {
     String getLastID() throws SQLException, ClassNotFoundException;
+    String paymentCount();
+
+    String getCpunt() throws SQLException, ClassNotFoundException;
 }

@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.AddEquipmentBO;
 import bo.custom.Impl.AddEquipmentBOImpl;
 import com.jfoenix.controls.JFXButton;
@@ -47,10 +48,11 @@ public class EquipmentFormController {
     private TableColumn<EquipmentDTO, String> colOneItem;
 
 
-    AddEquipmentBO addEquipmentBO = new AddEquipmentBOImpl();
+    AddEquipmentBO addEquipmentBO = (AddEquipmentBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.ADDEQUIPMENT);
 
     public void initialize() throws SQLException, ClassNotFoundException {
 
+        genaterId();
         setValuesTocmb();
         colID.setCellValueFactory(new PropertyValueFactory<>("equipmentId"));
         colName.setCellValueFactory(new PropertyValueFactory<>("equipmentName"));
@@ -59,6 +61,18 @@ public class EquipmentFormController {
 
         tblEqupment.setItems(loadAllTables());
 
+    }
+
+    private void genaterId() throws SQLException, ClassNotFoundException {
+        String lastid = addEquipmentBO.GetLastId();
+
+        if (lastid!= null){
+            lastid =lastid.split("[A-Z]")[1];
+            lastid ="P00"+(Integer.parseInt(lastid)+1);
+            txtID.setText(lastid);
+        }else {
+            txtID.setText("P001");
+        }
     }
 
     private void setValuesTocmb() throws SQLException, ClassNotFoundException {
@@ -103,17 +117,27 @@ public class EquipmentFormController {
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        String id = txtID.getText();
-        String name = txtEquName.getText();
-        int qty = Integer.parseInt(txtAvalQTY.getText());
-        double price = Double.parseDouble(txtPrice.getText());
+        try {
+            String id = txtID.getText();
+            String name = txtEquName.getText();
+            int qty = Integer.parseInt(txtAvalQTY.getText());
+            double price = Double.parseDouble(txtPrice.getText());
 
-        EquipmentDTO dto = new EquipmentDTO(id,name,qty,price);
-        boolean isAdded = addEquipmentBO.addEqupment(dto);
-        if (isAdded){
-            new Alert(Alert.AlertType.CONFIRMATION,"Added", ButtonType.OK).show();
-        }else {
-            new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
+            EquipmentDTO dto = new EquipmentDTO(id, name, qty, price);
+            boolean isAdded = addEquipmentBO.addEqupment(dto);
+            if (isAdded) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+            }
+        } catch (NumberFormatException e) {
+            new Alert(Alert.AlertType.WARNING,"Input String error",ButtonType.OK).show();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }catch (NullPointerException e){
+            new Alert(Alert.AlertType.WARNING,"Some text fields come with null values",ButtonType.OK).show();
         }
     }
     public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {

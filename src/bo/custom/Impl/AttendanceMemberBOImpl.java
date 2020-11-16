@@ -1,6 +1,7 @@
 package bo.custom.Impl;
 
 import bo.custom.AttendanceMemberBO;
+import dao.DAOFactory;
 import dao.custom.AttendaceDAO;
 import dao.custom.CustomerDAO;
 import dao.custom.Impl.AttendanceDAOImpl;
@@ -21,9 +22,9 @@ import java.util.ArrayList;
 
 public class AttendanceMemberBOImpl implements AttendanceMemberBO {
 
-    CustomerDAO customerDAO = new CustomerDAOImpl();
-    InstructorDAO instructorDAO = new InstructorDAOImpl();
-    AttendaceDAO attendaceDAO = new AttendanceDAOImpl();
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+    InstructorDAO instructorDAO = (InstructorDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.INSTRUCTOR);
+    AttendaceDAO attendaceDAO = (AttendaceDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.ATTENDANCE);
 
     @Override
     public ObservableList<CustomerDTO> setValuesTocmb() throws SQLException, ClassNotFoundException {

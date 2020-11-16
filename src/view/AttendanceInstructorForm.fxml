@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="926.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AttendanceInstructorFormController">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="531.0" prefWidth="905.0">
+      <AnchorPane layoutX="360.0" layoutY="33.0" opacity="0.79" prefHeight="531.0" prefWidth="905.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 50;">
          <children>
             <JFXComboBox fx:id="cmbInsID" layoutX="72.0" layoutY="377.0" onAction="#cmbInsIDOnAction" prefHeight="59.0" prefWidth="287.0" promptText="Instructors" />
             <JFXTextField fx:id="txtInsName" layoutX="503.0" layoutY="381.0" prefHeight="59.0" prefWidth="287.0" promptText="Instructor Name" />
@@ -37,14 +37,14 @@
             </Label>
             <Label fx:id="lblAttID" layoutX="205.0" layoutY="117.0" prefHeight="47.0" prefWidth="157.0" style="-fx-background-color: #1abc9c; -fx-background-radius: 30;" />
             <JFXComboBox fx:id="cmbInstrutor" layoutX="294.0" layoutY="289.0" onAction="#cmbInstrutorOnAction" prefHeight="47.0" prefWidth="294.0" promptText="Search AttID" />
+            <Label layoutX="51.0" layoutY="29.0" text="Instructors Attendance">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="56.0" layoutY="54.0" text="Instructors Attendance">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="btnAdd" layoutX="220.0" layoutY="573.0" onAction="#btnAddOnAction" text=" ">
+      <JFXButton fx:id="btnAdd" layoutX="494.0" layoutY="629.0" onAction="#btnAddOnAction" prefHeight="76.0" prefWidth="157.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -53,7 +53,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnUpdateAdd" layoutX="367.0" layoutY="573.0" onAction="#btnUpdateAddOnAction" text=" ">
+      <JFXButton fx:id="btnUpdateAdd" layoutX="710.0" layoutY="629.0" onAction="#btnUpdateAddOnAction" prefHeight="76.0" prefWidth="157.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -62,7 +62,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnClear" layoutX="539.0" layoutY="573.0" onAction="#btnClearOnAction" text=" ">
+      <JFXButton fx:id="btnClear" layoutX="905.0" layoutY="629.0" onAction="#btnClearOnAction" prefHeight="76.0" prefWidth="157.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
                <image>

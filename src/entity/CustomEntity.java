@@ -37,7 +37,15 @@ public class CustomEntity {
 
     private String ordersID;
     private String ordersDate;
-    //private String ordersCustomerID;
+    private String ordersCustomerID;
+
+    public String getOrdersCustomerID() {
+        return ordersCustomerID;
+    }
+
+    public void setOrdersCustomerID(String ordersCustomerID) {
+        this.ordersCustomerID = ordersCustomerID;
+    }
 
     private String payID;
     //private String customerId;

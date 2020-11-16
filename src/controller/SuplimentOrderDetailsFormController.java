@@ -1,11 +1,10 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.Impl.PlaceOrderBOImpl;
 import bo.custom.PlaceOrderBO;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
+import db.DBConnection;
 import dto.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,10 +12,14 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SuplimentOrderDetailsFormController {
 
@@ -60,9 +63,10 @@ public class SuplimentOrderDetailsFormController {
     public JFXRadioButton rdoCash;
     public JFXRadioButton rdoCard;
     public Label lblPayID;
+    public JFXButton jasper;
     private String cardType;
 
-    PlaceOrderBO placeOrderBO = new PlaceOrderBOImpl();
+    PlaceOrderBO placeOrderBO = (PlaceOrderBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.PLACEORDER);
 
 
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -143,7 +147,9 @@ public class SuplimentOrderDetailsFormController {
         int price = Integer.parseInt(txtPrice.getText());
         int total = Integer.parseInt(txtTotal.getText());
 
-        int totalX = addQty + price;
+        int priceTot = price*3;
+
+        int totalX = addQty + priceTot;
 
         txtTotal.setText(String.valueOf(totalX));
     }
@@ -199,76 +205,78 @@ public class SuplimentOrderDetailsFormController {
     }
 
     public void Add() {
-
-        PaymentDTO o = new PaymentDTO();
-
-        o.setPayId(lblPayID.getText());
-        o.setPayAmount(txtTotal.getText());
-        o.setPayType(rdoCard.getText());
-        o.setStatus(cmbType.getSelectionModel().getSelectedItem().toString());
-
-        System.out.println(o);
-
-        ObservableList<OrderDetailsDTO> orderDetailList = FXCollections.observableArrayList();
-        ObservableList<SuplimentDTO> suplimentList = FXCollections.observableArrayList();
-        ObservableList<InvoiceDTO> invoiceList = FXCollections.observableArrayList();
-
-        for (int i = 0; i < 1; i++) {
+try {
 
 
-            invoiceList.add(new InvoiceDTO(
-                    lblOrdId.getText(),
-                    txtOrderDate.getText(),
-                    cmbCustomerId.getValue().toString(),
-                    lblPayID.getText()
-            ));
+    PaymentDTO o = new PaymentDTO();
+
+    o.setPayId(lblPayID.getText());
+    o.setPayAmount(txtTotal.getText());
+    o.setPayType(rdoCard.getText());
+    o.setStatus(cmbType.getSelectionModel().getSelectedItem().toString());
+
+
+    ObservableList<OrderDetailsDTO> orderDetailList = FXCollections.observableArrayList();
+    ObservableList<SuplimentDTO> suplimentList = FXCollections.observableArrayList();
+    ObservableList<InvoiceDTO> invoiceList = FXCollections.observableArrayList();
+
+    for (int i = 0; i < 1; i++) {
+
+
+        invoiceList.add(new InvoiceDTO(
+                lblOrdId.getText(),
+                txtOrderDate.getText(),
+                cmbCustomerId.getValue().toString(),
+                lblPayID.getText()
+        ));
+    }
+    o.setInvoiceDTOS(invoiceList);
+
+    for (int i = 0; i < tblSupliment.getItems().size(); i++) {
+
+
+        orderDetailList.add(new OrderDetailsDTO(
+
+                lblOrdId.getText(),
+                tblSupliment.getItems().get(i).getSuplimId(),
+                Integer.parseInt(tblSupliment.getItems().get(i).getTotalQTy()),
+                tblSupliment.getItems().get(i).getTotal()));
+
+
+        int availableQTY = Integer.parseInt(txtAvalbleQTY.getText());
+        int changedQTY = Integer.parseInt(txtQTY.getText());
+        int newQTY = availableQTY - changedQTY;
+
+        suplimentList.add(new SuplimentDTO(
+
+                tblSupliment.getItems().get(i).getSuplimId(),
+                tblSupliment.getItems().get(i).getSuplimName(),
+                newQTY,
+                Double.parseDouble(txtPrice.getText())));
+
+    }
+
+
+    o.setOrderDetailsDTOS(orderDetailList);
+    o.setSuplimentDTOS(suplimentList);
+
+    try {
+        boolean isAdded = placeOrderBO.purchaseOrder(o);
+        if (isAdded) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Addedd!", ButtonType.OK).show();
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
         }
-        o.setInvoiceDTOS(invoiceList);
-
-        for (int i = 0; i < tblSupliment.getItems().size(); i++) {
-
-
-            orderDetailList.add(new OrderDetailsDTO(
-
-                    lblOrdId.getText(),
-                    tblSupliment.getItems().get(i).getSuplimId(),
-                    Integer.parseInt(tblSupliment.getItems().get(i).getTotalQTy()),
-                    tblSupliment.getItems().get(i).getTotal()));
-
-            System.out.println(orderDetailList);
-
-            int availableQTY = Integer.parseInt(txtAvalbleQTY.getText());
-            int changedQTY = Integer.parseInt(txtQTY.getText());
-            int newQTY = availableQTY - changedQTY;
-
-            suplimentList.add(new SuplimentDTO(
-
-                    tblSupliment.getItems().get(i).getSuplimId(),
-                    tblSupliment.getItems().get(i).getSuplimName(),
-                    newQTY,
-                    Double.parseDouble(txtPrice.getText())));
-
-            System.out.println(suplimentList);
-
-        }
-        System.out.println("check1");
-
-
-        o.setOrderDetailsDTOS(orderDetailList);
-        o.setSuplimentDTOS(suplimentList);
-
-        try {
-            boolean isAdded = placeOrderBO.purchaseOrder(o);
-            if (isAdded) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Addedd!", ButtonType.OK).show();
-            } else {
-                new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+    } catch (SQLException throwables) {
+        throwables.printStackTrace();
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    }
+} catch (NumberFormatException e) {
+    e.printStackTrace();
+}catch (NullPointerException e){
+    new Alert(Alert.AlertType.WARNING,"Some Values Comes with null",ButtonType.OK).show();
+}
     }
 
     public void radioButto() {
@@ -369,7 +377,6 @@ public class SuplimentOrderDetailsFormController {
         int index = cmbType.getSelectionModel().getSelectedIndex();
 
         if (index == 0) {
-            System.out.println("asdasdasd");
 
             cmbSuplimetnId.setVisible(true);
             lblPayments.setVisible(false);
@@ -447,5 +454,21 @@ public class SuplimentOrderDetailsFormController {
 
     public void txtQTYOnAcion(ActionEvent actionEvent) {
       //txtDiscount.requestFocus();
+    }
+
+    public void jasperOn(ActionEvent actionEvent) throws JRException, SQLException, ClassNotFoundException {
+        InputStream inputStream = this.getClass().getResourceAsStream("/jasper/gymm.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
+        HashMap map = new HashMap();
+        map.put("Pay Id",lblPayID.getText());
+        for (int i = 0; i <tblSupliment.getItems().size();i++) {
+            map.put("Suppliment ID",tblSupliment.getItems().get(i).getSuplimId());
+            map.put("Product Name",tblSupliment.getItems().get(i).getSuplimName());
+
+        }
+        map.put("Date",txtOrderDate.getText());
+        map.put("Total",String.valueOf(txtTotal.getText()));
+        JasperPrint print = JasperFillManager.fillReport(jasperReport,map, DBConnection.getInstance().getConnection());
+        JasperViewer.viewReport(print);
     }
 }

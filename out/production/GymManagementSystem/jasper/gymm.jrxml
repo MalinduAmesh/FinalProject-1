@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gymm" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="62859740-5357-4801-afc8-b60dceb0afae">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="GymSytem"/>
+	<parameter name="Pay Id" class="java.lang.String"/>
+	<parameter name="Date" class="java.lang.String"/>
+	<parameter name="Total" class="java.lang.String"/>
+	<parameter name="Suppliment ID" class="java.lang.String"/>
+	<parameter name="Product Name" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select ord.inoId, ord.qty, ord.unitPrice, sup.supId, sup.name from invoice od,orderDetail ord,payments pa,supliment sup  where (ord.inoId=od.inoId) and (od.payId=pa.payId) and (sup.supId=ord.supId)]]>
+	</queryString>
+	<field name="inoId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="inoId"/>
+		<property name="com.jaspersoft.studio.field.label" value="inoId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderDetail"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderDetail"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unitPrice" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="unitPrice"/>
+		<property name="com.jaspersoft.studio.field.label" value="unitPrice"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderDetail"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="supId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="supId"/>
+		<property name="com.jaspersoft.studio.field.label" value="supId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supliment"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supliment"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<sortField name="inoId" order="Descending"/>
+	<sortField name="qty" order="Descending"/>
+	<sortField name="unitPrice" order="Descending"/>
+	<sortField name="supId" order="Descending"/>
+	<sortField name="name" order="Descending"/>
+	<group name="inoId">
+		<groupExpression><![CDATA[$F{inoId}]]></groupExpression>
+	</group>
+	<group name="qty">
+		<groupExpression><![CDATA[$F{qty}]]></groupExpression>
+	</group>
+	<group name="unitPrice">
+		<groupExpression><![CDATA[$F{unitPrice}]]></groupExpression>
+	</group>
+	<group name="supId">
+		<groupExpression><![CDATA[$F{supId}]]></groupExpression>
+	</group>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="170" y="24" width="256" height="30" uuid="e9e9ba33-669d-49af-990a-d2c9bd0da6ea"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Beast House GYM]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="114" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="13" width="100" height="30" uuid="8375cf02-39ad-4eb2-a9ab-7f6699afa1d8"/>
+				<textFieldExpression><![CDATA[$P{Pay Id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="426" y="10" width="100" height="30" uuid="e4072115-9449-41b1-9b4e-e5ced5f42bee"/>
+				<textFieldExpression><![CDATA[$P{Date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="30" uuid="183f4b38-d3c4-4246-b3d4-4ec701e58a2b"/>
+				<text><![CDATA[PayId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="9" width="100" height="30" uuid="ce424e1c-e1a7-45ec-b796-218d4f0b4c7d"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="63" width="100" height="30" uuid="f1fee0d8-ec2c-45ea-a7dd-8447d3e51768"/>
+				<textFieldExpression><![CDATA[$P{Product Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="310" y="60" width="100" height="30" uuid="f75e1c3e-ad64-4dea-beff-d86e18c9cb7b"/>
+				<text><![CDATA[Prod Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="63" width="100" height="30" uuid="ae01ca3e-5e28-4d57-a124-c8c052c8c0be"/>
+				<text><![CDATA[Suppliment ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="60" width="100" height="30" uuid="5a241393-f92d-4603-98be-c4de22630171"/>
+				<textFieldExpression><![CDATA[$P{Suppliment ID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="7" width="100" height="30" uuid="4a0b0d1a-1d8c-4c29-955a-a09bf5e58d07"/>
+				<textFieldExpression><![CDATA[$P{Total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="6" width="100" height="30" uuid="a98e1865-b5cc-48f9-9888-06719da7ff3c"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

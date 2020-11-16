@@ -67,4 +67,16 @@ public class PaymentDAOImpl implements PaymentDAO {
         ResultSet rst = CrudUtil.executeQuery(sql);
         return rst.next()?rst.getString("payId"):null;
     }
+
+    @Override
+    public String paymentCount() {
+        return null;
+    }
+
+    @Override
+    public String getCpunt() throws SQLException, ClassNotFoundException {
+        String sql = "Select SUM(payAmount) from payments order by payAmount desc LIMIT 1";
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        return rst.next()?rst.getString(1):null;
+    }
 }

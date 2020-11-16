@@ -26,12 +26,11 @@ public class OrderDetailsDAOImpl implements OrderDetailsDAO {
     public boolean update(OrderDetails a) throws SQLException, ClassNotFoundException {
         String sql = "Update orderDetail set supId = ?,qty = ?,unitPrice =? where ordId =?";
         return CrudUtil.executeUpdate(sql,a.getSuplimeID(),a.getOrederDetailQTY(),a.getOrederDetailUnitP(),a.getOrderDetailID());
-
     }
 
     @Override
     public OrderDetails search(String s) throws SQLException, ClassNotFoundException {
-        String sql =" Select * From orderDetail where ordId =?";
+      String sql ="Select * from orderDetail where ordId=?";
         ResultSet rst = CrudUtil.executeQuery(sql, s);
         if (rst.next()){
             return new OrderDetails(

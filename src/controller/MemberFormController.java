@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.Impl.MemberFormBOImpl;
 import bo.custom.MemberFormBO;
 import com.jfoenix.controls.JFXTextField;
@@ -50,7 +51,7 @@ public class MemberFormController {
     @FXML
     private TableColumn<CustomerDTO,String> colTools;
 
-    MemberFormBO memberForm = new MemberFormBOImpl();
+    MemberFormBO memberForm = (MemberFormBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.MemForm);
 
     public AnchorPane root;
 
@@ -58,7 +59,7 @@ public class MemberFormController {
 
     public void initialize() {
 
-        setValuesTocol();
+       // setValuesTocol();
         setValuesTotxt();
 
 
@@ -70,8 +71,8 @@ public class MemberFormController {
         colMemID.setCellValueFactory(new PropertyValueFactory<>("custID"));
         colMemName.setCellValueFactory(new PropertyValueFactory<>("custName"));
         colNIC.setCellValueFactory(new PropertyValueFactory<>("custNic"));
-        colContact.setCellValueFactory(new PropertyValueFactory<>("custAddress"));
-        colGender.setCellValueFactory(new PropertyValueFactory<>("custContact"));
+//        colContact.setCellValueFactory(new PropertyValueFactory<>("custAddress"));
+//        colGender.setCellValueFactory(new PropertyValueFactory<>("custContact"));
         colDOB.setCellValueFactory(new PropertyValueFactory<>("custDOB"));
             System.out.println("BUG123");
 

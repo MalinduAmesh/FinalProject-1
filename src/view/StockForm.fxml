@@ -17,25 +17,21 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <TableView layoutX="184.0" layoutY="215.0" prefHeight="539.0" prefWidth="1298.0">
+      <TableView fx:id="tblEquipment" layoutX="78.0" layoutY="215.0" prefHeight="539.0" prefWidth="720.0">
         <columns>
-          <TableColumn prefWidth="129.0" text="Equipment ID" />
-          <TableColumn prefWidth="201.0" text="Name" />
-            <TableColumn prefWidth="112.0" text="QTY" />
-            <TableColumn prefWidth="172.0" text="Cost" />
-            <TableColumn prefWidth="167.0" text="Products ID" />
-            <TableColumn prefWidth="219.0" text="Name" />
-            <TableColumn prefWidth="97.0" text="QTY" />
-            <TableColumn prefWidth="200.0" text="Price" />
+          <TableColumn fx:id="colEquID" prefWidth="129.0" text="Equipment ID" />
+          <TableColumn fx:id="colEquName" prefWidth="201.0" text="Name" />
+            <TableColumn fx:id="colEquQty" prefWidth="161.0" text="QTY" />
+            <TableColumn fx:id="colEquCost" prefWidth="228.0" text="Cost" />
         </columns>
       </TableView>
-      <JFXComboBox editable="true" labelFloat="true" layoutX="661.0" layoutY="125.0" prefHeight="49.0" prefWidth="245.0" promptText="Search" />
+      <JFXComboBox fx:id="search" editable="true" labelFloat="true" layoutX="661.0" layoutY="125.0" onAction="#searchOnAction" prefHeight="49.0" prefWidth="245.0" promptText="Search" />
       <ImageView fx:id="btnSearch" fitHeight="49.0" fitWidth="53.0" layoutX="944.0" layoutY="125.0" onMouseEntered="#btnSearchOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assests/loupe.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnProducts" layoutX="88.0" layoutY="67.0" onAction="#btnProductsOnAction" stylesheets="@../css/styles.css" text="Products">
+      <JFXButton fx:id="btnProducts" layoutX="88.0" layoutY="67.0" onAction="#btnProductsOnAction" style="-fx-background-color: white; -fx-background-radius: 50;" stylesheets="@../css/styles.css" text="Products">
          <graphic>
             <ImageView fitHeight="49.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -47,7 +43,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnEqupment" layoutX="273.0" layoutY="67.0" onAction="#btnEqupmentOnAction" stylesheets="@../css/styles.css" text="Equipments">
+      <JFXButton fx:id="btnEqupment" layoutX="273.0" layoutY="67.0" onAction="#btnEqupmentOnAction" style="-fx-background-color: white; -fx-background-radius: 50;" stylesheets="@../css/styles.css" text="Equipments">
          <graphic>
             <ImageView fitHeight="49.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -71,5 +67,13 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
+      <TableView fx:id="tblSupliment" layoutX="877.0" layoutY="215.0" prefHeight="539.0" prefWidth="713.0">
+        <columns>
+          <TableColumn fx:id="colSupID" prefWidth="116.0" text="Supliment ID" />
+          <TableColumn fx:id="colSupName" prefWidth="207.0" text="Name" />
+            <TableColumn fx:id="colSupQty" prefWidth="208.0" text="QTY" />
+            <TableColumn fx:id="colSupCost" prefWidth="181.0" text="Cost" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

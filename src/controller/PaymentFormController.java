@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.Impl.PaymentBoImpl;
 import bo.custom.PaymentBo;
 import com.jfoenix.controls.JFXComboBox;
@@ -34,7 +35,7 @@ public class PaymentFormController {
     public JFXRadioButton rdoCard;
     public JFXTextField searchTable;
 
-    PaymentBo paymentBo = new PaymentBoImpl();
+    PaymentBo paymentBo = (PaymentBo) BOFactory.getInstance().getBO(BOFactory.BOTypes.PAYMENT);
 
     public void initialize() throws SQLException, ClassNotFoundException {
     }

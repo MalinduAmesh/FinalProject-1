@@ -8,7 +8,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jfoenix-8.0.7" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.34" level="project" />
     <orderEntry type="library" name="AnimateFX-1.2.0" level="project" />
+    <orderEntry type="library" name="jasper libries" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.34" level="project" />
+    <orderEntry type="library" name="RegEx_Simulator" level="project" />
   </component>
 </module>

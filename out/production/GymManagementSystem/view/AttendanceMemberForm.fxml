@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="926.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AttendanceMemberFormController">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="175.0" opacity="0.79" prefHeight="481.0" prefWidth="845.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="36.0" layoutY="34.0" text="Member Attendance">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="63.0" layoutY="116.0" text="Attandce ID :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="lblMemAttID" layoutX="187.0" layoutY="101.0" prefHeight="47.0" prefWidth="157.0" style="-fx-background-color: #1abc9c; -fx-background-radius: 30;" />
+            <JFXTextField fx:id="txtMemName" layoutX="496.0" layoutY="255.0" prefHeight="59.0" prefWidth="287.0" promptText="MemberName" unFocusColor="BLACK">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXTextField>
+            <JFXComboBox fx:id="cmbMemID" layoutX="65.0" layoutY="251.0" onAction="#cmbMemIDOnAction" prefHeight="59.0" prefWidth="287.0" promptText="Member" />
+            <JFXComboBox fx:id="cmbInsID" layoutX="63.0" layoutY="355.0" onAction="#cmbInsIDOnAction" prefHeight="59.0" prefWidth="287.0" promptText="Instructors" />
+            <JFXTextField fx:id="txtInsName" layoutX="494.0" layoutY="359.0" prefHeight="59.0" prefWidth="287.0" promptText="Instructor Name" unFocusColor="BLACK">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXTextField>
+            <Label layoutX="63.0" layoutY="197.0" text="Date :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="lblAutoDate" layoutX="187.0" layoutY="181.0" prefHeight="47.0" prefWidth="157.0" style="-fx-background-color: #1abc9c;" />
+            <Label layoutX="494.0" layoutY="197.0" text="Time :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="lblAutoTime" layoutX="603.0" layoutY="181.0" prefHeight="47.0" prefWidth="157.0" style="-fx-background-color: #1abc9c;" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <TableView fx:id="tblInstructor" layoutX="884.0" layoutY="281.0" prefHeight="365.0" prefWidth="720.0">
+        <columns>
+          <TableColumn fx:id="colInsID" prefWidth="127.0" text="Instructor ID" />
+            <TableColumn fx:id="colInsName" prefWidth="206.0" text="Instructor Name" />
+            <TableColumn fx:id="colStartTime" prefWidth="207.0" text="Start Time" />
+            <TableColumn fx:id="colEndTime" prefWidth="179.0" text="End Time" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtInsSearchPart" layoutX="1100.0" layoutY="162.0" onAction="#txtInsSearchPart" prefHeight="59.0" prefWidth="287.0" promptText="Search Instructor" />
+      <Label layoutX="920.0" layoutY="46.0" text="Avalibale Instructors" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnAdd" layoutX="263.0" layoutY="703.0" onAction="#btnAddOnAction" prefHeight="69.0" prefWidth="149.0" style="-fx-background-radius: 50;" text=" ">
+         <graphic>
+            <ImageView fitHeight="59.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/Ok.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" layoutX="481.0" layoutY="703.0" onAction="#btnClearOnAction" prefHeight="69.0" prefWidth="149.0" style="-fx-background-radius: 50;" text=" ">
+         <graphic>
+            <ImageView fitHeight="59.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/clear.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

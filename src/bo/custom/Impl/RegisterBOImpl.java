@@ -1,6 +1,7 @@
 package bo.custom.Impl;
 
 import bo.custom.RegisterBO;
+import dao.DAOFactory;
 import dao.custom.*;
 import dao.custom.Impl.*;
 import db.DBConnection;
@@ -13,11 +14,11 @@ import java.util.ArrayList;
 
 public class RegisterBOImpl implements RegisterBO {
 
-    RegisterDAO registerDAO = new RegisterDAOImpl();
-    MemberShipDAO memberShipDAO = new MemberShipDAOImpl();
-    CustomerDAO customerDAO = new CustomerDAOImpl();
-    QueryDAO queryDAO = new QueryDAOImpl();
-    InstructorDAO instructorDAO = new InstructorDAOImpl();
+    RegisterDAO registerDAO = (RegisterDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.REGISTER);
+    MemberShipDAO memberShipDAO = (MemberShipDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.MEMBERSHIP);
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+    QueryDAO queryDAO = (QueryDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.QUERYDAO);
+    InstructorDAO instructorDAO = (InstructorDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.INSTRUCTOR);
 
     @Override
     public String getLastCustomerCode() throws SQLException, ClassNotFoundException {

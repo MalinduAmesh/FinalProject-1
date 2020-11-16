@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="926.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaymentDetailFormController">
+   <children>
+      <JFXComboBox layoutX="670.0" layoutY="24.0" prefHeight="60.0" prefWidth="326.0" promptText="Member ID" />
+      <TableView layoutX="70.0" layoutY="203.0" prefHeight="428.0" prefWidth="652.0">
+        <columns>
+          <TableColumn prefWidth="161.0" text="ID" />
+          <TableColumn prefWidth="161.0" text="Name" />
+            <TableColumn prefWidth="161.0" text="C2" />
+            <TableColumn prefWidth="161.0" text="C2" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

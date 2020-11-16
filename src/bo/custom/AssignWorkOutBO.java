@@ -6,6 +6,7 @@ import dto.CustomDTO;
 import dto.CustomerDTO;
 import dto.ScheduleDTO;
 import entity.Schedule;
+import javafx.collections.ObservableList;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,4 +28,6 @@ public interface AssignWorkOutBO extends SuperBO {
     ArrayList<AssignWorkOutDTO> loadTable(String s) throws SQLException, ClassNotFoundException;
 
     ArrayList<CustomerDTO> getAllMemSearchID() throws SQLException, ClassNotFoundException;
+
+    ObservableList<AssignWorkOutDTO> loadTableForm() throws SQLException, ClassNotFoundException;
 }

@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,13 +19,13 @@
       </ImageView>
       <AnchorPane id=" linear-gradient(to right top, #372c05, #5d5631, #85845e, #b0b48f, #dce7c4)" fx:id="root" layoutX="-1.0" opacity="0.91" prefHeight="1029.0" prefWidth="486.0" style="-fx-background-color: #dcdde1;">
          <children>
-            <JFXTextField fx:id="txtUserName" focusColor="#214ccd" labelFloat="true" layoutX="88.0" layoutY="363.0" onAction="#txtUserNameOnAction" prefHeight="75.0" prefWidth="331.0" promptText="UserName" style="-fx-: red;" unFocusColor="BLACK">
+            <JFXTextField fx:id="txtUserName" focusColor="#214ccd" labelFloat="true" layoutX="88.0" layoutY="383.0" onAction="#txtUserNameOnAction" prefHeight="55.0" prefWidth="331.0" promptText="UserName" style="-fx-: red;" unFocusColor="BLACK">
                <font>
                   <Font size="16.0" />
                </font></JFXTextField>
-            <ImageView fx:id="con" fitHeight="236.0" fitWidth="250.0" layoutX="118.0" layoutY="119.0" onMouseEntered="#lblIconOnAction" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="con" fitHeight="236.0" fitWidth="250.0" layoutX="147.0" layoutY="23.0" onMouseEntered="#lblIconOnAction" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assests/BH%20logo%20non%20embosed.png" />
+                  <Image url="@../Assests/gym%207.png" />
                </image>
             </ImageView>
             <ImageView fx:id="btnLogin" fitHeight="86.0" fitWidth="201.0" layoutX="147.0" layoutY="666.0" onMouseEntered="#enter" onMouseReleased="#btnLoginOnAcrtionFucka" pickOnBounds="true" preserveRatio="true">
@@ -32,13 +33,33 @@
                   <Image url="@../Assests/login-button-png-18021(1).png" />
                </image>
             </ImageView>
-            <JFXPasswordField fx:id="txtPass" labelFloat="true" layoutX="88.0" layoutY="499.0" onAction="#txtPasswordOnAction" opacity="0.74" prefHeight="75.0" prefWidth="331.0" promptText="Password">
+            <JFXPasswordField fx:id="txtPass" labelFloat="true" layoutX="88.0" layoutY="495.0" onAction="#txtPasswordOnAction" opacity="0.74" prefHeight="55.0" prefWidth="331.0" promptText="Password">
                <font>
                   <Font size="16.0" />
                </font></JFXPasswordField>
-            <ImageView fitHeight="50.0" fitWidth="39.0" layoutX="427.0" layoutY="28.0" onMouseReleased="#ExitOnAction" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="39.0" fitWidth="55.0" layoutX="42.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assests/close-button-png-30225.png" />
+                  <Image url="@../Assests/username.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="32.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/keyy.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="80.0" layoutY="292.0" text="Beast House GYM">
+               <font>
+                  <Font name="System Bold Italic" size="35.0" />
+               </font>
+            </Label>
+            <Label layoutX="357.0" layoutY="978.0" text="Help">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="403.0" layoutY="981.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/icons8-question-mark-100.png" />
                </image>
             </ImageView>
          </children>
@@ -52,5 +73,10 @@
          <effect>
             <DropShadow />
          </effect></AnchorPane>
+      <ImageView fitHeight="50.0" fitWidth="39.0" layoutX="1480.0" layoutY="34.0" onMouseReleased="#ExitOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assests/close-button-png-30225.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

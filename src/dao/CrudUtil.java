@@ -5,6 +5,7 @@ import db.DBConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CrudUtil {
 
@@ -24,4 +25,5 @@ public class CrudUtil {
         PreparedStatement pstm = getPreparedStatement(sql, params);
         return pstm.executeQuery();
     }
+    ArrayList a = new ArrayList();
 }

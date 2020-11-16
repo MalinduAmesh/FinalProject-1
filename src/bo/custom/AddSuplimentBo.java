@@ -16,4 +16,5 @@ public interface AddSuplimentBo extends SuperBO {
     public ObservableList<SuplimentDTO> getAllSupliment() throws SQLException, ClassNotFoundException;
 
 
+    String getLastId() throws SQLException, ClassNotFoundException;
 }

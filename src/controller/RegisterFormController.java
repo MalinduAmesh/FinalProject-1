@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.Impl.RegisterBOImpl;
 import bo.custom.RegisterBO;
 import com.jfoenix.controls.*;
@@ -12,10 +13,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Paint;
 
 import javax.xml.stream.events.DTD;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class RegisterFormController {
 
@@ -26,7 +29,7 @@ public class RegisterFormController {
     public JFXTextField txtInstructorName;
     public JFXComboBox txtRegInstructor;
 
-    RegisterBO registerBO = new RegisterBOImpl();
+    RegisterBO registerBO = (RegisterBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.REGISTER);
 
     public JFXComboBox cmbRegMemberShip;
     public JFXDatePicker dateStartDate;
@@ -203,12 +206,29 @@ public class RegisterFormController {
             dto.setRegFeeType(paymentType);
             dto.setRegFee(txtRegTotalFee.getText());
 
+                if (Pattern.compile("^[a-z|A-Z]{1,}$").matcher(txtCustomerName.getText()).matches()) {
+                txtCustomerName.setUnFocusColor(Paint.valueOf("blue"));
+                if (Pattern.compile("^[0-9]{1,10}$").matcher(txtCusContact.getText()).matches()) {
+                    txtCusContact.setUnFocusColor(Paint.valueOf("blue"));
+                    dateDOB.requestFocus();
+                    if (Pattern.compile("^[0-9]{1,12}$").matcher(txtCustomerNIC.getText()).matches()) {
+                        txtCustomerNIC.setUnFocusColor(Paint.valueOf("blue"));
 
-            boolean isAdded = registerBO.registerCustomer(dto);
-            if (isAdded) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
-            } else {
-                new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+
+                        boolean isAdded = registerBO.registerCustomer(dto);
+                        if (isAdded) {
+                            new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
+                        } else {
+                            new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+                        }
+                    }else {
+                        txtCustomerNIC.setUnFocusColor(Paint.valueOf("red"));
+                    }
+                }else {
+                    txtCusContact.setUnFocusColor(Paint.valueOf("red"));
+                }
+            }else {
+                txtCustomerName.setUnFocusColor(Paint.valueOf("red"));
             }
 
         } catch (SQLException throwables) {
@@ -222,10 +242,31 @@ public class RegisterFormController {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
+
     }
     public void dateStartDateOnAction(ActionEvent actionEvent) {
     }
     public void dateEndDateOnAction(ActionEvent actionEvent) {
+    }
+
+    public void totalMin(){
+        try {
+        double total =Double.parseDouble(txtRegTotalFee.getText());
+        double paid = Double.parseDouble(txtCusPaidFee.getText());
+
+        if (total<paid) {
+            String finish =String.valueOf(paid-total);
+            txtCusChange.setText(finish);
+            txtCusChange.setUnFocusColor(Paint.valueOf("blue"));
+
+        }else {
+            txtCusPaidFee.setUnFocusColor(Paint.valueOf("red"));
+        }
+        } catch (NumberFormatException e) {
+            txtCusPaidFee.setUnFocusColor(Paint.valueOf("red"));
+        }
+
+
     }
 
 
@@ -292,16 +333,11 @@ public class RegisterFormController {
 
     }
     private void Calculate(){
-        double toatal = Double.parseDouble(txtRegTotalFee.getText());
-        int paid = Integer.parseInt(txtCusPaidFee.getText());
 
-        double x= (paid-toatal);
-
-        txtCusChange.setText(String.valueOf(x));
     }
 
 
     public void txtCusPaidFeeOnAction(ActionEvent actionEvent) {
-        Calculate();
+        totalMin();
     }
 }

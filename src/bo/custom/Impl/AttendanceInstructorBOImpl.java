@@ -1,6 +1,7 @@
 package bo.custom.Impl;
 
 import bo.custom.AttendanceInstructorBO;
+import dao.DAOFactory;
 import dao.custom.Impl.InstAttandanceDAOImpl;
 import dao.custom.Impl.InstructorDAOImpl;
 import dao.custom.InstAttandanceDAO;
@@ -17,8 +18,8 @@ import java.util.ArrayList;
 
 public class AttendanceInstructorBOImpl implements AttendanceInstructorBO {
 
-    InstructorDAO instructorDAO = new InstructorDAOImpl();
-    InstAttandanceDAO instAttandanceDAO = new InstAttandanceDAOImpl();
+    InstructorDAO instructorDAO = (InstructorDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.INSTRUCTOR);
+    InstAttandanceDAO instAttandanceDAO = (InstAttandanceDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.INSATTANDANCE);
 
     @Override
     public ObservableList<InstructorDTO> setValues() throws SQLException, ClassNotFoundException {

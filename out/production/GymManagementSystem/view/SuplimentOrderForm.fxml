@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="926.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SuplimentOrderFormController">
+   <children>
+      <Label layoutX="137.0" layoutY="52.0" text="Sell Records" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Separator layoutY="105.0" prefHeight="0.0" prefWidth="1666.0" />
+      <JFXButton layoutX="1396.0" layoutY="19.0" onMouseClicked="#sellOnAction" prefHeight="66.0" prefWidth="191.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 30;" text="Sell Products">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assests/Sell%20Icon.png" />
+               </image></ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="57.0" fitWidth="62.0" layoutX="68.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assests/Money.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblOrders" layoutX="256.0" layoutY="184.0" opacity="0.79" prefHeight="692.0" prefWidth="1155.0">
+        <columns>
+            <TableColumn fx:id="colOrderId" prefWidth="158.0" text="Order ID" />
+          <TableColumn fx:id="colOrdCusName" prefWidth="243.0" text="Customer Name" />
+          <TableColumn fx:id="colSuplimentName" minWidth="0.0" prefWidth="243.0" text="Pay for" />
+            <TableColumn fx:id="colOrdDate" prefWidth="253.0" text="Date" />
+            <TableColumn fx:id="colSuplimentTotal" prefWidth="257.0" text="Total Price" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

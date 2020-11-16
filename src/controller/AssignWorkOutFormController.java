@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.AssignWorkOutBO;
 import bo.custom.Impl.AssignWorkOutBOImpl;
 import com.jfoenix.controls.JFXButton;
@@ -35,7 +36,7 @@ public class AssignWorkOutFormController {
     public JFXComboBox cmbMemIID;
     public JFXComboBox cmbSearchOld;
     public AnchorPane root;
-    AssignWorkOutBO assignWorkOutBO = new AssignWorkOutBOImpl();
+    AssignWorkOutBO assignWorkOutBO = (AssignWorkOutBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.ASSIGNWORKOUT);
 
     public JFXComboBox cmbSchID;
     public JFXTextField txtMemName;
@@ -134,23 +135,30 @@ public class AssignWorkOutFormController {
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        String id =lblAssWorkID.getText();
-        String memId = cmbMemIID.getValue().toString();
-        String schGoal = cmbSchID.getValue().toString();
-        String dateIn = dateIN.getValue().toString();
-        String dateOut = DateOut.getValue().toString();
+       try {
+
+           String id = lblAssWorkID.getText();
+           String memId = cmbMemIID.getValue().toString();
+           String schGoal = cmbSchID.getValue().toString();
+           String dateIn = dateIN.getValue().toString();
+           String dateOut = DateOut.getValue().toString();
 
 
-
-        AssignWorkOutDTO assignWorkOutDTO = new AssignWorkOutDTO(id,memId,schGoal,dateIn,dateOut);
-        System.out.println("details"+assignWorkOutDTO);
-        boolean isAdded = assignWorkOutBO.addAssignWorkOut(assignWorkOutDTO);
-        if (isAdded){
-            new Alert(Alert.AlertType.CONFIRMATION,"Added", ButtonType.OK).show();
-        }else {
-            new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
-        }
-
+           AssignWorkOutDTO assignWorkOutDTO = new AssignWorkOutDTO(id, memId, schGoal, dateIn, dateOut);
+           System.out.println("details" + assignWorkOutDTO);
+           boolean isAdded = assignWorkOutBO.addAssignWorkOut(assignWorkOutDTO);
+           if (isAdded) {
+               new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
+           } else {
+               new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+           }
+       } catch (SQLException throwables) {
+           throwables.printStackTrace();
+       } catch (ClassNotFoundException e) {
+           e.printStackTrace();
+       }catch (NullPointerException e){
+           new Alert(Alert.AlertType.WARNING,"Some Values Comes with null",ButtonType.OK).show();
+       }
 
     }
 

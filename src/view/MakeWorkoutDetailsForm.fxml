@@ -27,7 +27,7 @@
             <JFXTextField fx:id="txtEquID" labelFloat="true" layoutX="101.0" layoutY="201.0" prefHeight="45.0" prefWidth="342.0" promptText="ID" />
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnAddCart" layoutX="1076.0" layoutY="658.0" onAction="#btnAddCartOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnAddCart" layoutX="1076.0" layoutY="658.0" onAction="#btnAddCartOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-radius: 50; -fx-background-color: white;" text=" ">
          <graphic>
             <ImageView fitHeight="67.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -36,7 +36,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnPay" layoutX="1276.0" layoutY="665.0" onAction="#btnPayOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnPay" layoutX="1276.0" layoutY="665.0" onAction="#btnPayOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-radius: 50; -fx-background-color: white;" text=" ">
          <graphic>
             <ImageView fitHeight="64.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -45,7 +45,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnClear" layoutX="1283.0" layoutY="795.0" onAction="#btnClearOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnClear" layoutX="1283.0" layoutY="795.0" onAction="#btnClearOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-radius: 50; -fx-background-color: white;" text=" ">
          <graphic>
             <ImageView fitHeight="63.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -93,7 +93,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnremoveCart" layoutX="1084.0" layoutY="795.0" onAction="#btnremoveCartOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 100 0 100 0;" text=" ">
+      <JFXButton fx:id="btnremoveCart" layoutX="1084.0" layoutY="795.0" onAction="#btnremoveCartOnAction" prefHeight="82.0" prefWidth="144.0" style="-fx-background-color: white; -fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="69.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                <image>

@@ -1,6 +1,7 @@
 package bo.custom.Impl;
 
 import bo.custom.MemberAttendnceBO;
+import dao.DAOFactory;
 import dao.custom.*;
 import dao.custom.Impl.*;
 import dto.AttendanceDTO;
@@ -18,10 +19,10 @@ import java.util.ArrayList;
 
 public class MemberAttendanceBOImpl implements MemberAttendnceBO {
 
-    AttendaceDAO attendaceDAO = new AttendanceDAOImpl();
-    InstAttandanceDAO instAttandanceDAO =new InstAttandanceDAOImpl();
-    CustomerDAO customerDAO = new CustomerDAOImpl();
-    InstructorDAO instructorDAO =new InstructorDAOImpl();
+    AttendaceDAO attendaceDAO = (AttendaceDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.ATTENDANCE);
+    InstAttandanceDAO instAttandanceDAO = (InstAttandanceDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.INSATTANDANCE);
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+    InstructorDAO instructorDAO = (InstructorDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.INSTRUCTOR);
 
     @Override
     public String getMemLastId() throws SQLException, ClassNotFoundException {

@@ -19,7 +19,7 @@ public class AppIntializer extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        Parent stage = FXMLLoader.load(this.getClass().getResource("view/MemGrowingForm.fxml"));
+        Parent stage = FXMLLoader.load(this.getClass().getResource("view/LoginForm.fxml"));
         primaryStage.setScene(new Scene(stage));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();

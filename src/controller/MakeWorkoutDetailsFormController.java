@@ -1,6 +1,7 @@
 package controller;
 
 import animatefx.animation.*;
+import bo.BOFactory;
 import bo.custom.Impl.MakeWorkOutDetailsBOImpl;
 import bo.custom.MakeWorkOutDetailsBO;
 import com.jfoenix.controls.JFXButton;
@@ -35,7 +36,7 @@ import java.util.ArrayList;
 public class MakeWorkoutDetailsFormController {
 
     public AnchorPane root;
-    MakeWorkOutDetailsBO makeWorkOutDetailsBO = new MakeWorkOutDetailsBOImpl();
+    MakeWorkOutDetailsBO makeWorkOutDetailsBO = (MakeWorkOutDetailsBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.MAKEWORKOUTDETAILS);
 
 
     public JFXTextField txtEquCost;
@@ -166,33 +167,41 @@ public class MakeWorkoutDetailsFormController {
 
     public void btnPayOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-        ScheduleDTO dto = new ScheduleDTO();
+        try {
 
-        dto.setSchId(lblSchID.getText());
-        dto.setSchGoal(txtschGoal.getText());
-        dto.setSchType(txtSchType.getText());
-        dto.setSchLevel(txtSchLevel.getText());
-        dto.setSchDuration(txtSchDuration.getText());
-        dto.setSchPerWeek(txtSchWeek.getText());
-        dto.setSchPerTime(txtSchTime.getText());
+            ScheduleDTO dto = new ScheduleDTO();
 
-        ObservableList<ScheduleDetailsDTO>list = FXCollections.observableArrayList();
-        for (int i = 0; i <tblSchDetails.getItems().size() ; i++) {
+            dto.setSchId(lblSchID.getText());
+            dto.setSchGoal(txtschGoal.getText());
+            dto.setSchType(txtSchType.getText());
+            dto.setSchLevel(txtSchLevel.getText());
+            dto.setSchDuration(txtSchDuration.getText());
+            dto.setSchPerWeek(txtSchWeek.getText());
+            dto.setSchPerTime(txtSchTime.getText());
 
-            list.add(new ScheduleDetailsDTO(tblSchDetails.getItems().get(i).getEquipmentId(),lblSchID.getText()));
+            ObservableList<ScheduleDetailsDTO> list = FXCollections.observableArrayList();
+            for (int i = 0; i < tblSchDetails.getItems().size(); i++) {
+
+                list.add(new ScheduleDetailsDTO(tblSchDetails.getItems().get(i).getEquipmentId(), lblSchID.getText()));
 
 
+            }
+            dto.setScheduleDetailsList(list);
+
+            boolean isAdded = makeWorkOutDetailsBO.createSchedule(dto);
+
+            if (isAdded) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }catch (NullPointerException e){
+            new Alert(Alert.AlertType.WARNING,"Some text Fields come with Null Values",ButtonType.OK).show();
         }
-        dto.setScheduleDetailsList(list);
-
-        boolean isAdded = makeWorkOutDetailsBO.createSchedule(dto);
-
-        if (isAdded){
-            new Alert(Alert.AlertType.CONFIRMATION,"Added", ButtonType.OK).show();
-        }else {
-            new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
-        }
-
 
 
     }

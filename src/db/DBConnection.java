@@ -7,11 +7,11 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static DBConnection dbConnection;
-    private Connection connection;
+    public Connection connection;
 
-    private DBConnection() throws ClassNotFoundException, SQLException {
+    public DBConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/GymSystem", "root", "1563");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/GymSystem", "root", "1561");
 
     }
     public static DBConnection getInstance() throws SQLException, ClassNotFoundException {

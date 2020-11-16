@@ -10,7 +10,7 @@
 <AnchorPane prefHeight="1057.0" prefWidth="1919.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBordFormController">
    <children>
 
-      <AnchorPane layoutX="266.0" prefHeight="95.0" prefWidth="1641.0" style="-fx-background-color: linear-gradient(to right top, #517c67, #2c797d, #277191, #556394, #7e517#311B#311B9292e); -fx-background-radius: 100 100 100 100;">
+      <AnchorPane layoutX="266.0" prefHeight="95.0" prefWidth="1641.0" style="-fx-background-color: linear-gradient(to right top, #517c67, #2c797d, #277191, #556394, #7e517); -fx-background-radius: 100 100 100 100;">
          <children>
             <Label layoutX="668.0" layoutY="24.0" text="Beast House GYM">
                <font>

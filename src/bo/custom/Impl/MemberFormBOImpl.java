@@ -1,6 +1,7 @@
 package bo.custom.Impl;
 
 import bo.custom.MemberFormBO;
+import dao.DAOFactory;
 import dao.custom.CustomerDAO;
 import dao.custom.Impl.CustomerDAOImpl;
 import dto.CustomerDTO;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 
 public class MemberFormBOImpl implements MemberFormBO {
 
-    CustomerDAO customerDAO = new CustomerDAOImpl();
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);
 
     @Override
     public CustomerDTO searchAllMemeName() {

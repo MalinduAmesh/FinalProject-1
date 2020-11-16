@@ -12,4 +12,8 @@ public interface InstructorDAO extends CrudDAO<Instructor,String> {
     ArrayList<Instructor> searchIns() throws SQLException, ClassNotFoundException;
 
     public boolean updateStatusOnly(Instructor id) throws  Exception;
+
+    String getCount() throws SQLException, ClassNotFoundException;
+
+    String getLastId() throws SQLException, ClassNotFoundException;
 }

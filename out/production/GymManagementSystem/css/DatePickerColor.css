@@ -1,0 +1,8 @@
+.txtDate .input-line{
+    -fx-background-color: aquamarine;
+
+}
+.txtDate .input-focused-line{
+    -fx-background-color: brown;
+
+}

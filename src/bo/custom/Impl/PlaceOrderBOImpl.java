@@ -1,6 +1,7 @@
 package bo.custom.Impl;
 
 import bo.custom.PlaceOrderBO;
+import dao.DAOFactory;
 import dao.custom.*;
 import dao.custom.Impl.*;
 import db.DBConnection;
@@ -15,11 +16,11 @@ import java.util.ArrayList;
 
 public class PlaceOrderBOImpl implements PlaceOrderBO {
 
-    SuplimentDAO suplimentDAO = new SuplimentDAOImpl();
-    InvoiceDAO invoiceDAO = new InvoiceDAOImpl();
-    OrderDetailsDAO orderDetailsDAO = new OrderDetailsDAOImpl();
-    CustomerDAO customerDAO = new CustomerDAOImpl();
-    PaymentDAO paymentDAO = new PaymentDAOImpl();
+    SuplimentDAO suplimentDAO = (SuplimentDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.SUPLIMENT);
+    InvoiceDAO invoiceDAO = (InvoiceDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.INVOICE);
+    OrderDetailsDAO orderDetailsDAO = (OrderDetailsDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.ORDERDETAILS);
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+    PaymentDAO paymentDAO = (PaymentDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.PAYMENT);
 
 
     @Override
@@ -36,7 +37,7 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
     }
 
     @Override
-    public boolean purchaseOrder(PaymentDTO pay) throws SQLException, ClassNotFoundException {
+    public boolean  purchaseOrder(PaymentDTO pay) throws SQLException, ClassNotFoundException {
     Connection connection = DBConnection.getInstance().getConnection();
         connection.setAutoCommit(false);
         System.out.println("debug1");
@@ -185,86 +186,3 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
         return paymentDAO.getLastID();
     }
 }
-  /*   /Invoice invoice = new Invoice(
-                invoiceDTO.getInoId(),
-                invoiceDTO.getInoDate(),
-                invoiceDTO.getInoCus(),
-                invoiceDTO.getInoPayId());
-
-        System.out.println(invoice);
-        boolean isAddedOrder = invoiceDAO.add(invoice);
-        try {
-            System.out.println("debug2");
-            if (isAddedOrder) {
-                for (OrderDetailsDTO od : invoiceDTO.getOrderDetailsDTOS()) {
-
-                   boolean isAddedOrderDetail = orderDetailsDAO.add(new OrderDetails(
-                                    od.getOrderDetailID(),
-                                    od.getSuplimeID(),
-                                    od.getOrederDetailQTY(),
-                                    od.getOrederDetailUnitP()
-                   ));
-                    System.out.println(isAddedOrderDetail);
-
-                   // boolean isAddedOrderDetail = orderDetailsDAO.add(orderDetails);
-
-                    if (!isAddedOrderDetail) {
-                        connection.rollback();
-                        return false;
-                    }
-                    System.out.println("debug3");
-                }
-                if (isAddedOrder) {
-                    for (SuplimentDTO s : invoiceDTO.getSuplimentDTOS()) {
-                        boolean isUpdatedSupliment = suplimentDAO.update(new Supliment(
-
-                                s.getSuplimId(),
-                                s.getSuplimName(),
-                                s.getSuplimQTY(),
-                                s.getSuplimCost()));
-
-                        System.out.println(isUpdatedSupliment);
-
-                        if (!isUpdatedSupliment) {
-                            connection.rollback();
-                            return false;
-                        }
-                    }if (isAddedOrder){
-                        for (PaymentDTO paymentDTO :invoiceDTO.getPaymentDTOS()){
-                            boolean isPaid = paymentDAO.add(new Payment(
-                                    paymentDTO.getPayId(),
-                                    paymentDTO.getPayType(),
-                                    paymentDTO.getPayAmount(),
-                                    paymentDTO.getStatus()
-                            ));
-                            System.out.println(isPaid);
-                            if (!isPaid){
-                                connection.rollback();
-                                return false;
-                            }
-                        }
-                        connection.commit();
-                        return true;
-                    }else {
-                        connection.rollback();
-                        return false;
-                    }
-
-                } else {
-                    connection.rollback();
-                    return false;
-                }
-
-            } else {
-                connection.rollback();
-                return false;
-            }
-        } catch (SQLException ex) {
-            connection.rollback();
-            ex.printStackTrace();
-            return false;
-//
-         } finally {
-            connection.setAutoCommit(true);
-        }
-*/

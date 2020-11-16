@@ -1,6 +1,7 @@
 package bo.custom.Impl;
 
 import bo.custom.MakeWorkOutDetailsBO;
+import dao.DAOFactory;
 import dao.custom.EquipmentDAO;
 import dao.custom.Impl.EquipmentDAOImpl;
 import dao.custom.Impl.ScheduleDAOImpl;
@@ -21,9 +22,9 @@ import java.util.ArrayList;
 
 public class MakeWorkOutDetailsBOImpl implements MakeWorkOutDetailsBO {
 
-    EquipmentDAO equipmentDAO = new EquipmentDAOImpl();
-    ScheduleDAO scheduleDAO = new ScheduleDAOImpl();
-    ScheduleDetailsDAO scheduleDetailsDAO = new ScheduleDetailsDAOImpl();
+    EquipmentDAO equipmentDAO = (EquipmentDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.EQUIPMENT);
+    ScheduleDAO scheduleDAO = (ScheduleDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.SCHEDULE);
+    ScheduleDetailsDAO scheduleDetailsDAO = (ScheduleDetailsDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.SCHEDULEDETAILS);
 
     @Override
     public ObservableList<EquipmentDTO> getAllEquipment() throws SQLException, ClassNotFoundException {

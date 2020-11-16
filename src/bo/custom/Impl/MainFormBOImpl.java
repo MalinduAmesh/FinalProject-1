@@ -1,8 +1,13 @@
 package bo.custom.Impl;
 
 import bo.custom.MainFormBO;
+import dao.DAOFactory;
 import dao.custom.CustomerDAO;
 import dao.custom.Impl.CustomerDAOImpl;
+import dao.custom.Impl.InstructorDAOImpl;
+import dao.custom.Impl.PaymentDAOImpl;
+import dao.custom.InstructorDAO;
+import dao.custom.PaymentDAO;
 import dto.CustomDTO;
 import entity.CustomEntity;
 import javafx.scene.chart.XYChart;
@@ -12,7 +17,9 @@ import java.util.ArrayList;
 
 public class MainFormBOImpl implements MainFormBO {
 
-    CustomerDAO customerDAO = new CustomerDAOImpl();
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+    InstructorDAO instructorDAO = (InstructorDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.INSTRUCTOR);
+    PaymentDAO paymentDAO = (PaymentDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.PAYMENT);
     @Override
     public ArrayList<CustomDTO> lineChart() throws SQLException, ClassNotFoundException {
         ArrayList<CustomEntity> populate = customerDAO.lineChart();
@@ -25,6 +32,22 @@ public class MainFormBOImpl implements MainFormBO {
 
         }
         return customDTOS;
+    }
+
+    @Override
+    public String getInstructorCount() throws SQLException, ClassNotFoundException {
+        return instructorDAO.getCount();
+    }
+
+    @Override
+    public String getPayCount() throws SQLException, ClassNotFoundException {
+        return paymentDAO.getCpunt();
+    }
+
+    @Override
+    public String getGenarlCount() throws SQLException, ClassNotFoundException {
+        return customerDAO.getCountGenaral();
+
     }
 }
 /*    @FXML

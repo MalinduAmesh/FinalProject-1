@@ -10,5 +10,7 @@ import java.sql.SQLException;
 public interface MemGrowingBo extends SuperBO {
     ObservableList<CustomerDTO> setValuesTocmb() throws SQLException, ClassNotFoundException;
 
-    boolean AddGrowth(MemGrowthDTO memGrowthDTO);
+    boolean AddGrowth(MemGrowthDTO memGrowthDTO) throws SQLException, ClassNotFoundException;
+
+    String getLastId() throws SQLException, ClassNotFoundException;
 }

@@ -21,15 +21,30 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="63.0" layoutY="116.0" text="Attandce ID :" />
+            <Label layoutX="63.0" layoutY="116.0" text="Attandce ID :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
             <Label fx:id="lblMemAttID" layoutX="187.0" layoutY="101.0" prefHeight="47.0" prefWidth="157.0" style="-fx-background-color: #1abc9c; -fx-background-radius: 30;" />
-            <JFXTextField fx:id="txtMemName" layoutX="496.0" layoutY="255.0" prefHeight="59.0" prefWidth="287.0" promptText="MemberName" />
+            <JFXTextField fx:id="txtMemName" layoutX="496.0" layoutY="255.0" prefHeight="59.0" prefWidth="287.0" promptText="MemberName" unFocusColor="BLACK">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXTextField>
             <JFXComboBox fx:id="cmbMemID" layoutX="65.0" layoutY="251.0" onAction="#cmbMemIDOnAction" prefHeight="59.0" prefWidth="287.0" promptText="Member" />
             <JFXComboBox fx:id="cmbInsID" layoutX="63.0" layoutY="355.0" onAction="#cmbInsIDOnAction" prefHeight="59.0" prefWidth="287.0" promptText="Instructors" />
-            <JFXTextField fx:id="txtInsName" layoutX="494.0" layoutY="359.0" prefHeight="59.0" prefWidth="287.0" promptText="Instructor Name" />
-            <Label layoutX="63.0" layoutY="197.0" text="Date :" />
+            <JFXTextField fx:id="txtInsName" layoutX="494.0" layoutY="359.0" prefHeight="59.0" prefWidth="287.0" promptText="Instructor Name" unFocusColor="BLACK">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXTextField>
+            <Label layoutX="63.0" layoutY="197.0" text="Date :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
             <Label fx:id="lblAutoDate" layoutX="187.0" layoutY="181.0" prefHeight="47.0" prefWidth="157.0" style="-fx-background-color: #1abc9c;" />
-            <Label layoutX="494.0" layoutY="197.0" text="Time :" />
+            <Label layoutX="494.0" layoutY="197.0" text="Time :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
             <Label fx:id="lblAutoTime" layoutX="603.0" layoutY="181.0" prefHeight="47.0" prefWidth="157.0" style="-fx-background-color: #1abc9c;" />
          </children>
          <effect>
@@ -50,7 +65,7 @@
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnAdd" layoutX="326.0" layoutY="703.0" onAction="#btnAddOnAction" text=" ">
+      <JFXButton fx:id="btnAdd" layoutX="263.0" layoutY="703.0" onAction="#btnAddOnAction" prefHeight="69.0" prefWidth="149.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="59.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -59,7 +74,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btnClear" layoutX="481.0" layoutY="703.0" onAction="#btnClearOnAction" text=" ">
+      <JFXButton fx:id="btnClear" layoutX="481.0" layoutY="703.0" onAction="#btnClearOnAction" prefHeight="69.0" prefWidth="149.0" style="-fx-background-radius: 50;" text=" ">
          <graphic>
             <ImageView fitHeight="59.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>

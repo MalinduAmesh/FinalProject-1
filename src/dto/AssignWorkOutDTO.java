@@ -11,6 +11,13 @@ public class AssignWorkOutDTO {
     public AssignWorkOutDTO() {
     }
 
+    public AssignWorkOutDTO(String assMemID, String assSchID, String assInDate, String assOutDate) {
+        this.assMemID = assMemID;
+        this.assSchID = assSchID;
+        this.assInDate = assInDate;
+        this.assOutDate = assOutDate;
+    }
+
     public AssignWorkOutDTO(String assWorkId, String assMemID, String assSchID, String assInDate, String assOutDate) {
         this.assWorkId = assWorkId;
         this.assMemID = assMemID;

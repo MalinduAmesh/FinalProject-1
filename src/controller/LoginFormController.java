@@ -59,7 +59,7 @@ public class LoginFormController {
 
 
         if(userName.length() > 0 && password.length()>0){
-            if (userName.equalsIgnoreCase("1")&&password.equals("1")){
+            if (userName.equalsIgnoreCase("admin")&&password.equals("1234")){
 
                 setForm();
 

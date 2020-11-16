@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.Impl.MemGrowingBOImpl;
 import bo.custom.MemGrowingBo;
 import com.jfoenix.controls.JFXButton;
@@ -14,6 +15,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class MemGrowingFormController {
     public JFXButton btnAdd;
@@ -28,10 +30,31 @@ public class MemGrowingFormController {
     public JFXTextField txtChest;
     public JFXComboBox cmbCusID;
 
-MemGrowingBo memGrowingBo = new MemGrowingBOImpl();
+MemGrowingBo memGrowingBo = (MemGrowingBo) BOFactory.getInstance().getBO(BOFactory.BOTypes.MEMGROWING);
 
     public void initialize(){
         setValuesTocmb();
+        setDate();
+        genateID();
+    }
+
+    private void genateID() {
+        String lastid = null;
+        try {
+            lastid = memGrowingBo.getLastId();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if (lastid!=null){
+            lastid = lastid.split("[A-Z]")[1];
+            lastid ="P00"+(Integer.parseInt(lastid)+1);
+            lblID.setText(lastid);
+        }else {
+            lblID.setText("P001");
+        }
     }
 
     private void setValuesTocmb() {
@@ -62,7 +85,14 @@ MemGrowingBo memGrowingBo = new MemGrowingBOImpl();
         String chest =txtChest.getText();
 
         MemGrowthDTO memGrowthDTO = new MemGrowthDTO(id,date,name,weigth,height,waist,thigh,arms,chest);
-        boolean isAdded = memGrowingBo.AddGrowth(memGrowthDTO);
+        boolean isAdded = false;
+        try {
+            isAdded = memGrowingBo.AddGrowth(memGrowthDTO);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         if (isAdded){
             new Alert(Alert.AlertType.CONFIRMATION,"Added", ButtonType.OK).show();
         }else {
@@ -71,5 +101,9 @@ MemGrowingBo memGrowingBo = new MemGrowingBOImpl();
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
+    }
+    public void setDate(){
+        String date = LocalDate.now().toString();
+        lblDate.setText(date);
     }
 }

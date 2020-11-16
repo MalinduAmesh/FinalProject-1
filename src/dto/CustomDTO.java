@@ -87,12 +87,59 @@ public class CustomDTO {
         InstructID = instructID;
     }
 
-    public CustomDTO(String customerID, String schGoal, String assWorkId, String assInDate, String assOutDate) {
+/*    public CustomDTO(String ordersID, String ordersDate, String ordersCustomerID, String payAmount, String payStatus) {
+        this.ordersID = ordersID;
+        this.ordersDate = ordersDate;
+        this.ordersCustomerID = ordersCustomerID;
+        this.payAmount = payAmount;
+        this.payStatus = payStatus;
+    }*/
+   public CustomDTO(String customerID, String schGoal, String assWorkId, String assInDate, String assOutDate) {
         this.customerID = customerID;
         this.schGoal = schGoal;
         this.assWorkId = assWorkId;
         this.assInDate = assInDate;
         this.assOutDate = assOutDate;
+    }
+
+    public String getOrdersID() {
+        return ordersID;
+    }
+
+    public void setOrdersID(String ordersID) {
+        this.ordersID = ordersID;
+    }
+
+    public String getOrdersDate() {
+        return ordersDate;
+    }
+
+    public void setOrdersDate(String ordersDate) {
+        this.ordersDate = ordersDate;
+    }
+
+    public String getOrdersCustomerID() {
+        return ordersCustomerID;
+    }
+
+    public void setOrdersCustomerID(String ordersCustomerID) {
+        this.ordersCustomerID = ordersCustomerID;
+    }
+
+    public String getPayAmount() {
+        return payAmount;
+    }
+
+    public void setPayAmount(String payAmount) {
+        this.payAmount = payAmount;
+    }
+
+    public String getPayStatus() {
+        return payStatus;
+    }
+
+    public void setPayStatus(String payStatus) {
+        this.payStatus = payStatus;
     }
 
     public CustomDTO(String equipmentId, String equipmentName, double equipmentCost, String schGoal) {
@@ -435,29 +482,6 @@ public class CustomDTO {
         this.orederDetailUnitP = orederDetailUnitP;
     }
 
-    public String getOrdersID() {
-        return ordersID;
-    }
-
-    public void setOrdersID(String ordersID) {
-        this.ordersID = ordersID;
-    }
-
-    public String getOrdersDate() {
-        return ordersDate;
-    }
-
-    public void setOrdersDate(String ordersDate) {
-        this.ordersDate = ordersDate;
-    }
-
-    public String getOrdersCustomerID() {
-        return ordersCustomerID;
-    }
-
-    public void setOrdersCustomerID(String ordersCustomerID) {
-        this.ordersCustomerID = ordersCustomerID;
-    }
 
     public String getOrdType() {
         return ordType;
@@ -481,22 +505,6 @@ public class CustomDTO {
 
     public void setPayType(String payType) {
         this.payType = payType;
-    }
-
-    public String getPayAmount() {
-        return payAmount;
-    }
-
-    public void setPayAmount(String payAmount) {
-        this.payAmount = payAmount;
-    }
-
-    public String getPayStatus() {
-        return payStatus;
-    }
-
-    public void setPayStatus(String payStatus) {
-        this.payStatus = payStatus;
     }
 
     public String getRegID() {

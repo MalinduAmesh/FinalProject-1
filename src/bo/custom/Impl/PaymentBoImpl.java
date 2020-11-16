@@ -1,6 +1,7 @@
 package bo.custom.Impl;
 
 import bo.custom.PaymentBo;
+import dao.DAOFactory;
 import dao.custom.CustomerDAO;
 import dao.custom.Impl.CustomerDAOImpl;
 import dao.custom.Impl.PaymentDAOImpl;
@@ -12,8 +13,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PaymentBoImpl implements PaymentBo {
-    PaymentDAO paymentDAO = new PaymentDAOImpl();
-    CustomerDAO customerDAO = new CustomerDAOImpl();
+    PaymentDAO paymentDAO = (PaymentDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.PAYMENT);
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);
 
     @Override
     public String getLastPayID() throws SQLException, ClassNotFoundException {

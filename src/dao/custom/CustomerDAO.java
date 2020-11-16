@@ -11,4 +11,6 @@ public interface CustomerDAO extends CrudDAO<Customer,String> {
     String getLastID() throws SQLException, ClassNotFoundException;
 
     ArrayList<CustomEntity> lineChart() throws SQLException, ClassNotFoundException;
+
+    String getCountGenaral() throws SQLException, ClassNotFoundException;
 }

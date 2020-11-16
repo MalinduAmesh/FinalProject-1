@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
@@ -14,24 +15,27 @@
    <children>
       <AnchorPane prefHeight="9803.0" prefWidth="1647.0" style="-fx-background-color: transparent;">
          <children>
-            <LineChart fx:id="lineChartName" layoutX="198.0" layoutY="381.0" prefHeight="449.0" prefWidth="1031.0">
+            <JFXButton fx:id="btnLoadChart" layoutX="1151.0" layoutY="588.0" onAction="#btnLoadChartOnAction" text="Load Chart" />
+            <BarChart fx:id="barchartID" layoutX="65.0" layoutY="317.0" prefHeight="541.0" prefWidth="870.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
               <yAxis>
                 <NumberAxis side="LEFT" />
               </yAxis>
-            </LineChart>
+            </BarChart>
+           
+
          </children></AnchorPane>
-      <Label layoutX="66.0" layoutY="46.0" prefHeight="217.0" prefWidth="452.0" style="-fx-background-color: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); -fx-background-radius: 20;" textAlignment="CENTER">
+      <Label layoutX="66.0" layoutY="46.0" opacity="0.79" prefHeight="217.0" prefWidth="452.0" style="-fx-background-color: linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790); -fx-background-radius: 20;" textAlignment="CENTER">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label layoutX="597.0" layoutY="41.0" prefHeight="217.0" prefWidth="452.0" style="-fx-background-color: linear-gradient(to right top, #a11f6e, #ac3c89, #b554a3, #bd6bbd, #c482d6, #c684dd, #c785e4, #c887eb, #c672e2, #c55bd7, #c43fca, #c40dbc); -fx-background-radius: 30;">
+      <Label layoutX="597.0" layoutY="41.0" opacity="0.79" prefHeight="217.0" prefWidth="452.0" style="-fx-background-color: linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790); -fx-background-radius: 30;">
          <effect>
             <DropShadow />
          </effect></Label>
-      <Label layoutX="1131.0" layoutY="41.0" prefHeight="217.0" prefWidth="452.0" style="-fx-background-color: linear-gradient(to right top, #02127c, #062b8e, #14419f, #2456ae, #376cbc, #356cbd, #346bbd, #326bbe, #1b54b1, #053da2, #002491, #02027e); -fx-background-radius: 30;" textAlignment="CENTER">
+      <Label layoutX="1131.0" layoutY="41.0" opacity="0.79" prefHeight="217.0" prefWidth="452.0" style="-fx-background-color: linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790); -fx-background-radius: 30;" textAlignment="CENTER">
          <effect>
             <DropShadow />
          </effect></Label>
@@ -65,19 +69,22 @@
             <Image url="@../Assests/instruc2.png" />
          </image>
       </ImageView>
-      <Label fx:id="txtTotalEarnings" layoutX="148.0" layoutY="118.0" prefHeight="51.0" prefWidth="161.0" text="0" textFill="WHITE" />
-      <Label fx:id="txtTotalGoldMembers" layoutX="687.0" layoutY="113.0" prefHeight="42.0" prefWidth="151.0" text="Gold Members  :" textFill="WHITE">
+      <Label fx:id="txtTotalEarnings" layoutX="148.0" layoutY="118.0" prefHeight="51.0" prefWidth="161.0" text="0" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font size="25.0" />
+         </font></Label>
+      <Label fx:id="txtTotalInstructors" layoutX="1285.0" layoutY="123.0" prefHeight="42.0" prefWidth="110.0" text="0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+      <Label fx:id="txtTotalGenarlMembers" layoutX="661.0" layoutY="123.0" prefHeight="42.0" prefWidth="177.0" text="         Genaral  :" textAlignment="RIGHT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="txtTotalInstructors" layoutX="1285.0" layoutY="123.0" prefHeight="42.0" prefWidth="110.0" text="0" textAlignment="CENTER" textFill="WHITE" />
-      <Label fx:id="txtTotalGenarlMembers" layoutX="695.0" layoutY="152.0" prefHeight="42.0" prefWidth="136.0" text="         Genaral  :" textAlignment="RIGHT" textFill="WHITE">
+      <Label fx:id="txtGenarlMem" layoutX="838.0" layoutY="127.0" prefHeight="34.0" prefWidth="55.0" text="0" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="txtGoldMem" layoutX="828.0" layoutY="117.0" prefHeight="34.0" prefWidth="55.0" text="0" textFill="WHITE" />
-      <Label fx:id="txtGenarlMem" layoutX="828.0" layoutY="156.0" prefHeight="34.0" prefWidth="55.0" text="0" textFill="WHITE" />
+            <Font size="25.0" />
+         </font></Label>
    </children>
 </AnchorPane>

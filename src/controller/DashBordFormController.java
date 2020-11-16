@@ -4,8 +4,10 @@ import animatefx.animation.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.chart.BarChart;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -23,6 +25,12 @@ public class DashBordFormController {
     public JFXButton btnHome;
     public JFXButton btnMemAttendance;
 
+    @FXML
+    private JFXButton btnLoadChart;
+
+    @FXML
+    private BarChart<?, ?> barchartID;
+
 
     public void initialize() throws IOException {
         defalt();
@@ -39,10 +47,11 @@ public class DashBordFormController {
     }
     
     public void btnMemberOnAction(ActionEvent actionEvent) throws IOException {
-        Parent stage = FXMLLoader.load(this.getClass().getResource("../view/MemberForm.fxml"));
+      Parent stage = FXMLLoader.load(this.getClass().getResource("../view/RegisterForm.fxml"));
         root.getChildren().clear();
         root.getChildren().add(stage);
         new FadeIn(stage).play();
+
     }
 
     public void btnInstructorOnAction(ActionEvent actionEvent) throws IOException {
@@ -52,7 +61,7 @@ public class DashBordFormController {
 
     public void btnAttndanceOnAction(ActionEvent actionEvent) throws IOException {
 
-        Parent stage = FXMLLoader.load(this.getClass().getResource("../view/AttendanceMemberForm.fxml"));
+        Parent stage = FXMLLoader.load(this.getClass().getResource("../view/AttendanceInstructorForm.fxml"));
         root.getChildren().clear();
         root.getChildren().add(stage);
         new FadeIn(stage).play();
@@ -90,7 +99,7 @@ public class DashBordFormController {
     }
 
     public void btnMemAttendanceOnAction(ActionEvent actionEvent) throws IOException {
-        Parent stage = FXMLLoader.load(this.getClass().getResource("../view/MemberAttendanceForm.fxml"));
+        Parent stage = FXMLLoader.load(this.getClass().getResource("../view/AttendanceMemberForm.fxml"));
         root.getChildren().clear();
         root.getChildren().add(stage);
         new FadeIn(stage).play();

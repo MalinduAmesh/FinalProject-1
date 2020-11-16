@@ -2,6 +2,7 @@ package bo.custom.Impl;
 
 import bo.custom.AssignWorkOutBO;
 import dao.AssignWorkOutDAO;
+import dao.DAOFactory;
 import dao.custom.AssignWorkOut;
 import dao.custom.CustomerDAO;
 import dao.custom.Impl.AssignWorkOutDAOImpl;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 
 public class AssignWorkOutBOImpl implements AssignWorkOutBO {
 
-    AssignWorkOutDAO assignWorkOutDAO = new AssignWorkOutDAOImpl();
+    AssignWorkOutDAO assignWorkOutDAO = (AssignWorkOutDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.ASSIGNWORK);
     CustomerDAO customerDAO = new CustomerDAOImpl();
     ScheduleDAO scheduleDAO = new ScheduleDAOImpl();
 
@@ -104,6 +105,22 @@ public class AssignWorkOutBOImpl implements AssignWorkOutBO {
             ));
         }
         return customerDTOS;
+    }
+
+    @Override
+    public ObservableList<AssignWorkOutDTO> loadTableForm() throws SQLException, ClassNotFoundException {
+        ArrayList<AssignWorkOut>list = assignWorkOutDAO.getAll();
+        ObservableList<AssignWorkOutDTO>assignWorkOutDTOS=FXCollections.observableArrayList();
+        for (AssignWorkOut assignWorkOut:list) {
+            assignWorkOutDTOS.add(new AssignWorkOutDTO(
+                    assignWorkOut.getAssMemID(),
+                    assignWorkOut.getAssSchID(),
+                    assignWorkOut.getAssInDate(),
+                    assignWorkOut.getAssOutDate()
+            ));
+
+        }
+        return assignWorkOutDTOS;
     }
 
 

@@ -1,0 +1,78 @@
+
+
+#newButton:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnMem:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnAttendance:hover{
+    -fx-background-color:-webkit-linear-gradient(#8434C1, #CA29AB)
+}
+#btnInstructor:hover{
+    -fx-background-color:linear-gradient(#8434C1, #CA29AB)
+}
+#btnWorkOut:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnProduct:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnProducts:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnEqupment:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnStock:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnHome:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnCart:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnClear:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnAdd:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnUpdateAdd:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnClear:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnAdd:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnClear:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnAddCart:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnPay:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnClear:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+
+}
+#btnremoveCart:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnAdd:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnUpdate:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnRemove:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}
+#btnClear:hover{
+    -fx-background-color:linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790)
+}

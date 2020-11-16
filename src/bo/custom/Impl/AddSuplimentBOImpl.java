@@ -1,6 +1,8 @@
 package bo.custom.Impl;
 
 import bo.custom.AddSuplimentBo;
+import dao.CrudUtil;
+import dao.DAOFactory;
 import dao.custom.Impl.SuplimentDAOImpl;
 import dao.custom.SuplimentDAO;
 import dto.SuplimentDTO;
@@ -8,12 +10,13 @@ import entity.Supliment;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AddSuplimentBOImpl implements AddSuplimentBo {
 
-    SuplimentDAO suplimentDAO = new SuplimentDAOImpl();
+    SuplimentDAO suplimentDAO = (SuplimentDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.SUPLIMENT);
 
     @Override
     public boolean addSupliment(SuplimentDTO a) throws SQLException, ClassNotFoundException {
@@ -52,6 +55,13 @@ public class AddSuplimentBOImpl implements AddSuplimentBo {
 
         }
         return suplimentDTOS;
+    }
+
+    @Override
+    public String getLastId() throws SQLException, ClassNotFoundException {
+        String sql = "Select supId from supliment order By supId desc LIMIT 1";
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        return rst.next()?rst.getString("supId"):null;
     }
 
 

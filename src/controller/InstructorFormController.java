@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.Impl.InstructorBOImpl;
 import bo.custom.InstructorBO;
 import com.jfoenix.controls.JFXButton;
@@ -14,15 +15,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Paint;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class InstructorFormController {
 
 
     public JFXComboBox cmbStatus;
-    InstructorBO instructorBO =new InstructorBOImpl();
+    InstructorBO instructorBO = (InstructorBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.INSTRUCTOR);
 
     public JFXTextField txtNic;
     public JFXTextField txtID;
@@ -60,15 +63,27 @@ public class InstructorFormController {
 
 
     public void initialize() throws SQLException, ClassNotFoundException {
-
+        genarteID();
         setValuesTocol();
         setValuesTocmb();
 
 
     }
 
+    private void genarteID() throws SQLException, ClassNotFoundException {
+        String lastid = instructorBO.getLastId();
+
+        if (lastid!= null){
+            lastid = lastid.split("[A-Z]")[1];
+            lastid ="D00"+(Integer.parseInt(lastid)+1);
+            txtID.setText(lastid);
+        }else {
+            txtID.setText("D001");
+        }
+    }
+
     private void setValuesTocmb() {
-        cmbStatus.getItems().add("Specialist");
+        cmbStatus.getItems().add("avalible");
 
     }
 
@@ -111,13 +126,29 @@ public class InstructorFormController {
             String status = cmbStatus.getValue().toString();
 
             InstructorDTO instructorDTO = new InstructorDTO(id, name, nic, gender, cont, dob, status);
-            boolean isAdded = instructorBO.addInstructors(instructorDTO);
-            if (isAdded) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
-            } else {
-                new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+            if (Pattern.compile("^[a-z|A-Z]{1,}$").matcher(txtName.getText()).matches()) {
+                txtName.setUnFocusColor(Paint.valueOf("blue"));
+                if (Pattern.compile("^[0-9]{1,10}$").matcher(txtContact.getText()).matches()) {
+                    txtContact.setUnFocusColor(Paint.valueOf("blue"));
+                    if (Pattern.compile("^[0-9]{1,12}$").matcher(txtNic.getText()).matches()) {
+                        txtNic.setUnFocusColor(Paint.valueOf("blue"));
+                        boolean isAdded = instructorBO.addInstructors(instructorDTO);
+                        if (isAdded) {
+                            new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
+                        } else {
+                            new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+                        }
+                    }else {
+                        txtNic.setUnFocusColor(Paint.valueOf("red"));
+                    }
+                }else {
+                    txtContact.setUnFocusColor(Paint.valueOf("red"));
+                }
+            }else {
+                txtName.setUnFocusColor(Paint.valueOf("red"));
             }
         }catch (NullPointerException e){
+            new Alert(Alert.AlertType.WARNING,"Some text Fields Comes With null Values",ButtonType.OK).show();
 
         }
 
@@ -152,7 +183,7 @@ public class InstructorFormController {
         InstructorDTO instructorDTO = new InstructorDTO(id,name,nic,gender,cont,dob,status);
         boolean isDeleted = instructorBO.deleteInstructor(instructorDTO);
         if (isDeleted){
-            new Alert(Alert.AlertType.CONFIRMATION,"added",ButtonType.OK).show();
+            new Alert(Alert.AlertType.CONFIRMATION,"Deleted",ButtonType.OK).show();
         }else {
             new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
         }

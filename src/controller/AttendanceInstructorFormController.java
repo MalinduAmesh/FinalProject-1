@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.AttendanceInstructorBO;
 import bo.custom.Impl.AttendanceInstructorBOImpl;
 import com.jfoenix.controls.JFXButton;
@@ -34,7 +35,8 @@ public class AttendanceInstructorFormController {
     public Label lblDate;
     public JFXComboBox cmbInstrutor;
 
-    AttendanceInstructorBO attendanceInstructorBO = new AttendanceInstructorBOImpl();
+    AttendanceInstructorBO attendanceInstructorBO = (AttendanceInstructorBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.ATTENDANCEINSTRUCTOR);
+
 
     public void initialize(){
         genarateAttID();
@@ -101,19 +103,27 @@ public class AttendanceInstructorFormController {
 
     public void btnAddOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-        String id = lblAttID.getText();
-        String insID =cmbInsID.getValue().toString();
-        String inTime =lblInTime.getText();
-        String date =lblDate.getText();
-        String outTime = "0";
+        try {
+            String id = lblAttID.getText();
+            String insID = cmbInsID.getValue().toString();
+            String inTime = lblInTime.getText();
+            String date = lblDate.getText();
+            String outTime = "0";
 
-        InsAttendanceDTO insAttendanceDTO = new InsAttendanceDTO(id,insID,inTime,date,outTime);
-        boolean isAdded = attendanceInstructorBO.markAttendance(insAttendanceDTO);
-        if (isAdded){
-            new Alert(Alert.AlertType.CONFIRMATION,"Added", ButtonType.OK).show();
+            InsAttendanceDTO insAttendanceDTO = new InsAttendanceDTO(id, insID, inTime, date, outTime);
+            boolean isAdded = attendanceInstructorBO.markAttendance(insAttendanceDTO);
+            if (isAdded) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
 
-        }else {
-            new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }catch (NullPointerException e){
+            new Alert(Alert.AlertType.WARNING,"Some TextField Values comes with null values",ButtonType.OK).show();
         }
 
 

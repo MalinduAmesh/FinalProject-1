@@ -1,5 +1,6 @@
 package controller;
 
+import bo.BOFactory;
 import bo.custom.AttendanceMemberBO;
 import bo.custom.Impl.AttendanceMemberBOImpl;
 import com.jfoenix.controls.JFXButton;
@@ -35,7 +36,7 @@ public class AttendanceMemberFormController {
     public JFXButton btnAdd;
     public JFXButton btnClear;
 
-    AttendanceMemberBO attendanceMemberBO = new AttendanceMemberBOImpl();
+    AttendanceMemberBO attendanceMemberBO = (AttendanceMemberBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.ATTENADNCEMEMBER);
 
     public void initialize() throws SQLException, ClassNotFoundException {
         setCusValuesTocmb();
@@ -143,19 +144,25 @@ public class AttendanceMemberFormController {
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) throws Exception {
-        String id = lblMemAttID.getText();
-        String memId = cmbMemID.getValue().toString();
-        String insId = cmbInsID.getValue().toString();
-        String date = lblAutoDate.getText();
-        String time = lblAutoTime.getText();
+        try {
 
-        AttendanceDTO attendanceDTO = new AttendanceDTO(id,memId,insId,date,time);
 
-        boolean isAdded =attendanceMemberBO.addMemAttandance(attendanceDTO);
-        if (isAdded){
-            new Alert(Alert.AlertType.CONFIRMATION,"Added", ButtonType.OK).show();
-        }else {
-            new Alert(Alert.AlertType.WARNING,"Faild",ButtonType.OK).show();
+            String id = lblMemAttID.getText();
+            String memId = cmbMemID.getValue().toString();
+            String insId = cmbInsID.getValue().toString();
+            String date = lblAutoDate.getText();
+            String time = lblAutoTime.getText();
+
+            AttendanceDTO attendanceDTO = new AttendanceDTO(id, memId, insId, date, time);
+
+            boolean isAdded = attendanceMemberBO.addMemAttandance(attendanceDTO);
+            if (isAdded) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Added", ButtonType.OK).show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Faild", ButtonType.OK).show();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.WARNING,"Some texts comes with null Values",ButtonType.OK).show();
         }
     }
 

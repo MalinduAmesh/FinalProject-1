@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="952.0" prefWidth="1666.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SuplimentOrderDetailsFormController">
    <children>
-      <JFXButton layoutX="1055.0" layoutY="486.0" onAction="#btnAddToCartOnAction" prefHeight="78.0" prefWidth="176.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
+      <JFXButton fx:id="btnCart" layoutX="1055.0" layoutY="486.0" onAction="#btnAddToCartOnAction" prefHeight="78.0" prefWidth="176.0" style="-fx-background-radius: 50;" stylesheets="@../css/styles.css" text=" ">
          <graphic>
             <ImageView fitHeight="68.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -24,7 +24,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton layoutX="1055.0" layoutY="728.0" onAction="#btnpaidOnAction" prefHeight="78.0" prefWidth="176.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
+      <JFXButton layoutX="1055.0" layoutY="728.0" onAction="#btnpaidOnAction" prefHeight="78.0" prefWidth="176.0" style="-fx-background-radius: 50; -fx-background-color: linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790);" text=" ">
          <graphic>
             <ImageView fitHeight="65.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -33,7 +33,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton layoutX="1055.0" layoutY="836.0" onAction="#btnClearOnAction" prefHeight="78.0" prefWidth="176.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
+      <JFXButton fx:id="btnClear" layoutX="1055.0" layoutY="836.0" onAction="#btnClearOnAction" prefHeight="78.0" prefWidth="176.0" style="-fx-background-radius: 50;" stylesheets="@../css/styles.css" text=" ">
          <graphic>
             <ImageView fitHeight="55.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -109,7 +109,7 @@
          </columns>
 
       </TableView>
-      <JFXButton layoutX="1055.0" layoutY="613.0" onAction="#btnRemovedOnAction" prefHeight="76.0" prefWidth="176.0" style="-fx-background-radius: 100 0 100 0; -fx-background-color: white;" text=" ">
+      <JFXButton layoutX="1055.0" layoutY="613.0" onAction="#btnRemovedOnAction" prefHeight="76.0" prefWidth="176.0" style="-fx-background-radius: 50; -fx-background-color: linear-gradient(to right top, #b3b2b5, #a9a7ac, #9f9ca2, #959299, #8b8790);" text=" ">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -118,16 +118,21 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXRadioButton fx:id="rdoCash" layoutX="1277.0" layoutY="525.0" onAction="#rdoCashOnAction" selected="true" text="Cash">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </JFXRadioButton>
-      <JFXRadioButton fx:id="rdoCard" layoutX="1469.0" layoutY="525.0" onAction="#rdoCardOnAction" text="Card">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </JFXRadioButton>
+      <AnchorPane layoutX="1259.0" layoutY="520.0" prefHeight="30.0" prefWidth="314.0" style="-fx-background-color: f1f2f6; -fx-background-radius: 50;">
+         <children>
+            <JFXRadioButton fx:id="rdoCash" layoutX="23.0" layoutY="6.0" onAction="#rdoCashOnAction" selected="true" text="Cash">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rdoCard" layoutX="208.0" layoutY="6.0" onAction="#rdoCardOnAction" text="Card">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXRadioButton>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="jasper" layoutX="899.0" layoutY="900.0" onAction="#jasperOn" prefHeight="44.0" prefWidth="113.0" style="-fx-background-color: red;" text="Print" />
    </children>
    <effect>
       <DropShadow />

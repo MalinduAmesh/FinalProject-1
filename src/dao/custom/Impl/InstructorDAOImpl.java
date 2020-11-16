@@ -123,4 +123,18 @@ public class InstructorDAOImpl implements InstructorDAO {
         String sql="Update instructor set traStatus='Unavalible' where traId=? ";
        return CrudUtil.executeUpdate(sql,a.getInstructID());
     }
+
+    @Override
+    public String getCount() throws SQLException, ClassNotFoundException {
+        String sql = "Select COUNT(traId) from instructor order by traId desc LIMIT 1";
+        ResultSet resultSet = CrudUtil.executeQuery(sql);
+        return resultSet.next()?resultSet.getString(1):null;
+    }
+
+    @Override
+    public String getLastId() throws SQLException, ClassNotFoundException {
+        String sql ="Select traId from instructor order BY traId desc LIMIT 1";
+        ResultSet rst = CrudUtil.executeQuery(sql);
+        return rst.next()?rst.getString("traId"):null;
+    }
 }

@@ -38,15 +38,13 @@
             <Image url="@../Assests/Money.png" />
          </image>
       </ImageView>
-      <TableView layoutX="31.0" layoutY="185.0" opacity="0.79" prefHeight="692.0" prefWidth="1605.0">
+      <TableView fx:id="tblOrders" layoutX="256.0" layoutY="184.0" opacity="0.79" prefHeight="692.0" prefWidth="1155.0">
         <columns>
-          <TableColumn prefWidth="171.0" text="Customer Name" />
-            <TableColumn prefWidth="230.0" text="Supliment ID" />
-          <TableColumn minWidth="0.0" prefWidth="243.0" text="Name" />
-            <TableColumn prefWidth="237.0" text="Date" />
-            <TableColumn prefWidth="171.0" text="QTY" />
-            <TableColumn prefWidth="249.0" text="Total Price" />
-            <TableColumn prefWidth="303.0" text="Tools" />
+            <TableColumn fx:id="colOrderId" prefWidth="158.0" text="Order ID" />
+          <TableColumn fx:id="colOrdCusName" prefWidth="243.0" text="Customer Name" />
+          <TableColumn fx:id="colSuplimentName" minWidth="0.0" prefWidth="243.0" text="Pay for" />
+            <TableColumn fx:id="colOrdDate" prefWidth="253.0" text="Date" />
+            <TableColumn fx:id="colSuplimentTotal" prefWidth="257.0" text="Total Price" />
         </columns>
       </TableView>
    </children>
